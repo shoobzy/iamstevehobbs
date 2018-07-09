@@ -1,0 +1,12 @@
+// A lot of developers/engineers use the terms component and pattern synonymously and that’s totally fine if you are
+// more comfortable with that. It is just my preference to separate those two terms.
+//
+// For a general rule of thumb, I think of a pattern (namespace: p-) as a combination of components but in a way
+// that is not scaleable.
+//
+// For example, I would consider the accordion as a component. It is scaleable and reusable on its own, meaning
+// that it can be used in other parts of the website without making any changes even if the accordion would contain other components such as buttons.
+//
+// On the other hand, the header, for example, would be a pattern because it is not scaleable (the header cannot be used
+// in the content or sidebar area) and also contains other components such as buttons, accordions, menus, logos, search form etc.
+//

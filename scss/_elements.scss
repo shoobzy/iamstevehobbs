@@ -1,0 +1,26 @@
+// Elements (namespace: e-) are the HTML native elements which we would not style based on the class names. For example,
+// we should provide default styles to <a> element rather than .link class.
+
+// Do this for the default link style
+a {
+    text-decoration: none;
+
+    &:hover {
+        background-color: blue;
+        color: white;
+    }
+}
+
+// Don’t provide the default link style to a class
+.link {
+    text-decoration: none;
+
+    &:hover {
+        background-color: blue;
+        color: white;
+    }
+}
+
+// It is because, especially in a CMS like WordPress, you wouldn’t want to add a class every single time you want to use a
+// link in content. Hence, we provide a default style to the <a> element so without any class, the link will still
+// have good-looking styles.

@@ -1,0 +1,11 @@
+// Objects (namespace: o-) are used for design patterns, such as layouts, where items are being arranged rather than
+// decorated. Object classes are used across all pages, so if you make any changes to the object classes, you should be v
+// ery careful because any changes are going to affect each and every page throughout the website.
+//
+// The most common object classes I use are:
+//
+// .o-page: the most outer container which usually contains max-width: 100vw and overflow: hidden.
+// .o-main: the outer container for the main area.
+// .o-container: the outer container for components and it usually provides a fixed width.
+// .o-content: in case if any extra configuration is needed for the actual content area.
+// .o-grid: if a grid layout with different number of columns are required.

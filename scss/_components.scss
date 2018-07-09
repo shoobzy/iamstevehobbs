@@ -1,0 +1,11 @@
+// A component (namespace: c-) is a small feature that makes up a part of the website. Think buttons, accordions, sliders,
+// modal dialogs, etc. Each component is fully functional by itself and does not rely on any other components. This fact
+// should be considered when you name the component.
+//
+// For example, the button in the main section from the example above shouldn’t be called .c-main-button because main
+// scopes it inside the main section and limits the use of it in other places, like a sidebar. Something like .c-btn
+// is much nicer because the button is no longer tied to any other specific sections of the page.
+//
+// If you need any extra features, you can always extend properties with a BEM modifier (combining powers!) or use Scope,
+// which is coming up in a bit.
+//
