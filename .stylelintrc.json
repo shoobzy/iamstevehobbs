@@ -1,0 +1,11 @@
+{
+  "extends": "./node_modules/stylelint-config-recommended-scss",
+  "rules": {
+    "value-list-max-empty-lines": 0,
+    "indentation": 4,
+    "rule-empty-line-before": "always-multi-line",
+    "no-eol-whitespace": true,
+    "declaration-empty-line-before": "never",
+    "block-closing-brace-empty-line-before": "never"
+  }
+}
