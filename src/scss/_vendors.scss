@@ -4,15 +4,14 @@
 // The reason these styles are higher up in the structure is so we can override them if needed. As you may recall,
 // if the same class is called twice, the cascade will render the properties of the second instance, assuming the
 // properties are exactly the same:
-//
-.btn--large {
-  padding: 3em;
-}
-//
+// .btn--large {
+//     padding: 3em;
+// }
+
 //This one wins out
-.btn--large {
-  padding: 5em;
-}
+// .btn--large {
+//     padding: 5em;
+// }
 
 // Just for the side note, in Sass, you can use ~ to point to the node_modules folder so you are able to import style
 // assets from the source rather than having to move it into your own directories.

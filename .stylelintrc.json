@@ -3,7 +3,14 @@
   "rules": {
     "value-list-max-empty-lines": 0,
     "indentation": 4,
-    "rule-empty-line-before": "always-multi-line",
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": [
+          "after-single-line-comment"
+        ]
+      }
+    ],
     "no-eol-whitespace": true,
     "declaration-empty-line-before": "never",
     "block-closing-brace-empty-line-before": "never"
