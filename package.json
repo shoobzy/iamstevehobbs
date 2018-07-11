@@ -4,8 +4,11 @@
   "description": "Portfolio of Steve Hobbs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "precommit": "lint-staged"
+    "start": "parcel src/index.html",
+    "prebuild": "shx rm -rf dist/*",
+    "build": "parcel build src/index.html --public-url ./",
+    "precommit": "lint-staged",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
     "*.scss": "stylelint --syntax=scss"
@@ -25,6 +28,8 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
     "node-sass": "^4.9.2",
+    "parcel-bundler": "^1.9.4",
+    "shx": "^0.3.2",
     "stylelint": "^9.3.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.1.3"

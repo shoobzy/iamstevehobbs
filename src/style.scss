@@ -1,0 +1,17 @@
+@import "./scss/settings";
+@import "./scss/tools";
+@import "./scss/vendors";
+@import "./scss/objects";
+@import "./scss/elements";
+@import "./scss/components";
+@import "./scss/patterns";
+
+// @todo Import this into a CSS file instead?
+// See https://golb.hplar.ch/2018/01/Bundling-web-applications-with-Parcel.html#sass
+
+body {
+    background: #FBFBFB;
+    padding: 2em;
+    font-size: 1em;
+    box-sizing: border-box;
+}
