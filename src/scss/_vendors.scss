@@ -16,3 +16,5 @@
 // Just for the side note, in Sass, you can use ~ to point to the node_modules folder so you are able to import style
 // assets from the source rather than having to move it into your own directories.
 // @import '~modern-normalize/modern-normalize';
+
+@import "../node_modules/normalize.css/normalize.css";

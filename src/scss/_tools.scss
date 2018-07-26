@@ -4,3 +4,7 @@
 // Placeholders
 // Mixins
 // Media queries
+
+$o-grid--tablet-up: (
+    media: "(min-width: 768px)",
+);
