@@ -27,12 +27,13 @@
     "autoprefixer": "^8.6.5",
     "dotenv": "^6.0.0",
     "font-awesome": "^4.7.0",
+    "moment": "^2.18.1",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-inlinesvg": "^0.8.1",
     "react-router": "^4.3.1",
-    "scss": "^0.2.4",
-    "moment": "^2.18.1"
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
