@@ -1,4 +1,8 @@
 import React from 'react';
+// import {
+//   BrowserRouter as Router,
+//   Link
+// } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import ReactSVG from 'react-svg';
 import Graphic from './images/steve-hobbs.svg';
@@ -9,10 +13,7 @@ import './style.css';
 class Intro extends React.Component {
   render() {
     const style = {
-      margin: 20,
-      padding: 20,
-      color: 'black',
-      backgroundColor: this.props.color,
+      textAlign: 'center',
     }
 
     return (
@@ -27,5 +28,5 @@ class Intro extends React.Component {
 
 ReactDOM.render(
     <Intro />,
-    document.getElementById('steve-hobbs')
+    document.getElementById('root')
 );

@@ -33,7 +33,9 @@
     "react-dom": "^16.5.2",
     "react-inlinesvg": "^0.8.1",
     "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-svg": "^6.0.15",
+    "react-transition-group": "^2.5.0",
     "scss": "^0.2.4"
   },
   "devDependencies": {
