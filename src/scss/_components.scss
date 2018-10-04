@@ -10,3 +10,29 @@
 // which is coming up in a bit.
 
 // fullstackreact.com/30-days-of-react
+.hero {
+    position: fixed;
+    height: calc(100vh + 2px);
+    width: calc(100% + 2px);
+    z-index: 10;
+
+    .name {
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+}
+
+#hero__intro {
+    text-align: center;
+}
+
+.hero__intro_graphic > div {
+    display: flex;
+    background: #fff;
+}
+
+.mini-hero {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: pink;
+}

@@ -5,28 +5,62 @@ import React from 'react';
 // } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import ReactSVG from 'react-svg';
-import Graphic from './images/steve-hobbs.svg';
+import Graphic from './images/steve__hobbs_inverted.svg';
+import Plx from 'react-plx';
 
-import 'font-awesome/css/font-awesome.css';
 import './style.css';
+
+const parallaxData = [
+  {
+    start: 0,
+    end: 500,
+    properties: [
+      {
+        startValue: 1,
+        endValue: 15,
+        property: 'scale',
+      },
+      {
+        startValue: 1,
+        endValue: 0,
+        property: 'opacity',
+      },
+    ],
+  },
+];
 
 class Intro extends React.Component {
   render() {
-    const style = {
-      textAlign: 'center',
-    }
-
     return (
-      <div style={style}>
-        <h1>Hi there, I am</h1>
-        {/* <h2>{process.env.NODE_ENV}</h2> */}
-        <ReactSVG src={Graphic} />
-      </div>
+      <Plx
+        className='hero__intro_graphic'
+        parallaxData={ parallaxData }
+      >
+      <div><h1>Hi there, I am</h1></div>
+      <ReactSVG src={Graphic} />
+      <div></div>
+      </Plx>
     )
   }
 }
 
+// class Intro extends React.Component {
+//   render() {
+//     const style = {
+//       textAlign: 'center',
+//     }
+
+//     return (
+//       <div style={style}>
+//         {/* <h1>{this.state.message}</h1> */}
+//         {/* <h2>{process.env.NODE_ENV}</h2> */}
+//         <ReactSVG src={Graphic} />
+//       </div>
+//     )
+//   }
+// }
+
 ReactDOM.render(
     <Intro />,
-    document.getElementById('root')
+    document.getElementById('hero__intro')
 );

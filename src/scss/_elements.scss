@@ -31,3 +31,12 @@
 // It is because, especially in a CMS like WordPress, you wouldn’t want to add a class every single time you want to use a
 // link in content. Hence, we provide a default style to the <a> element so without any class, the link will still
 // have good-looking styles.
+body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 200vh;
+}
