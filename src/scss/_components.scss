@@ -21,12 +21,25 @@
     }
 }
 
-#hero__intro {
+.hero__intro {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     text-align: center;
+
+    div {
+        flex: 1;
+        position: relative;
+        height: 100%;
+        z-index: 10;
+
+        &.hero__intro_graphic {
+            background: none;
+        }
+    }
 }
 
-.hero__intro_graphic > div {
-    display: flex;
+.hero__intro_fill {
     background: #fff;
 }
 

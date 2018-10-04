@@ -33,12 +33,13 @@ class Intro extends React.Component {
   render() {
     return (
       <Plx
-        className='hero__intro_graphic'
+        className="hero__intro_graphic"
         parallaxData={ parallaxData }
       >
-      <div><h1>Hi there, I am</h1></div>
-      <ReactSVG src={Graphic} />
-      <div></div>
+      <ReactSVG
+        src={ Graphic }
+        className="wrapper-class-name"
+      />
       </Plx>
     )
   }
@@ -62,5 +63,5 @@ class Intro extends React.Component {
 
 ReactDOM.render(
     <Intro />,
-    document.getElementById('hero__intro')
+    document.getElementById('hero__intro_graphic')
 );
