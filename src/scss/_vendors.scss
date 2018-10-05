@@ -17,3 +17,9 @@
 // assets from the source rather than having to move it into your own directories.
 // @import '~modern-normalize/modern-normalize';
 @import "../node_modules/normalize.css/normalize.css";
+
+.Plx.Plx--below {
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+}

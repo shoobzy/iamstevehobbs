@@ -8,44 +8,52 @@
 //
 // If you need any extra features, you can always extend properties with a BEM modifier (combining powers!) or use Scope,
 // which is coming up in a bit.
-
-// fullstackreact.com/30-days-of-react
 .hero {
-    position: fixed;
-    height: calc(100vh + 2px);
-    width: calc(100% + 2px);
-    z-index: 10;
-
-    .name {
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-}
-
-.hero__intro {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    text-align: center;
-
-    div {
-        flex: 1;
-        position: relative;
-        height: 100%;
-        z-index: 10;
-
-        &.hero__intro_graphic {
-            background: none;
-        }
-    }
-}
-
-.hero__intro_fill {
-    background: #fff;
-}
-
-.mini-hero {
     position: fixed;
     height: 100vh;
     width: 100%;
-    background: pink;
+    z-index: 10;
+}
+
+.hero__inner {
+    display: flex;
+    flex-direction: row;
+}
+
+.hero__intro_graphic {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    line-height: 0;
+}
+
+.hero__intro_fill {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.hero__intro_scroll {
+    height: 20px;
+}
+
+.intro {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: #000;
+
+    &.detached {
+        position: absolute;
+        margin-top: 100vh;
+    }
+}
+
+.intro__inner {
+    color: #fff;
 }
