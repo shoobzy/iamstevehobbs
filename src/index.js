@@ -28,21 +28,29 @@ import './style.css';
   var currentScale = 1;
   var lastUpdateTime = new Date();
   var targetScale;
-  var zoomTime = .2; // ~ number of seconds to reach the expected zoom for the current scroll position
+  var zoomTime = .3; // ~ number of seconds to reach the expected zoom for the current scroll position
   var endScrollHeight = window.innerHeight / 200; // in px
+  var expander = document.querySelector(".hero");
 
   // user input
   window.addEventListener('scroll', function (event) {
-      scroll = window.scrollY;
+    if (expander === null) {
+      expander = document.querySelector(".hero");
+    }
+    scroll = window.scrollY;
       var rate = scroll / endScrollHeight;
       targetScale = 1 + (scrollY / 1000) * rate;
   });
 
   // update once per frame
-  setInterval(onTimerTick, 16.66667); // 16.5 milliseconds = ~ 60 frames per sec
+  setInterval(onTimerTick, 32); // 16.5 milliseconds = ~ 60 frames per sec
 
   function onTimerTick() {
-      // make sure we're tracking how much time's elapsed
+    if (expander === null) {
+      return;
+    }
+
+    // make sure we're tracking how much time's elapsed
       var currentTime = new Date();
       var timeDelta = currentTime - lastUpdateTime;
       lastUpdateTime = currentTime;
@@ -50,10 +58,7 @@ import './style.css';
       var newScale = lerp(currentScale, targetScale, ((timeDelta / 1000) / zoomTime));
       currentScale = newScale;
 
-      console.log(newScale);
-
       //expand / contract
-      var expander = document.querySelector(".hero");
       expander.setAttribute("style", "transform: scale(" + newScale + ") translateZ(0);");
   }
 
