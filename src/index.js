@@ -90,8 +90,8 @@ class Scroller extends React.Component {
 class Intro extends React.Component {
   render() {
     return (
-      <div className="intro">
-        <div className="intro__inner">
+      <div className="Intro">
+        <div className="Intro--inner">
           <p>kdfhgkfdhsgjkdfh kjdfhkjghdjk fg</p>
           <p>kdfhgkfdhsgjkdfh kjdfhkjghdjk fg</p>
           <p>kdfhgkfdhsgjkdfh kjdfhkjghdjk fg</p>

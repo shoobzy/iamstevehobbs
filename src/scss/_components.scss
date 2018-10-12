@@ -43,7 +43,7 @@
     height: 20px;
 }
 
-.intro {
+.Intro {
     position: fixed;
     display: flex;
     align-items: center;
@@ -58,14 +58,14 @@
     }
 }
 
-.intro__inner {
+.Intro--inner {
     color: #fff;
 }
 
-.Translate--x--positive {
+.Translate--x-positive {
     transform: translateX(1px);
 }
 
-.Translate--x--negative {
+.Translate--x-negative {
     transform: translateX(-1px);
 }
