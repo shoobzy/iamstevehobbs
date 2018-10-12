@@ -8,26 +8,26 @@
 //
 // If you need any extra features, you can always extend properties with a BEM modifier (combining powers!) or use Scope,
 // which is coming up in a bit.
-.hero {
+.Hero {
     position: fixed;
     height: 100vh;
     width: 100%;
     z-index: 10;
 }
 
-.hero__inner {
+.Hero--inner {
     display: flex;
     flex-direction: row;
 }
 
-.hero__intro_graphic {
+.Hero--intro-graphic {
     display: flex;
     flex-flow: column;
     align-items: stretch;
     line-height: 0;
 }
 
-.hero__intro_fill {
+.Hero--intro-fill {
     display: flex;
     flex: 1;
     align-items: center;
@@ -35,7 +35,11 @@
     background: #fff;
 }
 
-.hero__intro_scroll {
+.Hero--intro-welcome {
+    transform: translateY(1px);
+}
+
+.Hero--intro-scroll {
     height: 20px;
 }
 
@@ -56,4 +60,12 @@
 
 .intro__inner {
     color: #fff;
+}
+
+.Translate--x--positive {
+    transform: translateX(1px);
+}
+
+.Translate--x--negative {
+    transform: translateX(-1px);
 }

@@ -8,14 +8,13 @@ import { animateScroll as scroll, } from 'react-scroll';
 import ReactDOM from 'react-dom';
 import ReactSVG from 'react-svg';
 import Graphic from './images/steve__hobbs_inverted.svg';
-// import Plx from 'react-plx';
 
 import './style.css';
 
 (function () {
   window.addEventListener('scroll', function () {
     var intro = document.querySelector('.intro'),
-        hero = document.querySelector('.hero');
+        hero = document.querySelector('.Hero');
 
     if (document.body.scrollTop || document.documentElement.scrollTop >= hero.scrollHeight) {
       intro.classList.add('detached');
@@ -29,13 +28,13 @@ import './style.css';
   var lastUpdateTime = new Date();
   var targetScale;
   var zoomTime = .3; // ~ number of seconds to reach the expected zoom for the current scroll position
-  var endScrollHeight = window.innerHeight / 200; // in px
-  var expander = document.querySelector(".hero");
+  var endScrollHeight = window.innerHeight / 250; // in px
+  var expander = document.querySelector(".Hero");
 
   // user input
   window.addEventListener('scroll', function (event) {
     if (expander === null) {
-      expander = document.querySelector(".hero");
+      expander = document.querySelector(".Hero");
     }
     scroll = window.scrollY;
       var rate = scroll / endScrollHeight;
@@ -43,7 +42,7 @@ import './style.css';
   });
 
   // update once per frame
-  setInterval(onTimerTick, 32); // 16.5 milliseconds = ~ 60 frames per sec
+  setInterval(onTimerTick, 32);
 
   function onTimerTick() {
     if (expander === null) {
@@ -119,19 +118,20 @@ class Hero extends React.Component {
 
     return (
       <div>
-        <div className="hero" style={ spanHeight }>
-          <div className="hero__inner" style={ spanHeight }>
-            <div className="hero__intro_fill"></div>
-            <div className="hero__intro_graphic">
-              <div className="hero__intro_fill"><h1>Hi there, I am</h1></div>
+        <div className="Hero" style={ spanHeight }>
+          <div className="Hero--inner" style={ spanHeight }>
+            <div className="Hero--intro-fill Translate--x-positive"></div>
+            <div className="Hero--intro-graphic">
+              <div className="Hero--intro-fill Hero--intro-welcome"><h1>Hi there, I am</h1></div>
                 <ReactSVG
                   src={ Graphic }
+                  className="Hero--intro-svg"
                 />
-              <div className="hero__arrow hero__intro_fill">
+              <div className="Hero--intro-fill Hero--intro-scroll">
                 <Scroller />
               </div>
             </div>
-            <div className="hero__intro_fill"></div>
+            <div className="Hero--intro-fill Translate--x-negative"></div>
           </div>
         </div>
         <Intro />
