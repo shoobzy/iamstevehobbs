@@ -13,7 +13,7 @@ import './style.css';
 
 (function () {
   window.addEventListener('scroll', function () {
-    var intro = document.querySelector('.intro'),
+    var intro = document.querySelector('.Intro'),
         hero = document.querySelector('.Hero');
 
     if (document.body.scrollTop || document.documentElement.scrollTop >= hero.scrollHeight) {
@@ -23,53 +23,71 @@ import './style.css';
     }
   });
 
-  var scroll = 1;
-  var currentScale = 1;
-  var lastUpdateTime = new Date();
-  var targetScale;
-  var zoomTime = .3; // ~ number of seconds to reach the expected zoom for the current scroll position
-  var endScrollHeight = window.innerHeight / 250; // in px
-  var expander = document.querySelector(".Hero");
+  window.addEventListener('load', function() {
+    var hero = document.querySelector('.Hero'),
+        docHeight = document.documentElement.offsetHeight;
 
-  // user input
-  window.addEventListener('scroll', function (event) {
-    if (expander === null) {
-      expander = document.querySelector(".Hero");
-    }
-    scroll = window.scrollY;
-      var rate = scroll / endScrollHeight;
-      targetScale = 1 + (scrollY / 1000) * rate;
-  });
+    window.addEventListener('scroll', function() {
+      // normalize scroll position as percentage
+      var scrolled = 1 + (window.scrollY / ( docHeight - window.innerHeight ) * 200),
+          transformValue = 'scale('+scrolled+')';
 
-  // update once per frame
-  setInterval(onTimerTick, 32);
+      hero.style.WebkitTransform = transformValue;
+      hero.style.MozTransform = transformValue;
+      hero.style.OTransform = transformValue;
+      hero.style.transform = transformValue;
 
-  function onTimerTick() {
-    if (expander === null) {
-      return;
-    }
+    }, false);
 
-    // make sure we're tracking how much time's elapsed
-      var currentTime = new Date();
-      var timeDelta = currentTime - lastUpdateTime;
-      lastUpdateTime = currentTime;
+  }, false);
 
-      var newScale = lerp(currentScale, targetScale, ((timeDelta / 1000) / zoomTime));
-      currentScale = newScale;
+  // var scroll = 1;
+  // var currentScale = 1;
+  // var lastUpdateTime = new Date();
+  // var targetScale;
+  // var zoomTime = .3; // ~ number of seconds to reach the expected zoom for the current scroll position
+  // var endScrollHeight = window.innerHeight / 250; // in px
+  // var expander = document.querySelector(".Hero");
 
-      //expand / contract
-      expander.setAttribute("style", "transform: scale(" + newScale + ") translateZ(0);");
-  }
+  // // user input
+  // window.addEventListener('scroll', function (event) {
+  //   if (expander === null) {
+  //     expander = document.querySelector(".Hero");
+  //   }
+  //   scroll = window.scrollY;
+  //     var rate = scroll / endScrollHeight;
+  //     targetScale = 1 + (scrollY / 1000) * rate;
+  // });
 
-  function lerp(current, target, fraction) {
-      var result = current + fraction * (target - current);
+  // // update once per frame
+  // setInterval(onTimerTick, 32);
 
-      if (result < 1 || isNaN(result)) {
-          return 1;
-      } else {
-          return result;
-      }
-  }
+  // function onTimerTick() {
+  //   if (expander === null) {
+  //     return;
+  //   }
+
+  //   // make sure we're tracking how much time's elapsed
+  //     var currentTime = new Date();
+  //     var timeDelta = currentTime - lastUpdateTime;
+  //     lastUpdateTime = currentTime;
+
+  //     var newScale = lerp(currentScale, targetScale, ((timeDelta / 1000) / zoomTime));
+  //     currentScale = newScale;
+
+  //     //expand / contract
+  //     expander.setAttribute("style", "transform: scale(" + newScale + ") translateZ(0);");
+  // }
+
+  // function lerp(current, target, fraction) {
+  //     var result = current + fraction * (target - current);
+
+  //     if (result < 1 || isNaN(result)) {
+  //         return 1;
+  //     } else {
+  //         return result;
+  //     }
+  // }
 })();
 
 class Scroller extends React.Component {
