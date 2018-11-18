@@ -2,5 +2,74 @@
 //
 // Base
 // Color
+// @todo Rename these
+$white: #fff;
+$off-white: #F4F4F4;
+$ink: #303245;
+
 // Typography
-// Animation
+// @import "../node_modules/modularscale-sass/stylesheets/modularscale";
+
+@font-face {
+    font-family: "futura_ltcondextraboldobl";
+    src: url("./webfonts/futuralt-condextraboldobl-webfont.woff2") format("woff2"),
+        url("./webfonts/futuralt-condextraboldobl-webfont.woff") format("woff"),
+        url("./webfonts/futuralt-condextraboldobl-webfont.svg#futura_ltcondextraboldobl") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "futura_ltbold";
+    src: url("./webfonts/futuralt-bold-webfont.woff2") format("woff2"),
+        url("./webfonts/futuralt-bold-webfont.woff") format("woff"),
+        url("./webfonts/futuralt-bold-webfont.svg#futura_ltbold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "futura_ltbook";
+    src: url("./webfonts/futuralt-book-webfont.woff2") format("woff2"),
+        url("./webfonts/futuralt-book-webfont.woff") format("woff"),
+        url("./webfonts/futuralt-book-webfont.svg#futura_ltbook") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$base-line-height: 1.75rem;
+$futura-condextraboldobl: "futura_ltcondextraboldobl", sans-serif;
+$futura-bold: "futura_ltbold", sans-serif;
+$futura-book: "futura_ltbook", sans-serif;
+
+$base-font-size: 1rem;
+$ratio: 1.25; // Desktop
+$ratio-sm: 1.125; // Mobile
+
+// Calculate values
+$h5: $base-font-size * $ratio;
+$h4: $h5 * $ratio;
+$h3: $h4 * $ratio;
+$h2: $h3 * $ratio;
+$h1: $h2 * $ratio;
+
+// Set the alternative ratio
+$h5-sm: $base-font-size * $ratio-sm;
+$h4-sm: $h5-sm * $ratio-sm;
+$h3-sm: $h4-sm * $ratio-sm;
+$h2-sm: $h3-sm * $ratio-sm;
+$h1-sm: $h2-sm * $ratio-sm;
+
+// Use interpolated Sass variables to set the CSS variables
+:root {
+    --font-size: #{$base-font-size};
+    --ratio: #{$ratio};
+    --ratio-sm: #{$ratio-sm};
+
+    // More math - has to be actual variables for the media query to work
+    --h5: calc(var(--font-size) * var(--ratio));
+    --h4: calc(var(--h5) * var(--ratio));
+    --h3: calc(var(--h4) * var(--ratio));
+    --h2: calc(var(--h3) * var(--ratio));
+    --h1: calc(var(--h2) * var(--ratio));
+}

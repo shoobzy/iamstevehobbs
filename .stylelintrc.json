@@ -1,5 +1,6 @@
 {
   "extends": "./node_modules/stylelint-config-recommended-scss",
+  "plugins": "./node_modules/stylelint-order",
   "rules": {
     "value-list-max-empty-lines": 0,
     "indentation": 4,
@@ -7,9 +8,44 @@
       "always-multi-line",
       {
         "except": [
-          "after-single-line-comment"
+          "after-single-line-comment",
+          "first-nested"
         ]
       }
+    ],
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      {
+        "type": "at-rule",
+        "name": "function"
+      },
+      {
+        "type": "at-rule",
+        "name": "extend"
+      },
+      {
+        "type": "at-rule",
+        "name": "mixin",
+        "hasBlock": false
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "hasBlock": false
+      },
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "include",
+        "hasBlock": true
+      },
+      {
+        "type": "at-rule",
+        "name": "mixin",
+        "hasBlock": true
+      },
+      "rules"
     ],
     "no-eol-whitespace": true,
     "declaration-empty-line-before": "never",

@@ -9,17 +9,68 @@
 // .o-container: the outer container for components and it usually provides a fixed width.
 // .o-content: in case if any extra configuration is needed for the actual content area.
 // .o-grid: if a grid layout with different number of columns are required.
+$o-container: 1098px;
+$o-gutter: 28px;
 
-// .o-grid {
-//     @include grid-container;
-// }
-//
-// .o-grid__item {
-//     @include grid-column(12);
-// }
-//
-// .six-col_tablet-up {
-//     @include grid-media($o-grid--tablet-up) {
-//         @include grid-column(6);
-//     }
-// }
+.o-Page {
+    background: $off-white;
+    margin: $o-gutter;
+    padding: $o-gutter * 3;
+    border: $o-gutter solid $white;
+    box-sizing: border-box;
+
+    @include for-tablet-landscape-down {
+        padding: #{$o-gutter * 2} #{$o-gutter * 1.5};
+    }
+
+    @include for-phone-only {
+        margin: $o-gutter / 2;
+        padding: #{$o-gutter * 2} #{$o-gutter * 1};
+        border: #{$o-gutter / 2} solid $white;
+    }
+
+    @include for-desktop-up {
+        padding: #{$o-gutter * 3} #{$o-gutter * 1};
+    }
+}
+
+.o-Container {
+    max-width: $o-container;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.o-Grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.o-Grid--Item {
+    width: 100%;
+}
+
+.\31\/2-TabletPortraitUp {
+    @include for-tablet-portrait-up {
+        width: calc(50% - #{$o-gutter / 2});
+    }
+}
+
+.\31\/3-TabletLandscapeUp {
+    @include for-tablet-landscape-up {
+        width: 33.333%;
+    }
+}
+
+.o-Nav {
+    justify-content: space-between;
+
+    a {
+        margin-left: $base-font-size * 2;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

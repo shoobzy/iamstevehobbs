@@ -8,64 +8,98 @@
 //
 // If you need any extra features, you can always extend properties with a BEM modifier (combining powers!) or use Scope,
 // which is coming up in a bit.
-.Hero {
-    position: fixed;
-    height: 100vh;
+.c-Nav a {
+    font-size: $h5;
+    font-size: var(--h5);
+    font-family: $futura-bold;
+    line-height: $base-line-height;
+    letter-spacing: $base-font-size * .1875;
+    text-transform: uppercase;
+}
+
+.c-Intro {
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: $o-gutter * 3 0;
+}
+
+.c-Intro--Bio {
+    font-size: $h4;
+    font-size: var(--h4);
+    line-height: $base-line-height;
+    font-family: $futura-book;
+}
+
+.c-Portfolio--ItemImg {
     width: 100%;
-    z-index: 10;
+    height: auto;
 }
 
-.Hero--inner {
-    display: flex;
-    flex-direction: row;
-}
-
-.Hero--intro-graphic {
-    display: flex;
-    flex-flow: column;
-    align-items: stretch;
-    line-height: 0;
-}
-
-.Hero--intro-fill {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-}
-
-.Hero--intro-welcome {
-    transform: translateY(1px);
-}
-
-.Hero--intro-scroll {
-    height: 20px;
-}
-
-.Intro {
-    position: fixed;
+.c-Portfolio--Content {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100%;
-    background: #000;
+    opacity: 0;
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
-    &.detached {
-        position: absolute;
-        margin-top: 100vh;
+.c-Portfolio--Title,
+.c-Portfolio--Category {
+    position: relative;
+    display: block;
+    margin-bottom: $base-line-height / 2;
+    opacity: 0;
+    transform: translateY(125%);
+    transition: transform .5s, opacity .5s;
+    z-index: 1;
+}
+
+.c-Portfolio--Background {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $white;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: center bottom;
+    transition: opacity 0s, transform .3s cubic-bezier(.4,0,.2,1);
+}
+
+//@todo Create default animation class and state
+.c-Portfolio--Item {
+    position: relative;
+    font-size: 0;
+    margin: 0;
+
+    &:hover {
+        .c-Portfolio--Content {
+            opacity: 1;
+        }
+
+        .c-Portfolio--Background {
+            transform: scaleY(1);
+        }
+
+        .c-Portfolio--Title,
+        .c-Portfolio--Category {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .c-Portfolio--Title {
+            transition-delay: .1s;
+        }
+
+        .c-Portfolio--Category {
+            transition-delay: .3s;
+        }
     }
-}
-
-.Intro--inner {
-    color: #fff;
-}
-
-.Translate--x-positive {
-    transform: translateX(1px);
-}
-
-.Translate--x-negative {
-    transform: translateX(-1px);
 }

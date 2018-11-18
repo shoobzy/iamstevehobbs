@@ -12,14 +12,18 @@
 // .btn--large {
 //     padding: 5em;
 // }
-
-// Just for the side note, in Sass, you can use ~ to point to the node_modules folder so you are able to import style
-// assets from the source rather than having to move it into your own directories.
-// @import '~modern-normalize/modern-normalize';
 @import "../node_modules/normalize.css/normalize.css";
 
-.Plx.Plx--below {
+.Plx {
+    position: fixed;
+    height: calc(100vh + 2px);
+    width: calc(100% + 2px);
+    z-index: 10;
+    transition: opacity .3s ease-in-out;
+}
+
+.Plx--below {
+    // position: static;
     opacity: 0;
-    display: none;
     pointer-events: none;
 }

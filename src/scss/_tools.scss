@@ -4,7 +4,74 @@
 // Placeholders
 // Mixins
 // Media queries
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
 
-$o-grid--tablet-up: (
-    media: "(min-width: 768px)",
-);
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-down {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1281px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+// Some helpers
+// !important declarations are acceptable for helpers
+.h-Translate--X-Positive {
+    transform: translateX(1px);
+}
+
+.h-Translate--X-Negative {
+    transform: translateX(-1px);
+}
+
+.h-Show {
+    opacity: 1 !important;
+}
+
+.h-Detached {
+    position: relative !important;
+}
