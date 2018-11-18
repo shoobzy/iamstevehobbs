@@ -62,15 +62,3 @@ $o-gutter: 28px;
         width: 33.333%;
     }
 }
-
-.o-Nav {
-    justify-content: space-between;
-
-    a {
-        margin-left: $base-font-size * 2;
-
-        &:first-child {
-            margin-left: 0;
-        }
-    }
-}

@@ -8,13 +8,22 @@
 //
 // If you need any extra features, you can always extend properties with a BEM modifier (combining powers!) or use Scope,
 // which is coming up in a bit.
-.c-Nav a {
-    font-size: $h5;
-    font-size: var(--h5);
-    font-family: $futura-bold;
-    line-height: $base-line-height;
-    letter-spacing: $base-font-size * .1875;
-    text-transform: uppercase;
+.c-Nav {
+    justify-content: space-between;
+
+    a {
+        margin-left: $base-font-size * 2;
+        font-size: $h5;
+        font-size: var(--h5);
+        font-family: $futura-bold;
+        line-height: $base-line-height;
+        letter-spacing: $base-font-size * .1875;
+        text-transform: uppercase;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
 }
 
 .c-Intro {
