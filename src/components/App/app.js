@@ -1,18 +1,22 @@
 import React from 'react';
-// import {
-//   BrowserRouter as Router,
-//   Link
-// } from 'react-router-dom';
 
-import Portfolio from './components/Portfolio';
+import Header from '../Header';
+import Intro from '../Intro';
+import Portfolio from '../Portfolio';
 
-import './style.css';
+import '../../style.css';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Portfolio />
+      <div class="o-Page">
+        <div class="o-Container">
+          <Header />
+          <main>
+            <Intro />
+            <Portfolio />
+          </main>
+        </div>
       </div>
     )
   }
