@@ -30,9 +30,8 @@ class PortfolioItem extends React.Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp">
         <a
-          className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
           href={url}
           onMouseEnter={this.onMouseEnter()}
           onMouseLeave={this.onMouseLeave()}

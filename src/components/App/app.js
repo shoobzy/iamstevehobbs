@@ -9,8 +9,8 @@ import '../../style.css';
 class App extends React.Component {
   render() {
     return (
-      <div class="o-Page">
-        <div class="o-Container">
+      <div className="o-Page">
+        <div className="o-Container">
           <Header />
           <main>
             <Intro />
