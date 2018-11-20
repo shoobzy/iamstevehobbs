@@ -14,82 +14,86 @@ import Moonshine from "../images/portfolio/moonshine.webp";
 import Diner from "../images/portfolio/open-24-hours.webp";
 import Solstice from "../images/portfolio/solstice.webp";
 import Milkyway from "../images/portfolio/milkyway.webp";
+import Intro from "./Intro";
 
 const Portfolio = () => {
   return (
-    <div className="c-Portfolio o-Grid" id="portfolio">
-      <PortfolioItem
-        url={"#"}
-        img_url={LaBergerie}
-        title={"La Bergerie"}
-        category={"Web"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={ThreeStreams}
-        title={"Three Streams"}
-        category={"Digital"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={ECommerce}
-        title={"eCommerce landing page"}
-        category={"Web"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={ProductPage}
-        title={"Product Detail Page"}
-        category={"Web"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={Bethany}
-        title={"Bethany"}
-        category={"Digital"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={SeeTheWorld}
-        title={"SeeTheWorld"}
-        category={"Web"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={Henry}
-        title={"Henry"}
-        category={"Digital"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={ChaletRentals}
-        title={"Chalet & Apartment Rentals"}
-        category={"Web"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={Moonshine}
-        title={"Moonshine"}
-        category={"Digital"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={Diner}
-        title={"Diner"}
-        category={"Digital"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={Solstice}
-        title={"Solstice"}
-        category={"Photography"}
-      />
-      <PortfolioItem
-        url={"#"}
-        img_url={Milkyway}
-        title={"Milkyway"}
-        category={"Photography"}
-      />
+    <div>
+      <Intro />
+      <div className="c-Portfolio o-Grid" id="portfolio">
+        <PortfolioItem
+          url={"#"}
+          img_url={LaBergerie}
+          title={"La Bergerie"}
+          category={"Web"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={ThreeStreams}
+          title={"Three Streams"}
+          category={"Digital"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={ECommerce}
+          title={"eCommerce landing page"}
+          category={"Web"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={ProductPage}
+          title={"Product Detail Page"}
+          category={"Web"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={Bethany}
+          title={"Bethany"}
+          category={"Digital"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={SeeTheWorld}
+          title={"SeeTheWorld"}
+          category={"Web"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={Henry}
+          title={"Henry"}
+          category={"Digital"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={ChaletRentals}
+          title={"Chalet & Apartment Rentals"}
+          category={"Web"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={Moonshine}
+          title={"Moonshine"}
+          category={"Digital"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={Diner}
+          title={"Diner"}
+          category={"Digital"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={Solstice}
+          title={"Solstice"}
+          category={"Photography"}
+        />
+        <PortfolioItem
+          url={"#"}
+          img_url={Milkyway}
+          title={"Milkyway"}
+          category={"Photography"}
+        />
+      </div>
     </div>
   );
 }
