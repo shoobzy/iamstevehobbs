@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Header from '../Header';
-import Intro from '../Intro';
-import Portfolio from '../Portfolio';
+import Header from "./Header";
+import Intro from "./Intro";
+import Portfolio from "./Portfolio";
 
-import '../../style.css';
+import "../style.css";
 
 class App extends React.Component {
   render() {
