@@ -1,4 +1,8 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Link
+} from 'react-router-dom';
 
 class PortfolioItem extends React.Component {
   constructor(props) {
@@ -30,22 +34,23 @@ class PortfolioItem extends React.Component {
     } = this.props;
 
     return (
-      <div className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp">
-        <a
-          href={url}
-          onMouseEnter={this.onMouseEnter()}
-          onMouseLeave={this.onMouseLeave()}
-        >
-          <img className="c-Portfolio--ItemImg" src={img_url}/>
-          <div className="c-Portfolio--Content">
-            <div className="c-Portfolio--Text">
-              <h5 className="c-Portfolio--Title">{title}</h5>
-              <p className="c-Portfolio--Category">{category}</p>
+      <Router>
+        <div className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp">
+          <Link to={url}
+            onMouseEnter={this.onMouseEnter()}
+            onMouseLeave={this.onMouseLeave()}
+          >
+            <img className="c-Portfolio--ItemImg" src={img_url}/>
+            <div className="c-Portfolio--Content">
+              <div className="c-Portfolio--Text">
+                <h5 className="c-Portfolio--Title">{title}</h5>
+                <p className="c-Portfolio--Category">{category}</p>
+              </div>
             </div>
-          </div>
-          <div className="c-Portfolio--Background"></div>
-        </a>
-      </div>
+            <div className="c-Portfolio--Background"></div>
+          </Link>
+        </div>
+      </Router>
     )
   }
 
