@@ -8,9 +8,8 @@ import {
   CSSTransition,
   TransitionGroup
 } from "react-transition-group";
-// import { HashLink as HashLink } from 'react-router-hash-link';
 
-import Portfolio from "./Portfolio";
+import Home from "./Home";
 import Contact from "./Contact";
 
 import "../style.css";
@@ -23,23 +22,24 @@ class App extends React.Component {
           <div>
             <nav className="o-Grid c-Nav">
               <div>
-                  <NavLink to="/">Steve Hobbs</NavLink>
+                <NavLink exact to="/">Steve Hobbs</NavLink>
               </div>
               <div>
-                  <NavLink to="/#portfolio">Portfolio</NavLink>
-                  <NavLink to="/contact">Contact</NavLink>
+                <NavLink exact to="/" activeClassName="active">Portfolio</NavLink>
+                <NavLink to="/contact" activeClassName="active">Contact</NavLink>
               </div>
             </nav>
 
             <Route render={({location}) => (
               <TransitionGroup>
                 <CSSTransition
-                  timeout={300}
-                  classNames="fade"
+                  key={location.key}
+                  timeout={500}
+                  classNames="fadeInUp"
                 >
                   <Switch location={location}>
-                    <Route exact path="/" component={Portfolio} />
-                    <Route path="/" component={Portfolio} />
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/" component={Home} />
                     <Route path="/contact" component={Contact} />
                   </Switch>
                 </CSSTransition>

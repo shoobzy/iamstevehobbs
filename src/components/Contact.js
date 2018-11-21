@@ -1,9 +1,11 @@
 import React from "react";
 
 const Contact = () => {
-    return (
-       <p>Foo</p>
-    )
+  return (
+    <div className="c-Page fadeInUp">
+      <p>Foo</p>
+    </div>
+  )
 }
 
 export default Contact;

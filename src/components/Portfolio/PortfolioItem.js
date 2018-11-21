@@ -1,45 +1,28 @@
 import React from "react"
 import {
-  BrowserRouter as Router,
-  Link
+  Route,
+  Link,
+  Switch
 } from "react-router-dom";
+import {
+  CSSTransition,
+  TransitionGroup
+} from "react-transition-group";
 
 class PortfolioItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      hover: false
-    };
-  }
-
-  onMouseEnter() {
-    this.setState({
-      hover: true
-    });
-  }
-
-  onMouseLeave() {
-    this.setState({
-      hover: false
-    });
-  }
-
   render() {
     const {
       url,
       img_url,
       title,
-      category
+      category,
+      component
     } = this.props;
 
     return (
-      <Router>
-        <div className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp">
-          <Link to={url}
-            onMouseEnter={this.onMouseEnter()}
-            onMouseLeave={this.onMouseLeave()}
-          >
+      <div className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp">
+        <div>
+          <Link to={url}>
             <img className="c-Portfolio--ItemImg" src={img_url}/>
             <div className="c-Portfolio--Content">
               <div className="c-Portfolio--Text">
@@ -50,20 +33,22 @@ class PortfolioItem extends React.Component {
             <div className="c-Portfolio--Background"></div>
           </Link>
         </div>
-      </Router>
+
+        <Route render={({location}) => (
+          <TransitionGroup>
+            <CSSTransition
+              key={location.key}
+              timeout={500}
+              classNames="fadeInUp"
+            >
+              <Switch location={location}>
+                <Route path={url} component={component} />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        )} />
+      </div>
     )
-  }
-
-  onMouseEnter() {
-    return () => {
-      this.setState({hover: true});
-    }
-  }
-
-  onMouseLeave() {
-    return () => {
-      this.setState({hover: false});
-    }
   }
 }
 
