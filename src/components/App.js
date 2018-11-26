@@ -13,9 +13,45 @@ import Home from "./Home";
 import Contact from "./Contact";
 
 import "../style.css";
+import LaBergerieProject from "./Projects/LaBergerie";
 
 class App extends React.Component {
+  state = {
+    height: null,
+  }
+
+  saveRef = (ref) => this.containerNode = ref
+
+  measure() {
+    const {clientHeight} = this.containerNode
+
+    this.setState({
+      height: clientHeight,
+    })
+  }
+
+  componentDidMount() {
+    this.measure()
+  }
+
+  componentDidUpdate() {
+    this.measure()
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      this.state.height !== nextState.height
+    )
+  }
+
   render() {
+    const {height} = this.state
+
+    const styles = {
+      position: 'relative',
+      height: {height} + 'px'
+    }
+
     return (
       <div className="o-Page">
         <div className="o-Container">
@@ -31,16 +67,18 @@ class App extends React.Component {
             </nav>
 
             <Route render={({location}) => (
-              <TransitionGroup>
+              <TransitionGroup style={styles}>
                 <CSSTransition
                   key={location.key}
                   timeout={500}
                   classNames="fadeInUp"
+                  ref={this.saveRef}
                 >
                   <Switch location={location}>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/" component={Home} />
                     <Route path="/contact" component={Contact} />
+                    <Route path="/la-begerie" component={LaBergerieProject} />
+                    <Route render={() => <div>Not Found</div>} />
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>
