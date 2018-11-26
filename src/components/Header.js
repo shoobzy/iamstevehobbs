@@ -2,14 +2,13 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Link,
+  NavLink,
   Switch
 } from "react-router-dom";
 import {
   CSSTransition,
   TransitionGroup
 } from "react-transition-group";
-import { HashLink as HashLink } from 'react-router-hash-link';
 
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
@@ -21,11 +20,11 @@ class Header extends React.Component {
         <div>
           <nav className="o-Grid c-Nav">
             <div>
-                <Link to="/">Steve Hobbs</Link>
+                <NavLink to="/">Steve Hobbs</NavLink>
             </div>
             <div>
-                <HashLink to="/#portfolio">Portfolio</HashLink>
-                <Link to="/contact">Contact</Link>
+                <NavLink exact to="/">Portfolio</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
             </div>
           </nav>
 
@@ -36,7 +35,7 @@ class Header extends React.Component {
             >
               <Switch>
                 <Route exact path="/" component={null} />
-                <Route path="/#portfolio" component={Portfolio} />
+                <Route path="/#portfolio" component={null} />
                 <Route path="/contact" component={Contact} />
               </Switch>
             </CSSTransition>
