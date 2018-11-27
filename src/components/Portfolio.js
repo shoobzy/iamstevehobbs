@@ -1,13 +1,7 @@
 import React from "react";
 import {
-  Route,
   Link,
-  Switch
 } from "react-router-dom";
-import {
-  CSSTransition,
-  TransitionGroup
-} from "react-transition-group";
 
 import LaBergerie from "../images/portfolio/la-bergerie.webp";
 import ThreeStreams from "../images/portfolio/three-streams.webp";
@@ -22,33 +16,31 @@ import Diner from "../images/portfolio/open-24-hours.webp";
 import Solstice from "../images/portfolio/solstice.webp";
 import Milkyway from "../images/portfolio/milkyway.webp";
 
-import LaBergerieProject from "./Projects/LaBergerie";
-
 class Portfolio extends React.Component {
   render() {
-    const Projects = [
-      { id: 0, url: "/la-bergerie", img_url: LaBergerie, title: "La Bergerie", category: "Web", component: LaBergerieProject },
-      { id: 1, url: "/three-streams", img_url: ThreeStreams, title: "Three Streams", category: "Digital", component: null },
-      { id: 3, url: "/e-commerce-concept", img_url: ECommerce, title: "Ecommerce concept", category: "Digital", component: null },
-      { id: 4, url: "/product-detail-concept", img_url: ProductPage, title: "Product page concept", category: "Digital", component: null },
-      { id: 5, url: "/bethany", img_url: Bethany, title: "Bethany", category: "Print", component: null },
-      { id: 6, url: "/seetheworld", img_url: SeeTheWorld, title: "SeeTheWorld", category: "Web", component: null },
-      { id: 7, url: "/henry", img_url: Henry, title: "Henry", category: "Print", component: null },
-      { id: 8, url: "/chalet-rentals", img_url: ChaletRentals, title: "Chalet Rentals", category: "Web", component: null },
-      { id: 9, url: "/moonshine", img_url: Moonshine, title: "Moonshine", category: "Digital", component: null },
-      { id: 10, url: "/diner", img_url: Diner, title: "Diner wrap", category: "Print", component: null },
-      { id: 11, url: "/solstice", img_url: Solstice, title: "Solstice", category: "Photography", component: null },
-      { id: 12, url: "/milkyway", img_url: Milkyway, title: "Milkyway", category: "Photography", component: null }
+    const projects = [
+      { id: 0, path: "/la-bergerie", img_url: LaBergerie, title: "La Bergerie", category: "Web" },
+      { id: 1, path: "/three-streams", img_url: ThreeStreams, title: "Three Streams", category: "Digital"},
+      { id: 3, path: "/e-commerce-concept", img_url: ECommerce, title: "Ecommerce concept", category: "Digital" },
+      { id: 4, path: "/product-detail-concept", img_url: ProductPage, title: "Product page concept", category: "Digital" },
+      { id: 5, path: "/bethany", img_url: Bethany, title: "Bethany", category: "Print" },
+      { id: 6, path: "/seetheworld", img_url: SeeTheWorld, title: "SeeTheWorld", category: "Web" },
+      { id: 7, path: "/henry", img_url: Henry, title: "Henry", category: "Print" },
+      { id: 8, path: "/chalet-rentals", img_url: ChaletRentals, title: "Chalet Rentals", category: "Web" },
+      { id: 9, path: "/moonshine", img_url: Moonshine, title: "Moonshine", category: "Digital" },
+      { id: 10, path: "/diner", img_url: Diner, title: "Diner wrap", category: "Print" },
+      { id: 11, path: "/solstice", img_url: Solstice, title: "Solstice", category: "Photography" },
+      { id: 12, path: "/milkyway", img_url: Milkyway, title: "Milkyway", category: "Photography" }
     ];
 
     return (
       <div className="o-Grid">
-        {Projects.map(i => (
+        {projects.map(i => (
           <div
             key={i.id}
             className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
           >
-            <Link to={i.url}>
+            <Link to={i.path}>
               <img className="c-Portfolio--ItemImg" src={i.img_url}/>
                 <div className="c-Portfolio--Content">
                   <div className="c-Portfolio--Text">
@@ -58,20 +50,6 @@ class Portfolio extends React.Component {
                 </div>
                 <div className="c-Portfolio--Background"></div>
             </Link>
-
-            <Route render={({location}) => (
-              <TransitionGroup>
-                <CSSTransition
-                  key={location.key}
-                  timeout={500}
-                  classNames="fadeInUp"
-                >
-                  <Switch location={location}>
-                    <Route path={i.url} component={i.component} />
-                  </Switch>
-                </CSSTransition>
-              </TransitionGroup>
-            )} />
           </div>
         ))}
       </div>
