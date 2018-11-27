@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Route,
-  NavLink,
   Switch
 } from "react-router-dom";
 import {
@@ -9,65 +8,28 @@ import {
   TransitionGroup
 } from "react-transition-group";
 
+import "../style.css";
+
+import Header from "./Header";
 import Home from "./Home";
 import Contact from "./Contact";
 
-import "../style.css";
 import LaBergerieProject from "./Projects/LaBergerie";
 
+const project_routes = [
+  { id: 0, path: "/la-bergerie", component: LaBergerieProject },
+];
+
 class App extends React.Component {
-  state = {
-    height: null,
-  }
-
-  saveRef = (ref) => this.containerNode = ref
-
-  measure() {
-    const {clientHeight} = this.containerNode
-
-    this.setState({
-      height: clientHeight,
-    })
-  }
-
-  componentDidMount() {
-    this.measure()
-  }
-
-  componentDidUpdate() {
-    this.measure()
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return (
-      this.state.height !== nextState.height
-    )
-  }
-
   render() {
-    const {height} = this.state
-
-    const styles = {
-      position: 'relative',
-      height: {height} + 'px'
-    }
-
     return (
       <div className="o-Page">
         <div className="o-Container">
           <div>
-            <nav className="o-Grid c-Nav">
-              <div>
-                <NavLink exact to="/">Steve Hobbs</NavLink>
-              </div>
-              <div>
-                <NavLink exact to="/" activeClassName="active">Portfolio</NavLink>
-                <NavLink to="/contact" activeClassName="active">Contact</NavLink>
-              </div>
-            </nav>
+            <Header />
 
             <Route render={({location}) => (
-              <TransitionGroup style={styles}>
+              <TransitionGroup>
                 <CSSTransition
                   key={location.key}
                   timeout={500}
@@ -75,10 +37,14 @@ class App extends React.Component {
                   ref={this.saveRef}
                 >
                   <Switch location={location}>
-                    <Route exact path="/" component={Home} />
+                    <Route exact={true} path="/" component={Home} />
                     <Route path="/contact" component={Contact} />
-                    <Route path="/la-begerie" component={LaBergerieProject} />
-                    <Route render={() => <div>Not Found</div>} />
+                    <Route path="/la-bergerie" component={LaBergerieProject} />
+                    {project_routes.map(i => (
+                      <div key={i.id}>
+                        <Route path={i.path} component={i.component} />
+                      </div>
+                    ))}
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>
