@@ -18,6 +18,7 @@ $o-gutter: 28px;
     padding: $o-gutter * 3;
     border: $o-gutter solid $white;
     box-sizing: border-box;
+    transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
 
     @include for-tablet-landscape-down {
         padding: #{$o-gutter * 2} #{$o-gutter * 1.5};

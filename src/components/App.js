@@ -22,6 +22,10 @@ const project_routes = [
 
 class App extends React.Component {
   render() {
+    const styles = {
+      position: "relative"
+    }
+
     return (
       <div className="o-Page">
         <div className="o-Container">
@@ -29,12 +33,11 @@ class App extends React.Component {
             <Header />
 
             <Route render={({location}) => (
-              <TransitionGroup>
+              <TransitionGroup style={styles}>
                 <CSSTransition
                   key={location.key}
                   timeout={500}
                   classNames="fadeInUp"
-                  ref={this.saveRef}
                 >
                   <Switch location={location}>
                     <Route exact={true} path="/" component={Home} />
