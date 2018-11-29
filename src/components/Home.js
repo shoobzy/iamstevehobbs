@@ -6,8 +6,10 @@ import Portfolio from "./Portfolio";
 const Home = () => {
   return (
     <div className="c-Page fadeInUp">
-      <Intro />
-      <Portfolio />
+      <div className="o-Container">
+        <Intro />
+        <Portfolio />
+      </div>
     </div>
   )
 }

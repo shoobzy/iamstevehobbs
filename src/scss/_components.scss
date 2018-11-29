@@ -26,6 +26,31 @@
     }
 }
 
+.c-Page {
+    background: $off-white;
+    margin: 0 $o-gutter $o-gutter;
+    padding: $o-gutter * 3;
+    padding-top: 0 !important;
+    border: $o-gutter solid $white;
+    border-top: 0;
+    box-sizing: border-box;
+    transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
+
+    @include for-tablet-landscape-down {
+        padding: #{$o-gutter * 2} #{$o-gutter * 1.5};
+    }
+
+    @include for-phone-only {
+        margin: $o-gutter / 2;
+        padding: #{$o-gutter * 2} #{$o-gutter * 1};
+        border: #{$o-gutter / 2} solid $white;
+    }
+
+    @include for-desktop-up {
+        padding: #{$o-gutter * 3} #{$o-gutter * 1};
+    }
+}
+
 .c-Intro {
     align-items: flex-end;
     justify-content: space-between;

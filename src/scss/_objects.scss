@@ -12,11 +12,14 @@
 $o-container: 1098px;
 $o-gutter: 28px;
 
+//@todo Update this page styling - it also applies to c-Page
 .o-Page {
     background: $off-white;
-    margin: $o-gutter;
+    margin: $o-gutter $o-gutter 0;
     padding: $o-gutter * 3;
+    padding-bottom: 0 !important;
     border: $o-gutter solid $white;
+    border-bottom: 0;
     box-sizing: border-box;
     transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
 
