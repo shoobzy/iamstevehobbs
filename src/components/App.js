@@ -22,37 +22,34 @@ const project_routes = [
 
 class App extends React.Component {
   render() {
-    const styles = {
-      position: "relative"
-    }
-
     return (
       <div>
         <div className="o-Page">
           <div className="o-Container">
             <Header />
+
+            <Route render={({location}) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  timeout={500}
+                  classNames="fadeInUp"
+                >
+                  <Switch location={location}>
+                    <Route exact={true} path="/" component={Home} />
+                    <Route path="/contact" component={Contact} />
+                    <Route path="/la-bergerie" component={LaBergerieProject} />
+                    {project_routes.map(i => (
+                      <div key={i.id}>
+                        <Route path={i.path} component={i.component} />
+                      </div>
+                    ))}
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )} />
           </div>
         </div>
-        <Route render={({location}) => (
-          <TransitionGroup style={styles}>
-            <CSSTransition
-              key={location.key}
-              timeout={500}
-              classNames="fadeInUp"
-            >
-              <Switch location={location}>
-                <Route exact={true} path="/" component={Home} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/la-bergerie" component={LaBergerieProject} />
-                {project_routes.map(i => (
-                  <div key={i.id}>
-                    <Route path={i.path} component={i.component} />
-                  </div>
-                ))}
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-        )} />
       </div>
     );
   }
