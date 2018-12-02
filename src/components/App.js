@@ -44,6 +44,7 @@ class App extends React.Component {
                         <Route path={i.path} component={i.component} />
                       </div>
                     ))}
+                    <Route render={() => <div>Not Found</div>} />
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>

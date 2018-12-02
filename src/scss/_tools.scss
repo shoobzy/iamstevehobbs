@@ -77,6 +77,5 @@
 
 .fadeInUp-exit.fadeInUp-exit-active {
     opacity: 0;
-    // transform: translateY(-28px);
     transition: opacity 0s linear, transform 0s ease-in;
 }
