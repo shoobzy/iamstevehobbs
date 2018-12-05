@@ -31,7 +31,7 @@ class App extends React.Component {
             <Route render={({location}) => (
               <TransitionGroup>
                 <CSSTransition
-                  key={location.key}
+                  key={location.pathname}
                   timeout={500}
                   classNames="fadeInUp"
                 >
@@ -39,9 +39,9 @@ class App extends React.Component {
                     <Route exact={true} path="/" component={Home} />
                     <Route exact={true} path="/contact" component={Contact} />
                     {project_routes.map(i => (
-                      <div key={i.id}>
+                      <React.Fragment key={i.id}>
                         <Route exact={true} path={i.path} component={i.component} />
-                      </div>
+                      </React.Fragment>
                     ))}
                     <Route render={() => <div>Not Found</div>} />
                   </Switch>
