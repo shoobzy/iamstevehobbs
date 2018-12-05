@@ -37,11 +37,10 @@ class App extends React.Component {
                 >
                   <Switch location={location}>
                     <Route exact={true} path="/" component={Home} />
-                    <Route path="/contact" component={Contact} />
-                    <Route path="/la-bergerie" component={LaBergerieProject} />
+                    <Route exact={true} path="/contact" component={Contact} />
                     {project_routes.map(i => (
                       <div key={i.id}>
-                        <Route path={i.path} component={i.component} />
+                        <Route exact={true} path={i.path} component={i.component} />
                       </div>
                     ))}
                     <Route render={() => <div>Not Found</div>} />

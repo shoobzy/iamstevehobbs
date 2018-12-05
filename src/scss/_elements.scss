@@ -68,11 +68,12 @@ h3 {
 h4 {
     font-size: $h4;
     font-size: var(--h4);
-    line-height: $base-line-height;
+    line-height: $base-line-height * 1.25;
     font-family: $futura-book;
 
     @include for-tablet-landscape-down {
         font-size: $h5;
+        line-height: $base-line-height;
     }
 }
 

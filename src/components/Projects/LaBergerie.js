@@ -6,30 +6,7 @@ const LaBergerieProject = () => {
   return (
     <div className="c-Page fadeInUp">
       <ScrollToTopOnMount />
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
-      <p>gdfhsg kjdfgkjdfkjgfdkg kjdf kdfkgdfgk</p>
+      <p className="c-Intro--Overview o-Grid--Item 1/2-TabletPortraitUp">La Bergerie is widely regarded as one of the finest privately-owned villas in Europe, available to rent for an unforgettable luxury holiday.</p>
     </div>
   )
 }
