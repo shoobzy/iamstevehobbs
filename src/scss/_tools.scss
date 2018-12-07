@@ -63,7 +63,7 @@
 .fadeInUp-enter.fadeInUp-enter-active {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
+    transition: opacity 500ms linear 150ms, transform 500ms ease-out 150ms;
 }
 
 .fadeInUp-exit {
