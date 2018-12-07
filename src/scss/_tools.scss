@@ -52,11 +52,7 @@
     }
 }
 
-.fadeInUp {
-    animation-name: fadeInUp;
-    animation-duration: .5s;
-}
-
+.fadeInUp,
 .fadeInUp-appear,
 .fadeInUp-enter {
     animation-name: fadeInUp;

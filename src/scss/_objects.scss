@@ -12,20 +12,20 @@
 $o-container: 1098px;
 $o-gutter: 28px;
 
-//@todo Update this page styling - it also applies to c-Page
 .o-Page {
     background: $off-white;
+    min-height: calc(100vh - #{$o-gutter * 2});
     margin: $o-gutter;
     padding: $o-gutter * 3;
     border: $o-gutter solid $white;
     box-sizing: border-box;
-    transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
 
     @include for-tablet-landscape-down {
         padding: #{$o-gutter * 2} #{$o-gutter * 1.5};
     }
 
     @include for-phone-only {
+        min-height: calc(100vh - #{$o-gutter});
         margin: $o-gutter / 2;
         padding: #{$o-gutter * 2} #{$o-gutter * 1};
         border: #{$o-gutter / 2} solid $white;
@@ -54,6 +54,12 @@ $o-gutter: 28px;
 }
 
 .\31\/2-TabletPortraitUp {
+    @include for-tablet-portrait-up {
+        width: 50%;
+    }
+}
+
+.\31\/2-TabletPortraitUp-WithGutter {
     @include for-tablet-portrait-up {
         width: calc(50% - #{$o-gutter / 2});
     }
