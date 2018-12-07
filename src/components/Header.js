@@ -4,13 +4,10 @@ import {
   NavLink
 } from "react-router-dom";
 
-import ScrollToTopOnMount from "./ScrollToTopOnMount";
-
 class Header extends React.Component {
   render() {
     return (
       <div>
-        <ScrollToTopOnMount />
         <nav className="o-Grid c-Nav">
           <div>
             <Link to="/" replace={false}>Steve Hobbs</Link>
