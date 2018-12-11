@@ -24,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="o-Page">
+        <div className="o-Page fadeInUp">
           <div className="o-Container">
             <Header />
 

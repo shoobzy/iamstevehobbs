@@ -1,15 +1,5 @@
 // Vendors are third-party styles that are being used on a project. Think of things like reset.css, normalize.css,
 // or even Foundation and Bootstrap.
 //
-// The reason these styles are higher up in the structure is so we can override them if needed. As you may recall,
-// if the same class is called twice, the cascade will render the properties of the second instance, assuming the
-// properties are exactly the same:
-// .btn--large {
-//     padding: 3em;
-// }
-
-//This one wins out
-// .btn--large {
-//     padding: 5em;
-// }
+// The reason these styles are higher up in the structure is so we can override them if needed.
 @import "../node_modules/normalize.css/normalize.css";
