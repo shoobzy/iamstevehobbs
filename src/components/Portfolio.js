@@ -21,26 +21,26 @@ class Portfolio extends React.Component {
     const projects = [
       { id: 0, path: "/la-bergerie", img_url: LaBergerie, title: "La Bergerie", category: "Web" },
       { id: 1, path: "/three-streams", img_url: ThreeStreams, title: "Three Streams", category: "Digital"},
-      { id: 3, path: "/e-commerce-concept", img_url: ECommerce, title: "Ecommerce concept", category: "Digital" },
-      { id: 4, path: "/product-detail-concept", img_url: ProductPage, title: "Product page concept", category: "Digital" },
-      { id: 5, path: "/bethany", img_url: Bethany, title: "Bethany", category: "Print" },
-      { id: 6, path: "/seetheworld", img_url: SeeTheWorld, title: "SeeTheWorld", category: "Web" },
-      { id: 7, path: "/henry", img_url: Henry, title: "Henry", category: "Print" },
-      { id: 8, path: "/chalet-rentals", img_url: ChaletRentals, title: "Chalet Rentals", category: "Web" },
-      { id: 9, path: "/moonshine", img_url: Moonshine, title: "Moonshine", category: "Digital" },
-      { id: 10, path: "/diner", img_url: Diner, title: "Diner wrap", category: "Print" },
-      { id: 11, path: "/solstice", img_url: Solstice, title: "Solstice", category: "Photography" },
-      { id: 12, path: "/milkyway", img_url: Milkyway, title: "Milkyway", category: "Photography" }
+      { id: 2, path: "/e-commerce-concept", img_url: ECommerce, title: "Ecommerce concept", category: "Digital" },
+      { id: 3, path: "/product-detail-concept", img_url: ProductPage, title: "Product page concept", category: "Digital" },
+      { id: 4, path: "/bethany", img_url: Bethany, title: "Bethany", category: "Print" },
+      { id: 5, path: "/seetheworld", img_url: SeeTheWorld, title: "SeeTheWorld", category: "Web" },
+      { id: 6, path: "/henry", img_url: Henry, title: "Henry", category: "Print" },
+      { id: 7, path: "/chalet-rentals", img_url: ChaletRentals, title: "Chalet Rentals", category: "Web" },
+      { id: 8, path: "/moonshine", img_url: Moonshine, title: "Moonshine", category: "Digital" },
+      { id: 9, path: "/diner", img_url: Diner, title: "Diner wrap", category: "Print" },
+      { id: 10, path: "/solstice", img_url: Solstice, title: "Solstice", category: "Photography" },
+      { id: 11, path: "/milkyway", img_url: Milkyway, title: "Milkyway", category: "Photography" }
     ];
 
     return (
-      <div className="o-Grid">
+      <div className="o-Grid c-Portfolio">
         {projects.map(i => (
           <div
             key={i.id}
             className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
           >
-            <Link to={i.path}>
+            <Link to={i.path} exact={true}>
               <img className="c-Portfolio--ItemImg" src={i.img_url}/>
                 <div className="c-Portfolio--Content">
                   <div className="c-Portfolio--Text">

@@ -25,13 +25,16 @@ $o-gutter: 28px;
     }
 
     @include for-phone-only {
-        min-height: calc(100vh - #{$o-gutter});
-        margin: $o-gutter / 2;
-        padding: #{$o-gutter * 2} #{$o-gutter * 1};
-        border: #{$o-gutter / 2} solid $white;
+        margin: 0;
+        padding: #{$o-gutter * 1.5} #{$o-gutter * .75};
+        border: #{$o-gutter * .25} solid $white;
     }
 
     @include for-desktop-up {
+        padding: #{$o-gutter * 3} #{$o-gutter * 2};
+    }
+
+    @include for-big-desktop-up {
         padding: #{$o-gutter * 3} #{$o-gutter * 1};
     }
 }
@@ -45,12 +48,19 @@ $o-gutter: 28px;
 .o-Grid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
 }
 
 .o-Grid--Item {
     width: 100%;
+}
+
+.\31\/3-TabletPortraitUp-WithGutter {
+    @include for-tablet-portrait-up {
+        width: calc(33.333% - #{$o-gutter});
+    }
 }
 
 .\31\/2-TabletPortraitUp {
@@ -61,12 +71,18 @@ $o-gutter: 28px;
 
 .\31\/2-TabletPortraitUp-WithGutter {
     @include for-tablet-portrait-up {
-        width: calc(50% - #{$o-gutter / 2});
+        width: calc(50% - #{$o-gutter});
     }
 }
 
 .\31\/3-TabletLandscapeUp {
     @include for-tablet-landscape-up {
         width: 33.333%;
+    }
+}
+
+.\32\/3-TabletPortraitUp-WithGutter {
+    @include for-tablet-portrait-up {
+        width: calc(66.666% - #{$o-gutter});
     }
 }

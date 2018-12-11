@@ -10,23 +10,51 @@
     padding: 0 0 $o-gutter * 3;
     font-size: 0;
 
+    @include for-phone-only {
+        > div {
+            padding-bottom: $base-font-size;
+        }
+    }
+
     a {
+        position: relative;
         margin-left: $base-font-size * 2;
+        padding-bottom: 13px;
         font-size: $base-font-size;
         font-family: $futura-bold;
         line-height: $base-line-height;
         letter-spacing: $base-font-size * .1875;
         text-transform: uppercase;
 
+        @include for-phone-only {
+            margin-left: $base-font-size;
+        }
+
         &:first-child {
             margin-left: 0;
+        }
+
+        &::after {
+            @include cubic-transition;
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: $ink;
+            backface-visibility: hidden;
+            content: "";
+        }
+
+        &.active::after,
+        &:hover::after {
+            width: 100%;
         }
     }
 }
 
 .c-Intro {
     align-items: flex-end;
-    justify-content: space-between;
     padding: 0 0 $o-gutter * 2;
 }
 
@@ -34,13 +62,17 @@
 .c-Intro--Overview {
     font-size: $h4;
     font-size: var(--h4);
-    line-height: $base-line-height * 1.25;
+    line-height: $base-line-height * 1.5;
     font-family: $futura-book;
 
     @include for-tablet-landscape-down {
         font-size: $h5;
         line-height: $base-line-height;
     }
+}
+
+.c-Portfolio {
+    justify-content: normal;
 }
 
 .c-Portfolio--Content {
@@ -116,4 +148,30 @@
 .c-Portfolio--ItemImg {
     width: 100%;
     height: auto;
+}
+
+.c-Btn {
+    @include cubic-transition;
+    position: relative;
+    padding: #{$o-gutter * .25} $o-gutter * .75;
+    border: 2px solid $ink;
+    font-size: $base-font-size; /* IE fallback */
+    font-size: var(--font-size);
+    font-family: $futura-book;
+    color: $ink;
+    text-align: center;
+    line-height: $base-line-height;
+    border-radius: 4px;
+    background: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:hover {
+        border-color: $ink-lighter;
+        color: $ink-lighter;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }

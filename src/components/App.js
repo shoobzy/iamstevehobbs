@@ -14,10 +14,13 @@ import Header from "./Header";
 import Home from "./Home";
 import Contact from "./Contact";
 
+// Figure this out
 import LaBergerieProject from "./Projects/LaBergerie";
+import ThreeStreamsProject from "./Projects/ThreeStreams";
 
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
+  { id: 1, path: "/three-streams", component: ThreeStreamsProject }
 ];
 
 class App extends React.Component {
@@ -39,9 +42,7 @@ class App extends React.Component {
                     <Route exact={true} path="/" component={Home} />
                     <Route exact={true} path="/contact" component={Contact} />
                     {project_routes.map(i => (
-                      <React.Fragment key={i.id}>
-                        <Route exact={true} path={i.path} component={i.component} />
-                      </React.Fragment>
+                      <Route key={i.id} path={i.path} component={i.component} />
                     ))}
                     <Route render={() => <div>Not Found</div>} />
                   </Switch>

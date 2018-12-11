@@ -20,7 +20,8 @@ h3,
 h4,
 h5,
 p,
-a {
+a,
+li {
     margin-top: 0;
     margin-bottom: $base-line-height;
     color: $ink;
@@ -57,7 +58,7 @@ h3 {
     font-size: $h3;
     font-size: var(--h3);
     font-family: $futura-condextraboldobl;
-    line-height: $base-line-height * 1.25;
+    line-height: $base-line-height * 1.5;
     text-transform: uppercase;
 
     @include for-tablet-landscape-down {
@@ -68,7 +69,7 @@ h3 {
 h4 {
     font-size: $h4;
     font-size: var(--h4);
-    line-height: $base-line-height * 1.25;
+    line-height: $base-line-height * 1.5;
     font-family: $futura-book;
 
     @include for-tablet-landscape-down {
@@ -86,10 +87,12 @@ h5 {
     text-transform: uppercase;
 }
 
-p {
+p,
+li {
     font-size: $base-font-size; /* IE fallback */
     font-size: var(--font-size);
     font-family: $futura-book;
+    color: $ink-lighter;
     line-height: $base-line-height;
 }
 
@@ -99,9 +102,13 @@ a {
 }
 
 ul {
-    margin: 0;
+    margin: 0 0 $base-line-height;
     padding: 0;
     list-style: none;
+
+    li {
+        margin-bottom: $base-line-height / 2;
+    }
 }
 
 @include for-tablet-landscape-down {

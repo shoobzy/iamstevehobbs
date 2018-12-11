@@ -29,13 +29,13 @@
 }
 
 @mixin for-desktop-up {
-    @media (min-width: 1281px) {
+    @media (min-width: 1280px) {
         @content;
     }
 }
 
 @mixin for-big-desktop-up {
-    @media (min-width: 1800px) {
+    @media (min-width: 1600px) {
         @content;
     }
 }
@@ -50,6 +50,10 @@
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
+}
+
+@mixin cubic-transition {
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
 }
 
 .fadeInUp,
@@ -74,4 +78,9 @@
 .fadeInUp-exit.fadeInUp-exit-active {
     opacity: 0;
     transition: opacity 0s linear, transform 0s ease-in;
+}
+
+// Some helpers
+.h-MarginTrailer--x2 {
+    margin-bottom: $base-line-height * 2;
 }
