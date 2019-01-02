@@ -1,6 +1,6 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/PortfolioItem";
-import Exterior from "../../images/projects/la-bergerie/exterior.webp";
+import PortfolioItem from "../Portfolio/ProjectTpl";
+import Exterior from "../../images/projects/la-bergerie/exterior-large.webp";
 import Cards from "../../images/projects/la-bergerie/business-cards.webp";
 
 const LaBergerieProject = () => {

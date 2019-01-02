@@ -13,36 +13,18 @@ $o-container: 1098px;
 $o-gutter: 28px;
 
 .o-Page {
-    background: $off-white;
-    min-height: calc(100vh - #{$o-gutter * 2});
-    margin: $o-gutter;
-    padding: $o-gutter * 3;
-    border: $o-gutter solid $white;
-    box-sizing: border-box;
-
-    @include for-tablet-landscape-down {
-        padding: #{$o-gutter * 2} #{$o-gutter * 1.5};
-    }
-
-    @include for-phone-only {
-        margin: 0;
-        padding: #{$o-gutter * 1.5} #{$o-gutter * .75};
-        border: #{$o-gutter * .25} solid $white;
-    }
-
-    @include for-desktop-up {
-        padding: #{$o-gutter * 3} #{$o-gutter * 2};
-    }
-
-    @include for-big-desktop-up {
-        padding: #{$o-gutter * 3} #{$o-gutter * 1};
-    }
+    background: $white;
 }
 
 .o-Container {
     max-width: $o-container;
     margin: 0 auto;
-    padding: 0;
+    padding: $o-gutter * 2.25 $o-gutter * 2;
+    // box-sizing: border-box;
+
+    @include for-tablet-landscape-down {
+        padding: #{$o-gutter * 2} #{$o-gutter * 1.25};
+    }
 }
 
 .o-Grid {

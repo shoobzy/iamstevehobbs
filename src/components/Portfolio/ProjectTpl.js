@@ -13,25 +13,27 @@ class PortfolioItem extends React.Component {
     } = this.props
 
  return (
-      <div className="c-Page fadeInUp">
+      <div className="c-Page fadeInUp c-Project">
         <ScrollToTopOnMount />
-        <h1>
+        <h1 className="fadeInUp">
           {title}
         </h1>
         <img
-          className="c-Portfolio--ItemImg h-MarginTrailer--x2"
+          className="c-Project--ItemImg h-ResponsiveImg h-MarginTrailer--x3"
           src={image_primary}
         />
-        <div className="o-Grid">
+        <div className="o-Grid c-Project--Copy">
           <div className="o-Grid--Item 2/3-TabletPortraitUp-WithGutter">
             <h5>Overview</h5>
-            <p className="c-Intro--Overview h-MarginTrailer--x2">
+            <p className="c-Intro--Overview h-MarginTrailer--x3">
               {overview}
             </p>
-            <img
-              className="c-Portfolio--ItemImg h-MarginTrailer--x2"
-              src={image_secondary}
-            />
+            {image_secondary && (
+              <img
+                className="c-Project--ItemImg h-ResponsiveImg h-MarginTrailer--x3"
+                src={image_secondary}
+              />
+            )}
           </div>
           <div className="o-Grid--Item 1/3-TabletPortraitUp-WithGutter">
             <h5>Details</h5>

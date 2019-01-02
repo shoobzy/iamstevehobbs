@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/PortfolioItem";
+import PortfolioItem from "../Portfolio/ProjectTpl";
 import Logo from "../../images/projects/three-streams/logo-main.webp";
 
 const ThreeStreamsProject = () => {

@@ -40,8 +40,8 @@ class Portfolio extends React.Component {
             key={i.id}
             className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
           >
-            <Link to={i.path} exact={true}>
-              <img className="c-Portfolio--ItemImg" src={i.img_url}/>
+            <Link to={i.path}>
+              <img className="c-Portfolio--ItemImg h-ResponsiveImg" src={i.img_url}/>
                 <div className="c-Portfolio--Content">
                   <div className="c-Portfolio--Text">
                     <h5 className="c-Portfolio--Title">{i.title}</h5>

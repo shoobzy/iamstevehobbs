@@ -65,9 +65,10 @@
 
 .fadeInUp-appear-active,
 .fadeInUp-enter.fadeInUp-enter-active {
+    @include cubic-transition;
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 500ms linear 150ms, transform 500ms ease-out 150ms;
+    // transition: opacity 500ms linear 150ms, transform 500ms ease-out 150ms;
 }
 
 .fadeInUp-exit {
@@ -80,7 +81,42 @@
     transition: opacity 0s linear, transform 0s ease-in;
 }
 
+// .fadeInUp-appear h1,
+// .fadeInUp-enter h1 {
+//     animation-name: fadeInUp;
+//     animation-delay: .3s;
+//   transform: translateY(-5px);
+//   opacity: 0;
+// }
+// .fadeInUp-appear-active,
+// .fadeInUp-enter.fadeInUp-enter-active {
+//   opacity: 1;
+//   transform: translateY(0);
+//   transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
+// }
+// .fadeInUp-appear-active h1,
+// .fadeInUp-enter.fadeInUp-enter-active h1 {
+//   transform: translateY(0);
+//   opacity: 1;
+// }
+// .fadeInUp-appear-active h1:nth-child(2),
+// .fadeInUp-enter.fadeInUp-enter-active h1:nth-child(2) {
+//   transition: opacity 300ms linear 300ms, transform 300ms ease-out 300ms;
+// }
+// .fadeInUp-appear-active h1:nth-child(3),
+// .fadeInUp-enter.fadeInUp-enter-active h1:nth-child(3) {
+//   transition: opacity 300ms linear 400ms, transform 300ms ease-out 400ms;
+// }
+// .fadeInUp-appear-active h1:nth-child(4),
+// .fadeInUp-enter.fadeInUp-enter-active h1:nth-child(4) {
+//   transition: opacity 300ms linear 500ms, transform 300ms ease-out 500ms;
+// }
 // Some helpers
-.h-MarginTrailer--x2 {
-    margin-bottom: $base-line-height * 2;
+.h-MarginTrailer--x3 {
+    margin-bottom: $base-line-height * 3;
+}
+
+.h-ResponsiveImg {
+    width: 100%;
+    height: auto;
 }

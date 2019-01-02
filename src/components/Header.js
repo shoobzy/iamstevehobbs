@@ -7,17 +7,19 @@ import {
 class Header extends React.Component {
   render() {
     return (
-      <div>
-        <nav className="o-Grid c-Nav">
-          <div>
-            <Link to="/" replace={false}>Steve Hobbs</Link>
+      <nav className="c-Nav">
+        <div className="c-Nav--Inner o-Container">
+          <div className="o-Grid">
+            <div className="c-Nav--Item">
+              <Link to="/" replace={false}>Steve Hobbs</Link>
+            </div>
+            <div>
+              <NavLink to="/" exact={true} activeClassName="active">Portfolio</NavLink>
+              <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+            </div>
           </div>
-          <div>
-            <NavLink to="/" exact={true} activeClassName="active">Portfolio</NavLink>
-            <NavLink to="/contact" activeClassName="active">Contact</NavLink>
-          </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     )
   }
 };
