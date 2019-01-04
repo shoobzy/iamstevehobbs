@@ -34,7 +34,7 @@ class Portfolio extends React.Component {
     ];
 
     return (
-      <div className="o-Grid c-Portfolio">
+      <div className="o-Grid c-Portfolio fadeInUp">
         {projects.map(i => (
           <div
             key={i.id}

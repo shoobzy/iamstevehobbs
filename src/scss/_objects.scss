@@ -63,6 +63,13 @@ $o-gutter: 28px;
     }
 }
 
+.\32\/3-TabletPortraitUp {
+    @include for-tablet-portrait-up {
+        width: 66.666%;
+    }
+}
+
+
 .\32\/3-TabletPortraitUp-WithGutter {
     @include for-tablet-portrait-up {
         width: calc(66.666% - #{$o-gutter});

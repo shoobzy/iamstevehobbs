@@ -154,6 +154,15 @@
     }
 }
 
+.c-Project {
+    font-size: 0;
+}
+
+.c-Project--Copy {
+    margin: 0 auto;
+    padding: $base-line-height * 4 0;
+}
+
 .c-Btn {
     @include cubic-transition;
     position: relative;

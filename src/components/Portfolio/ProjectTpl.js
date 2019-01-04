@@ -19,21 +19,15 @@ class PortfolioItem extends React.Component {
           {title}
         </h1>
         <img
-          className="c-Project--ItemImg h-ResponsiveImg h-MarginTrailer--x3"
+          className="c-Project--ItemImg h-ResponsiveImg"
           src={image_primary}
         />
-        <div className="o-Grid c-Project--Copy">
+        <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
           <div className="o-Grid--Item 2/3-TabletPortraitUp-WithGutter">
             <h5>Overview</h5>
-            <p className="c-Intro--Overview h-MarginTrailer--x3">
+            <p className="c-Intro--Overview">
               {overview}
             </p>
-            {image_secondary && (
-              <img
-                className="c-Project--ItemImg h-ResponsiveImg h-MarginTrailer--x3"
-                src={image_secondary}
-              />
-            )}
           </div>
           <div className="o-Grid--Item 1/3-TabletPortraitUp-WithGutter">
             <h5>Details</h5>
@@ -43,6 +37,12 @@ class PortfolioItem extends React.Component {
             )}
           </div>
         </div>
+        {image_secondary && (
+          <img
+            className="c-Project--ItemImg h-ResponsiveImg"
+            src={image_secondary}
+          />
+        )}
       </div>
     )
   }
