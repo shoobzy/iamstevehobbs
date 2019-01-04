@@ -26,16 +26,7 @@ li {
 }
 
 h1 {
-    font-size: $h1;
-    font-size: var(--h1);
-    font-family: $futura-condextraboldobl;
-    line-height: $base-line-height * 2;
-    text-transform: uppercase;
-
-    @include for-tablet-landscape-down {
-        font-size: $h2;
-        line-height: $base-line-height * 1.5;
-    }
+    @include header-one;
 }
 
 h2 {

@@ -1,5 +1,4 @@
 // Tools also will not produce any CSS yet and are typically preprocessor functions that help write or extend properties on classes:
-//
 // Functions
 // Placeholders
 // Mixins
@@ -37,6 +36,37 @@
 @mixin for-big-desktop-up {
     @media (min-width: 1600px) {
         @content;
+    }
+}
+
+@mixin header-setup(
+    $font-size,
+    $font-size-var,
+    $font-family,
+    $line-height,
+    $text-transform: null
+) {
+    font-size: $font-size;
+    font-size: $font-size-var;
+    font-family: $font-family;
+    line-height: $line-height;
+    text-transform: $text-transform;
+    @content;
+}
+
+// @todo Create all header mixins
+@mixin header-one {
+    @include header-setup(
+        $h1,
+        var(--h1),
+        $futura-condextraboldobl,
+        $base-line-height * 2,
+        uppercase
+    );
+
+    @include for-tablet-landscape-down {
+        font-size: $h2;
+        line-height: $base-line-height * 1.5;
     }
 }
 
