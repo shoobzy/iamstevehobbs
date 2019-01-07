@@ -7,7 +7,7 @@ const ThreeStreamsProject = () => {
     <PortfolioItem
       title="Three Streams"
       image_primary={Logo}
-      overview=""
+      overview="Logo concept for Three Streams - a neuropsychology, psychotherapy, and spiritual practice."
       details={
         <ul>
           <li>Branding</li>
