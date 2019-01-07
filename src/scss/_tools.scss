@@ -44,18 +44,19 @@
     $font-size-var,
     $font-family,
     $line-height,
-    $text-transform: null
+    $text-transform: null,
+    $letter-spacing: null
 ) {
     font-size: $font-size;
     font-size: $font-size-var;
     font-family: $font-family;
     line-height: $line-height;
     text-transform: $text-transform;
+    letter-spacing: $letter-spacing;
     @content;
 }
 
-// @todo Create all header mixins
-@mixin header-one {
+@mixin header-alpha {
     @include header-setup(
         $h1,
         var(--h1),
@@ -68,6 +69,60 @@
         font-size: $h2;
         line-height: $base-line-height * 1.5;
     }
+}
+
+@mixin header-bravo {
+    @include header-setup(
+        $h2,
+        var(--h2),
+        $futura-condextraboldobl,
+        $base-line-height * 1.5,
+        uppercase
+    );
+
+    @include for-tablet-landscape-down {
+        font-size: $h3;
+        line-height: $base-line-height * 1.25;
+    }
+}
+
+@mixin header-charlie {
+    @include header-setup(
+        $h3,
+        var(--h3),
+        $futura-condextraboldobl,
+        $base-line-height * 1.5,
+        uppercase
+    );
+
+    @include for-tablet-landscape-down {
+        font-size: $h4;
+    }
+}
+
+@mixin header-delta {
+    @include header-setup(
+        $h4,
+        var(--h4),
+        $futura-book,
+        $base-line-height * 1.5,
+    );
+
+    @include for-tablet-landscape-down {
+        font-size: $h5;
+        line-height: $base-line-height;
+    }
+}
+
+@mixin header-echo {
+    @include header-setup(
+        $h5,
+        var(--h5),
+        $futura-bold,
+        $base-line-height,
+        uppercase,
+        $base-font-size * .1875
+    );
 }
 
 @keyframes fadeInUp {

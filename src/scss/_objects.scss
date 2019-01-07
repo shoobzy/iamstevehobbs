@@ -1,8 +1,5 @@
 // Objects (namespace: o-) are used for design patterns, such as layouts, where items are being arranged rather than
-// decorated. Object classes are used across all pages, so if you make any changes to the object classes, you should be
-// very careful because any changes are going to affect each and every page throughout the website.
-//
-// The most common object classes I use are:
+// decorated.
 //
 // .o-page: the most outer container which usually contains max-width: 100vw and overflow: hidden.
 // .o-main: the outer container for the main area.
@@ -20,7 +17,6 @@ $o-gutter: 28px;
     max-width: $o-container;
     margin: 0 auto;
     padding: $o-gutter * 2.25 $o-gutter * 2;
-    // box-sizing: border-box;
 
     @include for-tablet-landscape-down {
         padding: #{$o-gutter * 2} #{$o-gutter * 1.25};
