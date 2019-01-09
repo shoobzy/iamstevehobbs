@@ -184,19 +184,19 @@
 
 .c-Project--Copy {
     margin: 0 auto;
-    padding: $o-gutter * 4 0;
+    padding: $o-gutter * 4 0 $o-gutter * 3;
 }
 
 .c-Btn {
     @include cubic-transition;
     position: relative;
     display: inline-block;
-    padding: #{$o-gutter * .25} $o-gutter * 1;
-    border: 2px solid $ink;
+    padding: 9px $o-gutter * 1 8px;
+    border: 2px solid $ink-lighter;
     font-size: $base-font-size; // IE fallback
     font-size: var(--font-size);
     font-family: $futura-book;
-    color: $ink;
+    color: $white;
     text-align: center;
     line-height: $base-line-height;
     border-radius: $o-gutter * 2.5;
