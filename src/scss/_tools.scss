@@ -148,6 +148,12 @@
     animation-duration: .5s;
 }
 
+// This is'nt working
+.fadeInUpDelay {
+    animation-name: fadeInUp;
+    animation-delay: 3s;
+}
+
 .fadeInUp-appear-active,
 .fadeInUp-enter.fadeInUp-enter-active {
     @include cubic-transition;

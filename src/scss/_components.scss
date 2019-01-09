@@ -146,7 +146,7 @@
 }
 
 .c-Project {
-    font-size: 0;
+    font-size: 0; // Remove any lingering white-space
 }
 
 .c-Project--Header {
@@ -161,6 +161,10 @@
         left: -#{$o-gutter * 2};
         // transform: translateY(-50%);
     }
+}
+
+.c-Project--Category {
+    @include header-delta;
 }
 
 .c-Project--Copy {

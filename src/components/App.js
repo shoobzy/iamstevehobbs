@@ -15,6 +15,7 @@ import Home from "./Home";
 import Contact from "./Contact";
 
 // Figure this out
+// Create a routing file?
 import LaBergerieProject from "./Projects/LaBergerie";
 import ThreeStreamsProject from "./Projects/ThreeStreams";
 
@@ -24,6 +25,10 @@ const project_routes = [
 ];
 
 class App extends React.Component {
+  componentDidMount() {
+    document.body.classList.add("u-Animate");
+  }
+
   render() {
     return (
       <div>

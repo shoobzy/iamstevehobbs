@@ -27,7 +27,7 @@ class PortfolioItem extends React.Component {
           <h1 className="c-Project--Title fadeInUp">
             {title}
           </h1>
-          <p className="c-Intro--Overview o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+          <p className="c-Project--Category fadeInUpDelay">
             {category}
           </p>
           <img
