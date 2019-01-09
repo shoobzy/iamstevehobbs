@@ -52,8 +52,8 @@
 }
 
 .c-Nav--Inner {
-    padding-top: $o-gutter * 2;
-    padding-bottom: $o-gutter * 2;
+    padding-top: $o-gutter * 1.5;
+    padding-bottom: $o-gutter * 1.5;
 }
 
 .c-Nav--Item {
@@ -154,17 +154,32 @@
 }
 
 .c-Project--Title {
-    @include for-desktop-up {
+    @include for-tablet-landscape-down {
+        position: static;
+    }
+
+    @include for-tablet-landscape-up {
         position: absolute;
         width: 1px; // Force the text to wrap - review and test this in browsers.
-        top: 50%;
+        top: $o-gutter * 2.5;
         left: -#{$o-gutter * 2};
-        // transform: translateY(-50%);
     }
 }
 
 .c-Project--Category {
     @include header-delta;
+
+    @include for-tablet-landscape-down {
+        position: static;
+    }
+
+    @include for-tablet-landscape-up {
+        position: absolute;
+        bottom: $o-gutter * 2.5;
+        right: -#{$o-gutter * 2};
+        margin: 0;
+        text-align: right;
+    }
 }
 
 .c-Project--Copy {

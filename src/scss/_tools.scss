@@ -4,13 +4,13 @@
 // Mixins
 // Media queries
 @mixin for-phone-only {
-    @media (max-width: 599px) {
+    @media (max-width: 600px) {
         @content;
     }
 }
 
 @mixin for-tablet-portrait-up {
-    @media (min-width: 600px) {
+    @media (min-width: 601px) {
         @content;
     }
 }
@@ -22,13 +22,19 @@
 }
 
 @mixin for-tablet-landscape-up {
-    @media (min-width: 900px) {
+    @media (min-width: 901px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-down {
+    @media (max-width: 1280px) {
         @content;
     }
 }
 
 @mixin for-desktop-up {
-    @media (min-width: 1280px) {
+    @media (min-width: 1281px) {
         @content;
     }
 }
@@ -61,13 +67,13 @@
         $h1,
         var(--h1),
         $futura-condextraboldobl,
-        $base-line-height * 2,
+        $base-line-height * 2.5,
         uppercase
     );
 
     @include for-tablet-landscape-down {
         font-size: $h2;
-        line-height: $base-line-height * 1.5;
+        line-height: $base-line-height * 2;
     }
 }
 
@@ -76,13 +82,12 @@
         $h2,
         var(--h2),
         $futura-condextraboldobl,
-        $base-line-height * 1.5,
+        $base-line-height * 1.25,
         uppercase
     );
 
     @include for-tablet-landscape-down {
         font-size: $h3;
-        line-height: $base-line-height * 1.25;
     }
 }
 

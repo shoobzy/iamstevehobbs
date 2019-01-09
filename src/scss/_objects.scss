@@ -14,6 +14,11 @@ $o-gutter: 28px;
     margin: 0 auto;
     padding: $o-gutter * 2.25 $o-gutter * 2;
 
+    @include for-desktop-down {
+        max-width: calc(#{$o-container} - #{$o-gutter * 4});
+        padding: #{$o-gutter * 2} #{$o-gutter * 3};
+    }
+
     @include for-tablet-landscape-down {
         padding: #{$o-gutter * 2} #{$o-gutter * 1.25};
     }
@@ -22,6 +27,7 @@ $o-gutter: 28px;
 .o-Grid {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-end;
     justify-content: space-between;
     margin: 0;
     padding: 0;
