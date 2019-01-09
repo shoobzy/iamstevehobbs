@@ -9,10 +9,6 @@
 $o-container: 1098px;
 $o-gutter: 28px;
 
-.o-Page {
-    background: $white;
-}
-
 .o-Container {
     max-width: $o-container;
     margin: 0 auto;
@@ -64,7 +60,6 @@ $o-gutter: 28px;
         width: 66.666%;
     }
 }
-
 
 .\32\/3-TabletPortraitUp-WithGutter {
     @include for-tablet-portrait-up {

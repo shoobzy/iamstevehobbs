@@ -7,14 +7,9 @@ const LaBergerieProject = () => {
   return (
     <PortfolioItem
       title="La Bergerie"
+      category="Web, Branding"
       image_primary={Exterior}
       overview="La Bergerie is widely regarded as one of the finest privately-owned villas in Europe, available to rent for an unforgettable luxury holiday."
-      details={
-        <ul>
-          <li>Web,</li>
-          <li>Branding</li>
-        </ul>
-      }
       ext_url="http://www.bergerieterreblanche.com/"
       image_secondary={Cards}
     />

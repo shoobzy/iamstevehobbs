@@ -42,10 +42,8 @@ $futura-condextraboldobl: "futura_ltcondextraboldobl", sans-serif;
 $futura-bold: "futura_ltbold", sans-serif;
 $futura-book: "futura_ltbook", sans-serif;
 
-// @todo Review mobile ratio - is it still used?
 $base-font-size: 1rem;
 $ratio: 1.25; // Desktop
-$ratio-sm: 1.125; // Mobile
 
 // Calculate values
 $h5: $base-font-size * $ratio;
@@ -54,18 +52,10 @@ $h3: $h4 * $ratio;
 $h2: $h3 * $ratio;
 $h1: $h2 * $ratio;
 
-// Set the alternative ratio
-$h5-sm: $base-font-size * $ratio-sm;
-$h4-sm: $h5-sm * $ratio-sm;
-$h3-sm: $h4-sm * $ratio-sm;
-$h2-sm: $h3-sm * $ratio-sm;
-$h1-sm: $h2-sm * $ratio-sm;
-
 // Use interpolated Sass variables to set the CSS variables
 :root {
     --font-size: #{$base-font-size};
     --ratio: #{$ratio};
-    --ratio-sm: #{$ratio-sm};
 
     // More math - has to be actual variables for the media query to work
     --h5: calc(var(--font-size) * var(--ratio));

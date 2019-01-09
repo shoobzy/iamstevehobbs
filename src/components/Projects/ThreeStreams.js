@@ -6,13 +6,9 @@ const ThreeStreamsProject = () => {
   return (
     <PortfolioItem
       title="Three Streams"
+      category="Branding"
       image_primary={Logo}
       overview="Logo concept for Three Streams - a neuropsychology, psychotherapy, and spiritual practice."
-      details={
-        <ul>
-          <li>Branding</li>
-        </ul>
-      }
     />
   )
 }

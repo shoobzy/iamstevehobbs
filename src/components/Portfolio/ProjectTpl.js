@@ -2,40 +2,47 @@ import React from "react";
 import ScrollToTopOnMount from "../ScrollToTopOnMount";
 
 class PortfolioItem extends React.Component {
+  componentDidMount() {
+    document.body.classList.add("u-DarkMode");
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove("u-DarkMode");
+  }
+
   render() {
     const {
       title,
+      category,
       image_primary,
       overview,
       image_secondary,
-      details,
       ext_url
     } = this.props
 
- return (
+  return (
       <div className="c-Page fadeInUp c-Project">
         <ScrollToTopOnMount />
-        <h1 className="fadeInUp">
-          {title}
-        </h1>
-        <img
-          className="c-Project--ItemImg h-ResponsiveImg"
-          src={image_primary}
-        />
+        <div class="c-Project--Header">
+          <h1 className="c-Project--Title fadeInUp">
+            {title}
+          </h1>
+          <p className="c-Intro--Overview o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+            {category}
+          </p>
+          <img
+            className="c-Project--ItemImg h-ResponsiveImg"
+            src={image_primary}
+          />
+        </div>
         <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
-          <div className="o-Grid--Item 2/3-TabletPortraitUp-WithGutter">
-            <h5>Overview</h5>
-            <p className="c-Intro--Overview">
-              {overview}
-            </p>
-          </div>
-          <div className="o-Grid--Item 1/3-TabletPortraitUp-WithGutter">
-            <h5>Details</h5>
-            {details}
-            {ext_url && (
-              <a className="c-Btn" href={ext_url} target="_blank">Visit</a>
-            )}
-          </div>
+          <h5>Overview</h5>
+          <p className="c-Intro--Overview">
+            {overview}
+          </p>
+          {ext_url && (
+            <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
+          )}
         </div>
         {image_secondary && (
           <img

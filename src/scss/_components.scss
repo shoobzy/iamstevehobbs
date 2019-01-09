@@ -149,9 +149,23 @@
     font-size: 0;
 }
 
+.c-Project--Header {
+    position: relative;
+}
+
+.c-Project--Title {
+    @include for-desktop-up {
+        position: absolute;
+        width: 1px; // Force the text to wrap - review and test this in browsers.
+        top: 50%;
+        left: -#{$o-gutter * 2};
+        // transform: translateY(-50%);
+    }
+}
+
 .c-Project--Copy {
     margin: 0 auto;
-    padding: $base-line-height * 4 0;
+    padding: $o-gutter * 4 0;
 }
 
 .c-Btn {
