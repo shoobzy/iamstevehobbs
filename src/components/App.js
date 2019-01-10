@@ -18,6 +18,7 @@ import Contact from "./Contact";
 // Create a routing file?
 import LaBergerieProject from "./Projects/LaBergerie";
 import ThreeStreamsProject from "./Projects/ThreeStreams";
+import Footer from "./Footer";
 
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
@@ -54,6 +55,7 @@ class App extends React.Component {
               </TransitionGroup>
             )} />
           </div>
+          <Footer />
         </div>
       </div>
     );

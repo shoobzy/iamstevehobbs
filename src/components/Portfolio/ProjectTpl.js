@@ -23,7 +23,7 @@ class PortfolioItem extends React.Component {
   return (
       <div className="c-Page fadeInUp c-Project">
         <ScrollToTopOnMount />
-        <div class="c-Project--Header o-Grid">
+        <div className="c-Project--Header o-Grid">
           <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
             {title}
           </h1>
