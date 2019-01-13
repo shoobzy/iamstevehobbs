@@ -19,7 +19,7 @@ import Contact from "./Contact";
 import LaBergerieProject from "./Projects/LaBergerie";
 import ThreeStreamsProject from "./Projects/ThreeStreams";
 import Footer from "./Footer";
-import ECommerceProject from "./Projects/Ecommerce";
+import ECommerceProject from "./Projects/ECommerce";
 
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
