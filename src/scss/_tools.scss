@@ -143,7 +143,7 @@
 }
 
 @mixin cubic-transition {
-    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    transition: all .5s cubic-bezier(.4, 0, .2, 1);
 }
 
 .fadeInUp,
@@ -156,6 +156,7 @@
 // This is'nt working
 .fadeInUpDelay {
     animation-name: fadeInUp;
+    animation-direction: .7s;
     animation-delay: 3s;
 }
 

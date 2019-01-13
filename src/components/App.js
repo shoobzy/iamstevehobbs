@@ -19,10 +19,21 @@ import Contact from "./Contact";
 import LaBergerieProject from "./Projects/LaBergerie";
 import ThreeStreamsProject from "./Projects/ThreeStreams";
 import Footer from "./Footer";
+import ECommerceProject from "./Projects/Ecommerce";
 
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
-  { id: 1, path: "/three-streams", component: ThreeStreamsProject }
+  { id: 1, path: "/three-streams", component: ThreeStreamsProject },
+  { id: 2, path: "/e-commerce-concept", component: ECommerceProject },
+  { id: 3, path: "/product-detail-concept", component: "" },
+  { id: 4, path: "/bethany", component: "" },
+  { id: 5, path: "/seetheworld", component: "" },
+  { id: 6, path: "/henry", component: "" },
+  { id: 7, path: "/chalet-rentals", component: "" },
+  { id: 8, path: "/moonshine", component: "" },
+  { id: 9, path: "/diner", component: "" },
+  { id: 10, path: "/solstice", component: "" },
+  { id: 11, path: "/milkyway", component: "" }
 ];
 
 class App extends React.Component {

@@ -17,7 +17,8 @@ class PortfolioItem extends React.Component {
       image_primary,
       overview,
       image_secondary,
-      ext_url
+      ext_url,
+      modal
     } = this.props
 
   return (
@@ -41,6 +42,9 @@ class PortfolioItem extends React.Component {
             {overview}
           </p>
           {ext_url && (
+            <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
+          )}
+          {modal && (
             <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
           )}
         </div>
