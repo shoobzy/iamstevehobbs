@@ -1,8 +1,9 @@
 import React from "react";
 
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
-import Intro from "./Intro";
-import Portfolio from "./Portfolio";
+
+const Intro = React.lazy(() => import("./Intro"));
+const Portfolio = React.lazy(() => import("./Portfolio"));
 
 class Home extends React.Component {
   componentDidMount() {
@@ -13,8 +14,10 @@ class Home extends React.Component {
     return (
       <div className="c-Page">
         <ScrollToTopOnMount />
-        <Intro />
-        <Portfolio />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Intro />
+          <Portfolio />
+        </Suspense>
       </div>
     )
   }
