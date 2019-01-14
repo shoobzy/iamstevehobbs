@@ -6,10 +6,10 @@
 // scopes it inside the main section and limits the use of it in other places, like a sidebar. Something like .c-btn
 // is much nicer because the button is no longer tied to any other specific sections of the page.
 .c-Nav {
-    background: url("./images/gradient-wavey.svg") 0 0 no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin-bottom: $o-gutter;
+    // background: url("./images/gradient-wavey.svg") 0 0 no-repeat;
+    // background-size: cover;
+    // background-attachment: fixed;
+    // margin-bottom: $o-gutter;
     padding: 0;
     font-size: 0;
 
@@ -19,7 +19,7 @@
         padding-bottom: 13px;
         font-size: $base-font-size;
         font-family: $futura-bold;
-        color: $white;
+        // color: $white;
         line-height: $base-line-height;
         letter-spacing: $base-font-size * .1875;
         text-transform: uppercase;
@@ -183,10 +183,6 @@
         text-align: center;
         z-index: 1;
     }
-}
-
-.c-Project--ItemImg {
-    opacity: .7;
 }
 
 .c-Project--Copy {
