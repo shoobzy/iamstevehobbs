@@ -163,6 +163,7 @@
         width: 1px; // Force the text to wrap - review and test this in browsers.
         top: $o-gutter * 2.5;
         left: -#{$o-gutter * 2};
+        z-index: 1;
     }
 }
 
@@ -175,11 +176,17 @@
 
     @include for-tablet-landscape-up {
         position: absolute;
+        width: auto;
         bottom: $o-gutter * 2.5;
         right: -#{$o-gutter * 2};
         margin: 0;
-        text-align: right;
+        text-align: center;
+        z-index: 1;
     }
+}
+
+.c-Project--ItemImg {
+    opacity: .7;
 }
 
 .c-Project--Copy {
