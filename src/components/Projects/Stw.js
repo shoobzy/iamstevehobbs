@@ -1,7 +1,6 @@
 import React from "react";
 import PortfolioItem from "../Portfolio/ProjectTpl";
 
-
 const StwProject = () => {
   return (
     <PortfolioItem

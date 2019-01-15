@@ -1,5 +1,7 @@
 import React from "react";
 import ScrollToTopOnMount from "../ScrollToTopOnMount";
+// @todo Only load this when called
+import Modal from "../Modal/Modal";
 
 class PortfolioItem extends React.Component {
   componentDidMount() {
@@ -45,7 +47,12 @@ class PortfolioItem extends React.Component {
             <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
           )}
           {modal && (
-            <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
+            <div>
+              <Modal
+                content=""
+              />
+              <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
+            </div>
           )}
         </div>
         {image_secondary && (
