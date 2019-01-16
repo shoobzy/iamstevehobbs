@@ -9,6 +9,7 @@ const ECommerceProject = () => {
       category="Web, Digital"
       image_primary={Lander}
       overview="Web landing page concept for an ECommerce company. Designed in Sketch."
+      modal={Lander}
     />
   )
 }

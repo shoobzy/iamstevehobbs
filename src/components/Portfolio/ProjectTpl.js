@@ -4,6 +4,16 @@ import ScrollToTopOnMount from "../ScrollToTopOnMount";
 import Modal from "../Modal/Modal";
 
 class PortfolioItem extends React.Component {
+  state = {
+    showModal: false
+  }
+
+  toggleModal = () => {
+    this.setState({
+      showModal: !this.state.showModal
+    });
+  }
+
   componentDidMount() {
     document.body.classList.add("u-DarkMode");
   }
@@ -49,9 +59,15 @@ class PortfolioItem extends React.Component {
           {modal && (
             <div>
               <Modal
-                content=""
-              />
-              <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
+                show={this.state.showModal}
+                closeCallback={this.toggleModal}
+                customClass="custom_modal_class"
+              >
+                <React.Fragment>
+                  <img src={modal} />
+                </React.Fragment>
+              </Modal>
+              <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
             </div>
           )}
         </div>
