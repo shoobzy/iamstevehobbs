@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "../../modal.css";
-
 const Modal = ({ children, customClass, show, closeCallback }) => (
   <div className={`${customClass}`} style={{ display: show ? "block" : "none"}}>
     <div className="c-Modal--Content o-Container">
