@@ -128,6 +128,12 @@
         uppercase,
         $base-font-size * .1875
     );
+
+    // Figure out why the h5 disappears without this breakpoint
+    @include for-tablet-landscape-down {
+        font-size: $h5;
+        line-height: $base-line-height;
+    }
 }
 
 @keyframes fadeInUp {
@@ -153,7 +159,6 @@
     animation-duration: .5s;
 }
 
-// This is'nt working
 .fadeInUpDelay {
     animation-name: fadeInUp;
     animation-direction: .7s;

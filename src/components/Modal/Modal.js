@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./modal.css";
+import "../../modal.css";
 
 const Modal = ({ children, customClass, show, closeCallback }) => (
-  <div className={`modal ${customClass}`} style={{ display: show ? "block" : "none"}}>
-    <div className="overlay" onClick={closeCallback}></div>
-    <div className="modal_content">
+  <div className={`${customClass}`} style={{ display: show ? "block" : "none"}}>
+    <div className="c-Modal--Content o-Container">
       {children}
-      <button title="Close" className="close_modal" onClick={closeCallback}>
-        <i className="fas fa-times"></i>
+      <button title="Close" className="c-Modal--Close" onClick={closeCallback}>
+        &times;
       </button>
     </div>
   </div>

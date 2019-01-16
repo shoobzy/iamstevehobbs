@@ -6,10 +6,6 @@
 // scopes it inside the main section and limits the use of it in other places, like a sidebar. Something like .c-btn
 // is much nicer because the button is no longer tied to any other specific sections of the page.
 .c-Nav {
-    // background: url("./images/gradient-wavey.svg") 0 0 no-repeat;
-    // background-size: cover;
-    // background-attachment: fixed;
-    // margin-bottom: $o-gutter;
     padding: 0;
     font-size: 0;
 
@@ -19,7 +15,6 @@
         padding-bottom: 13px;
         font-size: $base-font-size;
         font-family: $futura-bold;
-        // color: $white;
         line-height: $base-line-height;
         letter-spacing: $base-font-size * .1875;
         text-transform: uppercase;
@@ -39,7 +34,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background: $white;
+            background: $ink;
             backface-visibility: hidden;
             content: "";
         }
@@ -153,36 +148,36 @@
     position: relative;
 }
 
-.c-Project--Title {
-    @include for-tablet-landscape-down {
-        position: static;
-    }
+// .c-Project--Title {
+//     @include for-tablet-landscape-down {
+//         position: static;
+//     }
 
-    @include for-tablet-landscape-up {
-        position: absolute;
-        width: 1px; // Force the text to wrap - review and test this in browsers.
-        top: $o-gutter * 2.5;
-        left: -#{$o-gutter * 2};
-        z-index: 1;
-    }
-}
-
+//     @include for-tablet-landscape-up {
+//         position: absolute;
+//         width: 1px; // Force the text to wrap - review and test this in browsers.
+//         top: $o-gutter * 2.5;
+//         left: -#{$o-gutter * 2};
+//         z-index: 1;
+//     }
+// }
 .c-Project--Category {
     @include header-delta;
+    text-align: right;
 
-    @include for-tablet-landscape-down {
-        position: static;
-    }
+    // @include for-tablet-landscape-down {
+    //     position: static;
+    // }
 
-    @include for-tablet-landscape-up {
-        position: absolute;
-        width: auto;
-        bottom: $o-gutter * 2.5;
-        right: -#{$o-gutter * 2};
-        margin: 0;
-        text-align: center;
-        z-index: 1;
-    }
+    // @include for-tablet-landscape-up {
+    //     position: absolute;
+    //     width: auto;
+    //     bottom: $o-gutter * 2.5;
+    //     right: -#{$o-gutter * 2};
+    //     margin: 0;
+    //     text-align: center;
+    //     z-index: 1;
+    // }
 }
 
 .c-Project--Copy {
@@ -219,4 +214,43 @@
     &:focus {
         outline: none;
     }
+}
+
+.c-Modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (Image) */
+.c-Modal--Content {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+    animation-name: fadeInUp;
+    animation-duration: .5s;
+}
+
+.c-Modal--Close {
+    position: absolute;
+    top: 14px;
+    right: 35px;
+    background: none;
+    border: 0;
+    font-size: 40px;
+    appearance: none;
+}
+
+.c-Modal--Close:hover,
+.c-Modal--Close:focus {
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
 }

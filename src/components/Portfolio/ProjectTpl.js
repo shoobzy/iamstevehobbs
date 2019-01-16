@@ -1,6 +1,6 @@
 import React from "react";
 import ScrollToTopOnMount from "../ScrollToTopOnMount";
-// @todo Only load this when called
+// @todo Only load this when required
 import Modal from "../Modal/Modal";
 
 class PortfolioItem extends React.Component {
@@ -12,6 +12,8 @@ class PortfolioItem extends React.Component {
     this.setState({
       showModal: !this.state.showModal
     });
+
+    document.body.classList.toggle("u-ModalOpen");
   }
 
   componentDidMount() {
@@ -36,13 +38,15 @@ class PortfolioItem extends React.Component {
   return (
       <div className="c-Page fadeInUp c-Project">
         <ScrollToTopOnMount />
-        <div className="c-Project--Header o-Grid">
-          <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
-            {title}
-          </h1>
-          <p className="c-Project--Category o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
-            {category}
-          </p>
+        <div className="c-Project--Header">
+          <div className="c-Intro o-Grid">
+            <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+              {title}
+            </h1>
+            <p className="c-Project--Category o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+              {category}
+            </p>
+          </div>
           <img
             className="c-Project--ItemImg h-ResponsiveImg"
             src={image_primary}
@@ -61,10 +65,10 @@ class PortfolioItem extends React.Component {
               <Modal
                 show={this.state.showModal}
                 closeCallback={this.toggleModal}
-                customClass="custom_modal_class"
+                customClass="c-Modal"
               >
                 <React.Fragment>
-                  <img src={modal} />
+                  <img src={modal} className="h-ResponsiveImg" />
                 </React.Fragment>
               </Modal>
               <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
