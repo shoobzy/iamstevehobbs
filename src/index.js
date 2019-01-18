@@ -11,7 +11,7 @@ const App = React.lazy(() => import ("./components/App"));
 ReactDOM.render(
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
-      <Route path="/" component={App} />
+        <Route path="/" component={App} />
       </Suspense>
     </BrowserRouter>,
     document.getElementById("root")
