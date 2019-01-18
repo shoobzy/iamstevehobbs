@@ -45,7 +45,7 @@ const project_routes = [
   { id: 11, path: "/milkyway", component: MilkyWayProject }
 ];
 
-const App = () => {
+function App() {
   return (
     <div>
       <div className="o-Page">

@@ -5,12 +5,13 @@ import {
   Route,
 } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
+import Loader from "./components/Loader";
 
 const App = React.lazy(() => import ("./components/App"));
 
 ReactDOM.render(
     <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense maxDuration={300} fallback={<Loader/>}>
         <Route path="/" component={App} />
       </Suspense>
     </BrowserRouter>,
