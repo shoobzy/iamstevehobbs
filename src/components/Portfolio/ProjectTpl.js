@@ -17,11 +17,11 @@ class PortfolioItem extends React.Component {
   }
 
   componentDidMount() {
-    document.body.classList.add("u-DarkMode");
-  }
+    document.body.classList.add("u-Animate","u-DarkMode");
+    }
 
   componentWillUnmount() {
-    document.body.classList.remove("u-DarkMode");
+    document.body.classList.remove("u-Animate","u-DarkMode");
   }
 
   render() {

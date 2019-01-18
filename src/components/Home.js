@@ -1,8 +1,8 @@
-import React from "react";
-
+import React, { Suspense } from "react";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
-import Intro from "./Intro";
-import Portfolio from "./Portfolio";
+
+const Intro = React.lazy(() => import ("./Intro"));
+const Portfolio = React.lazy(() => import ("./Portfolio"));
 
 class Home extends React.Component {
   componentDidMount() {

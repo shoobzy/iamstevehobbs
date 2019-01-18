@@ -45,41 +45,35 @@ const project_routes = [
   { id: 11, path: "/milkyway", component: MilkyWayProject }
 ];
 
-class App extends React.Component {
-  componentDidMount() {
-    document.body.classList.add("u-Animate");
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="o-Page">
-          <Header />
-          <div className="o-Container">
-            <Route render={({location}) => (
-              <TransitionGroup>
-                <CSSTransition
-                  key={location.pathname}
-                  timeout={500}
-                  classNames="fadeInUp"
-                >
-                  <Switch location={location}>
-                    <Route exact={true} path="/" component={Home} />
-                    <Route exact={true} path="/contact" component={Contact} />
-                    {project_routes.map(i => (
-                      <Route key={i.id} path={i.path} component={i.component} />
-                    ))}
-                    <Route render={() => <div>Not Found</div>} />
-                  </Switch>
-                </CSSTransition>
-              </TransitionGroup>
-            )} />
-          </div>
-          <Footer />
+const App = () => {
+  return (
+    <div>
+      <div className="o-Page">
+        <Header />
+        <div className="o-Container">
+          <Route render={({location}) => (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.pathname}
+                timeout={500}
+                classNames="fadeInUp"
+              >
+                <Switch location={location}>
+                  <Route exact={true} path="/" component={Home} />
+                  <Route exact={true} path="/contact" component={Contact} />
+                  {project_routes.map(i => (
+                    <Route key={i.id} path={i.path} component={i.component} />
+                  ))}
+                  <Route render={() => <div>Not Found</div>} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )} />
         </div>
+        <Footer />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;

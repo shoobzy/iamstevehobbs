@@ -233,6 +233,8 @@
     margin: auto;
     display: block;
     max-width: 100%;
+    padding-top: #{$o-gutter * 2.5};
+    text-align: center;
     box-sizing: border-box;
     animation-name: fadeInUp;
     animation-duration: .5s;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import {
   BrowserRouter,
@@ -6,12 +6,14 @@ import {
 } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
 
-import App from "./components/App";
+const App = React.lazy(() => import ("./components/App"));
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Route path="/" component={App} />
-  </BrowserRouter>,
-  document.getElementById("root")
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+      <Route path="/" component={App} />
+      </Suspense>
+    </BrowserRouter>,
+    document.getElementById("root")
 );
 registerServiceWorker();
