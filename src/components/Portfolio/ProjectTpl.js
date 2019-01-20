@@ -1,7 +1,12 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ScrollToTopOnMount from "../ScrollToTopOnMount";
-// @todo Only load this when required
-import Modal from "../Modal/Modal";
+import Loader from "../Loader";
+
+const Modal = (
+  lazy(() => (
+    import("../Modal/Modal")
+  ))
+)
 
 class PortfolioItem extends React.Component {
   state = {
@@ -35,53 +40,57 @@ class PortfolioItem extends React.Component {
       modal
     } = this.props
 
-  return (
-      <div className="c-Page fadeInUp c-Project">
-        <ScrollToTopOnMount />
-        <div className="c-Project--Header">
-          <div className="c-Intro o-Grid">
-            <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
-              {title}
-            </h1>
-            <p className="c-Project--Category o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
-              {category}
-            </p>
-          </div>
-          <img
-            className="c-Project--ItemImg h-ResponsiveImg"
-            src={image_primary}
-          />
-        </div>
-        <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
-          <h5>Overview</h5>
-          <p className="c-Intro--Overview">
-            {overview}
-          </p>
-          {ext_url && (
-            <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
-          )}
-          {modal && (
-            <div>
-              <Modal
-                show={this.state.showModal}
-                closeCallback={this.toggleModal}
-                customClass="c-Modal"
-              >
-                <React.Fragment>
-                  <img src={modal} className="h-ResponsiveImg" />
-                </React.Fragment>
-              </Modal>
-              <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
+    return (
+      <Suspense maxDuration={300} fallback={<Loader/>}>
+        <div className="c-Page fadeInUp c-Project">
+          <ScrollToTopOnMount />
+          <div className="c-Project--Header">
+            <div className="c-Intro o-Grid">
+              <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+                {title}
+              </h1>
+              <p className="c-Project--Category o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+                {category}
+              </p>
             </div>
+            <img
+              className="c-Project--ItemImg h-ResponsiveImg"
+              src={image_primary}
+            />
+          </div>
+          <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
+            <h5>Overview</h5>
+            <p className="c-Intro--Overview">
+              {overview}
+            </p>
+            {ext_url && (
+              <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
+            )}
+            {modal && (
+              <Suspense maxDuration={300} fallback={<Loader/>}>
+                <div>
+                  <Modal
+                    show={this.state.showModal}
+                    closeCallback={this.toggleModal}
+                    customClass="c-Modal"
+                  >
+                    <React.Fragment>
+                      <img src={modal} className="h-ResponsiveImg" />
+                    </React.Fragment>
+                  </Modal>
+                  <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
+                </div>
+              </Suspense>
+            )}
+          </div>
+          {image_secondary && (
+            <img
+              className="c-Project--ItemImg h-ResponsiveImg"
+              src={image_secondary}
+            />
           )}
         </div>
-        {image_secondary && (
-          <img
-            className="c-Project--ItemImg h-ResponsiveImg"
-            src={image_secondary}
-          />
-        )}
-      </div>
+      </Suspense>
     )
   }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import {
   Route,
   Switch
@@ -10,6 +10,7 @@ import {
 
 import "../style.css";
 
+import Loader from "./Loader";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
@@ -30,6 +31,19 @@ import DinerProject from "./Projects/Diner";
 import SolsticeProject from "./Projects/Solstice";
 import MilkyWayProject from "./Projects/MilkyWay";
 
+// const LaBergerieProject = React.lazy(() => import ("./Projects/LaBergerie"));
+// const ThreeStreamsProject = React.lazy(() => import ("./Projects/ThreeStreams"));
+// const ECommerceProject = React.lazy(() => import ("./Projects/ECommerce"));
+// const DetailPageProject = React.lazy(() => import ("./Projects/ProductPage"));
+// const BethanyProject = React.lazy(() => import ("./Projects/Bethany"));
+// const StwProject = React.lazy(() => import ("./Projects/Stw"));
+// const HenryProject = React.lazy(() => import ("./Projects/Henry"));
+// const ChaletRentalsProject = React.lazy(() => import ("./Projects/ChaletRentals"));
+// const MoonshineProject = React.lazy(() => import ("./Projects/Moonshine"));
+// const DinerProject = React.lazy(() => import ("./Projects/Diner"));
+// const SolsticeProject = React.lazy(() => import ("./Projects/Solstice"));
+// const MilkyWayProject = React.lazy(() => import ("./Projects/MilkyWay"));
+
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
   { id: 1, path: "/three-streams", component: ThreeStreamsProject },
@@ -47,32 +61,34 @@ const project_routes = [
 
 function App() {
   return (
-    <div>
-      <div className="o-Page">
-        <Header />
-        <div className="o-Container">
-          <Route render={({location}) => (
-            <TransitionGroup>
-              <CSSTransition
-                key={location.pathname}
-                timeout={500}
-                classNames="fadeInUp"
-              >
-                <Switch location={location}>
-                  <Route exact={true} path="/" component={Home} />
-                  <Route exact={true} path="/contact" component={Contact} />
-                  {project_routes.map(i => (
-                    <Route key={i.id} path={i.path} component={i.component} />
-                  ))}
-                  <Route render={() => <div>Not Found</div>} />
-                </Switch>
-              </CSSTransition>
-            </TransitionGroup>
-          )} />
+    <Suspense maxDuration={300} fallback={<Loader/>}>
+      <div>
+        <div className="o-Page">
+          <Header />
+          <div className="o-Container">
+            <Route render={({location}) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.pathname}
+                  timeout={500}
+                  classNames="fadeInUp"
+                >
+                  <Switch location={location}>
+                    <Route exact={true} path="/" component={Home} />
+                    <Route exact={true} path="/contact" component={Contact} />
+                    {project_routes.map(i => (
+                      <Route key={i.id} path={i.path} component={i.component} />
+                    ))}
+                    <Route render={() => <div>Not Found</div>} />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )} />
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+    </Suspense>
   );
 }
 

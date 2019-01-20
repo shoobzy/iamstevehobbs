@@ -1,19 +1,16 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import {
   BrowserRouter,
   Route,
 } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
-import Loader from "./components/Loader";
 
-const App = React.lazy(() => import ("./components/App"));
+import App from "./components/App";
 
 ReactDOM.render(
     <BrowserRouter>
-      <Suspense maxDuration={300} fallback={<Loader/>}>
-        <Route path="/" component={App} />
-      </Suspense>
+      <Route path="/" component={App} />
     </BrowserRouter>,
     document.getElementById("root")
 );
