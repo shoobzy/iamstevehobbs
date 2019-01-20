@@ -5,7 +5,7 @@ const Modal = ({ children, customClass, show, closeCallback }) => (
   <div className={`${customClass}`} style={{ display: show ? "block" : "none"}}>
     <div className="c-Modal--Content o-Container">
       {children}
-      <button title="Close" className="c-Modal--Close" onClick={closeCallback}>
+      <button title="Close" className="c-Btn c-Modal--Close" onClick={closeCallback}>
         &times;
       </button>
     </div>

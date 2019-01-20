@@ -1,13 +1,15 @@
 import React from "react";
 import PortfolioItem from "../Portfolio/ProjectTpl";
+import BethanyPoster from "../../images/projects/bethany/bethany-poster.webp"
+import BethanyPosterFull from "../../images/projects/bethany/bethany-poster-full.png"
 
 const BethanyProject = () => {
   return (
     <PortfolioItem
-      title="Title"
       category="Digital, Print"
-
-      overview="A2 sized poster, printed on ... (copy content from existing page)."
+      image_primary={BethanyPoster}
+      overview="A2 poster printed on Hahnemuhle Pearl 285g.s.m. semi-gloss paper. Designed in Adobe Illustrator"
+      modal={BethanyPosterFull}
     />
   )
 }
