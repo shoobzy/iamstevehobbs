@@ -62,7 +62,7 @@
     padding: 0 0 $o-gutter * 2;
 }
 
-.c-Intro--Overview {
+.c-Overview {
     @include header-delta;
 }
 
@@ -187,6 +187,10 @@
     @include for-tablet-landscape-down {
         padding: $o-gutter * 3 0 $o-gutter * 3;
     }
+}
+
+.c-Project--Overview {
+    margin: 0 0 $o-gutter * 2;
 }
 
 .c-Btn {

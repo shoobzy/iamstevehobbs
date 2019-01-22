@@ -8,7 +8,7 @@ const BethanyProject = () => {
     <PortfolioItem
       category="Digital, Print"
       image_primary={BethanyPoster}
-      overview="A2 poster printed on Hahnemuhle Pearl 285g.s.m. semi-gloss paper. Designed in Adobe Illustrator"
+      overview="A2 print on Giclée Hahnemühle Pearl 285gsm. Designed in Adobe Illustrator"
       modal={BethanyPosterFull}
     />
   )

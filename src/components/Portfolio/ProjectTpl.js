@@ -60,7 +60,7 @@ class PortfolioItem extends React.Component {
           </div>
           <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
             <h5>Overview</h5>
-            <p className="c-Intro--Overview">
+            <p className="c-Overview c-Project--Overview">
               {overview}
             </p>
             {ext_url && (
