@@ -5,18 +5,19 @@ const iconStyle = {
 };
 
 class Footer extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isHovered: false
     };
-    this.handleHover = this.handleHover.bond(this);
+
+    this.handleHover = this.handleHover.bind(this);
   }
 
   handleHover() {
-    this.setState(prevState, () => {
+    this.setState(prevState => ({
       isHovered: !prevState.isHovered
-    });
+    }));
   }
   render() {
     const iconClass = this.state.isHovered ? "spin" : "";
