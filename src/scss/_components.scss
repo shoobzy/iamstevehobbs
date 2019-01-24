@@ -67,10 +67,6 @@
     padding: 0 0 $o-gutter * 2;
 }
 
-.c-Overview {
-    @include header-delta;
-}
-
 .c-Portfolio {
     justify-content: normal;
 }
@@ -153,36 +149,9 @@
     position: relative;
 }
 
-// .c-Project--Title {
-//     @include for-tablet-landscape-down {
-//         position: static;
-//     }
-
-//     @include for-tablet-landscape-up {
-//         position: absolute;
-//         width: 1px; // Force the text to wrap - review and test this in browsers.
-//         top: $o-gutter * 2.5;
-//         left: -#{$o-gutter * 2};
-//         z-index: 1;
-//     }
-// }
 .c-Project--Category {
     @include header-delta;
     text-align: right;
-
-    // @include for-tablet-landscape-down {
-    //     position: static;
-    // }
-
-    // @include for-tablet-landscape-up {
-    //     position: absolute;
-    //     width: auto;
-    //     bottom: $o-gutter * 2.5;
-    //     right: -#{$o-gutter * 2};
-    //     margin: 0;
-    //     text-align: center;
-    //     z-index: 1;
-    // }
 }
 
 .c-Project--Copy {
@@ -196,6 +165,14 @@
 
 .c-Project--Overview {
     margin: 0 0 $o-gutter * 2;
+}
+
+.c-Title--Charlie {
+    @include header-charlie;
+}
+
+.c-Title--Delta {
+    @include header-delta;
 }
 
 .c-Btn {
@@ -234,10 +211,9 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, .9);
+    background: rgba($color: $ink, $alpha: .9);
 }
 
-/* Modal Content (Image) */
 .c-Modal--Content {
     position: relative;
     display: block;

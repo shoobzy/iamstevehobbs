@@ -26,10 +26,21 @@ class PortfolioItem extends React.Component {
 
   componentDidMount() {
     document.body.classList.add("u-Animate","u-DarkMode");
+    const textElems = document.querySelectorAll("h1, h2, h3, h4, h5, p, a");
+
+    textElems.forEach(function(textElem) {
+      textElem.classList.add("u-Foreground");
+    });
   }
 
   componentWillUnmount() {
     document.body.classList.remove("u-Animate","u-DarkMode");
+
+    const textElems = document.querySelectorAll("h1, h2, h3, h4, h5, p, a");
+
+    textElems.forEach(function(textElem) {
+      textElem.classList.remove("u-Foreground");
+    });
   }
 
   render() {
@@ -63,7 +74,7 @@ class PortfolioItem extends React.Component {
           </div>
           <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
             <h5>Overview</h5>
-            <p className="c-Overview c-Project--Overview">
+            <p className="c-Title--Delta c-Project--Overview">
               {overview}
             </p>
             {ext_url && (
