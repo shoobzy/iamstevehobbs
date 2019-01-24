@@ -10,7 +10,7 @@ class Intro extends React.Component {
           Front-End<br></br>
           Developer
         </h1>
-        <p className="c-Overview o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">With more than 8 years’ industry experience at combining web development and design.</p>
+        <p className="c-Title--Delta o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">With more than 8 years’ industry experience at combining web development and design.</p>
       </div>
     )
   }

@@ -1,11 +1,5 @@
 // Objects (namespace: o-) are used for design patterns, such as layouts, where items are being arranged rather than
 // decorated.
-//
-// .o-page: the most outer container which usually contains max-width: 100vw and overflow: hidden.
-// .o-main: the outer container for the main area.
-// .o-container: the outer container for components and it usually provides a fixed width.
-// .o-content: in case if any extra configuration is needed for the actual content area.
-// .o-grid: if a grid layout with different number of columns are required.
 $o-container: 1098px;
 $o-gutter: 28px;
 
@@ -37,12 +31,15 @@ $o-gutter: 28px;
     width: 100%;
 }
 
-.\31\/3-TabletPortraitUp-WithGutter {
-    @include for-tablet-portrait-up {
-        width: calc(33.333% - #{$o-gutter});
-    }
+.o-Footer {
+    text-align: center;
 }
 
+// .\31\/3-TabletPortraitUp-WithGutter {
+//     @include for-tablet-portrait-up {
+//         width: calc(33.333% - #{$o-gutter});
+//     }
+// }
 .\31\/2-TabletPortraitUp {
     @include for-tablet-portrait-up {
         width: 50%;
@@ -67,8 +64,8 @@ $o-gutter: 28px;
     }
 }
 
-.\32\/3-TabletPortraitUp-WithGutter {
-    @include for-tablet-portrait-up {
-        width: calc(66.666% - #{$o-gutter});
-    }
-}
+// .\32\/3-TabletPortraitUp-WithGutter {
+//     @include for-tablet-portrait-up {
+//         width: calc(66.666% - #{$o-gutter});
+//     }
+// }

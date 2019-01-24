@@ -4,10 +4,10 @@
 
 .u-DarkMode {
     background: $ink;
+}
 
-    * {
-        color: $white !important;
-    }
+.u-Foreground {
+    color: $white;
 }
 
 .u-ModalOpen {

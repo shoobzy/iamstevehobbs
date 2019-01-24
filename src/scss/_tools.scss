@@ -136,6 +136,16 @@
     }
 }
 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -152,6 +162,7 @@
     transition: all .5s cubic-bezier(.4, 0, .2, 1);
 }
 
+// CSS transition group
 .fadeInUp,
 .fadeInUp-appear,
 .fadeInUp-enter {
@@ -170,7 +181,6 @@
     @include cubic-transition;
     opacity: 1;
     transform: translateY(0);
-    // transition: opacity 500ms linear 150ms, transform 500ms ease-out 150ms;
 }
 
 .fadeInUp-exit {
@@ -183,38 +193,17 @@
     transition: opacity 0s linear, transform 0s ease-in;
 }
 
-// .fadeInUp-appear h1,
-// .fadeInUp-enter h1 {
-//     animation-name: fadeInUp;
-//     animation-delay: .3s;
-//   transform: translateY(-5px);
-//   opacity: 0;
-// }
-// .fadeInUp-appear-active,
-// .fadeInUp-enter.fadeInUp-enter-active {
-//   opacity: 1;
-//   transform: translateY(0);
-//   transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
-// }
-// .fadeInUp-appear-active h1,
-// .fadeInUp-enter.fadeInUp-enter-active h1 {
-//   transform: translateY(0);
-//   opacity: 1;
-// }
-// .fadeInUp-appear-active h1:nth-child(2),
-// .fadeInUp-enter.fadeInUp-enter-active h1:nth-child(2) {
-//   transition: opacity 300ms linear 300ms, transform 300ms ease-out 300ms;
-// }
-// .fadeInUp-appear-active h1:nth-child(3),
-// .fadeInUp-enter.fadeInUp-enter-active h1:nth-child(3) {
-//   transition: opacity 300ms linear 400ms, transform 300ms ease-out 400ms;
-// }
-// .fadeInUp-appear-active h1:nth-child(4),
-// .fadeInUp-enter.fadeInUp-enter-active h1:nth-child(4) {
-//   transition: opacity 300ms linear 500ms, transform 300ms ease-out 500ms;
-// }
+.spin {
+    @include cubic-transition;
+    animation-name: spin;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 // Some helpers
 .h-ResponsiveImg {
+    width: 100%;
     max-width: 100%;
     height: auto;
 }

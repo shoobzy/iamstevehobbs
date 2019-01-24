@@ -5,8 +5,11 @@ import Loader from "../Loader";
 const Modal = (lazy(() => (import("../Modal/Modal"))))
 
 class PortfolioItem extends React.Component {
-  state = {
-    showModal: false
+  constructor(props) {
+    super(props)
+    this.state = {
+      showModal: false
+    }
   }
 
   toggleModal = () => {
@@ -19,10 +22,21 @@ class PortfolioItem extends React.Component {
 
   componentDidMount() {
     document.body.classList.add("u-Animate","u-DarkMode");
-    }
+    const textElems = document.querySelectorAll("h1, h2, h3, h4, h5, p, a");
+
+    textElems.forEach(function(textElem) {
+      textElem.classList.add("u-Foreground");
+    });
+  }
 
   componentWillUnmount() {
     document.body.classList.remove("u-Animate","u-DarkMode");
+
+    const textElems = document.querySelectorAll("h1, h2, h3, h4, h5, p, a");
+
+    textElems.forEach(function(textElem) {
+      textElem.classList.remove("u-Foreground");
+    });
   }
 
   render() {

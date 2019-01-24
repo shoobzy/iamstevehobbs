@@ -19,7 +19,6 @@ import Loader from "./Loader";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
-import Contact from "./Contact";
 
 // Figure this out
 // Create a core routing file?
@@ -69,7 +68,6 @@ function App() {
               >
                 <Switch location={location}>
                   <Route exact={true} path="/" component={Home} />
-                  <Route exact={true} path="/contact" component={Contact} />
                   {project_routes.map(i => (
                     <Route key={i.id} path={i.path} component={i.component} />
                   ))}
