@@ -1,8 +1,5 @@
 import React from "react";
-
-const iconStyle = {
-  color: "#61dafb",
-};
+import classnames from "classnames";
 
 class Footer extends React.Component {
   constructor(props) {
@@ -19,7 +16,12 @@ class Footer extends React.Component {
       isHovered: !prevState.isHovered
     }));
   }
+
   render() {
+    const iconStyle = {
+      color: "#61dafb",
+    };
+
     const iconClass = this.state.isHovered ? "spin" : "";
 
     return (
@@ -28,12 +30,11 @@ class Footer extends React.Component {
           <a
             href="https://reactjs.org/"
             target="_blank"
-            className={iconClass}
             style={iconStyle}
             onMouseEnter={this.handleHover}
             onMouseLeave={this.handleHover}
           >
-            <i className="fab fa-react"></i>
+            <i className={classnames("fab fa-react", iconClass)}></i>
           </a>
         </p>
         <p>Steve Hobbs &copy; {(new Date().getFullYear())}</p>
