@@ -5,63 +5,6 @@
 // For example, the button in the main section from the example above shouldn’t be called .c-main-button because main
 // scopes it inside the main section and limits the use of it in other places, like a sidebar. Something like .c-btn
 // is much nicer because the button is no longer tied to any other specific sections of the page.
-.c-Nav {
-    padding: 0;
-    font-size: 0;
-
-    a {
-        position: relative;
-        margin-left: $o-gutter * 1.5;
-        padding-bottom: 13px;
-        font-size: $base-font-size;
-        font-family: $futura-bold;
-        line-height: $base-line-height;
-        letter-spacing: $base-font-size * .1875;
-        text-transform: uppercase;
-
-        @include for-phone-only {
-            margin-left: $base-font-size;
-        }
-
-        &:first-child {
-            margin-left: 0;
-        }
-
-        &::after {
-            @include cubic-transition;
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: $ink;
-            backface-visibility: hidden;
-            content: "";
-
-            // Review this
-            @at-root body.u-DarkMode & {
-                background: $white;
-            }
-        }
-
-        &.active::after,
-        &:hover::after {
-            width: 100%;
-        }
-    }
-}
-
-.c-Nav--Inner {
-    padding-top: $o-gutter * 1.5;
-    padding-bottom: $o-gutter * 1.5;
-}
-
-.c-Nav--Item {
-    @include for-phone-only {
-        padding-bottom: $base-font-size;
-    }
-}
-
 .c-Intro {
     align-items: flex-end;
     padding: 0 0 $o-gutter * 2;

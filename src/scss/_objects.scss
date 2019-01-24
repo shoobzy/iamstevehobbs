@@ -35,12 +35,11 @@ $o-gutter: 28px;
     text-align: center;
 }
 
-.\31\/3-TabletPortraitUp-WithGutter {
-    @include for-tablet-portrait-up {
-        width: calc(33.333% - #{$o-gutter});
-    }
-}
-
+// .\31\/3-TabletPortraitUp-WithGutter {
+//     @include for-tablet-portrait-up {
+//         width: calc(33.333% - #{$o-gutter});
+//     }
+// }
 .\31\/2-TabletPortraitUp {
     @include for-tablet-portrait-up {
         width: 50%;
@@ -65,8 +64,8 @@ $o-gutter: 28px;
     }
 }
 
-.\32\/3-TabletPortraitUp-WithGutter {
-    @include for-tablet-portrait-up {
-        width: calc(66.666% - #{$o-gutter});
-    }
-}
+// .\32\/3-TabletPortraitUp-WithGutter {
+//     @include for-tablet-portrait-up {
+//         width: calc(66.666% - #{$o-gutter});
+//     }
+// }
