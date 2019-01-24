@@ -162,6 +162,7 @@
     transition: all .5s cubic-bezier(.4, 0, .2, 1);
 }
 
+// CSS transition group
 .fadeInUp,
 .fadeInUp-appear,
 .fadeInUp-enter {
@@ -193,8 +194,11 @@
 }
 
 .spin {
+    @include cubic-transition;
     animation-name: spin;
     animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 // Some helpers
