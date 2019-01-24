@@ -37,6 +37,11 @@
             background: $ink;
             backface-visibility: hidden;
             content: "";
+
+            // Review this
+            @at-root body.u-DarkMode & {
+                background: $white;
+            }
         }
 
         &.active::after,

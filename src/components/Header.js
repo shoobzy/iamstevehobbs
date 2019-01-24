@@ -4,6 +4,10 @@ import {
   NavLink
 } from "react-router-dom";
 
+function MailTo(props) {
+  return <a href={`mailto:${props.email}`}>{props.content}</a>;
+}
+
 class Header extends React.Component {
   render() {
     return (
@@ -15,7 +19,7 @@ class Header extends React.Component {
             </div>
             <div className="c-Nav--Item">
               <NavLink to="/" exact={true} activeClassName="active">Portfolio</NavLink>
-              <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+              <MailTo email="hi@iamstevehobbs.com" content="Contact" />
             </div>
           </div>
         </div>

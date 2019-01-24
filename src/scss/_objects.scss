@@ -37,6 +37,10 @@ $o-gutter: 28px;
     width: 100%;
 }
 
+.o-Footer {
+    text-align: center;
+}
+
 .\31\/3-TabletPortraitUp-WithGutter {
     @include for-tablet-portrait-up {
         width: calc(33.333% - #{$o-gutter});
