@@ -31,19 +31,6 @@ import DinerProject from "./Projects/Diner";
 import SolsticeProject from "./Projects/Solstice";
 import MilkyWayProject from "./Projects/MilkyWay";
 
-// const LaBergerieProject = React.lazy(() => import ("./Projects/LaBergerie"));
-// const ThreeStreamsProject = React.lazy(() => import ("./Projects/ThreeStreams"));
-// const ECommerceProject = React.lazy(() => import ("./Projects/ECommerce"));
-// const DetailPageProject = React.lazy(() => import ("./Projects/ProductPage"));
-// const BethanyProject = React.lazy(() => import ("./Projects/Bethany"));
-// const StwProject = React.lazy(() => import ("./Projects/Stw"));
-// const HenryProject = React.lazy(() => import ("./Projects/Henry"));
-// const ChaletRentalsProject = React.lazy(() => import ("./Projects/ChaletRentals"));
-// const MoonshineProject = React.lazy(() => import ("./Projects/Moonshine"));
-// const DinerProject = React.lazy(() => import ("./Projects/Diner"));
-// const SolsticeProject = React.lazy(() => import ("./Projects/Solstice"));
-// const MilkyWayProject = React.lazy(() => import ("./Projects/MilkyWay"));
-
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
   { id: 1, path: "/three-streams", component: ThreeStreamsProject },

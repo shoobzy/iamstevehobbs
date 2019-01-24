@@ -9,8 +9,11 @@ const Modal = (
 )
 
 class PortfolioItem extends React.Component {
-  state = {
-    showModal: false
+  constructor(props) {
+    super(props)
+    this.state = {
+      showModal: false
+    }
   }
 
   toggleModal = () => {
@@ -23,7 +26,7 @@ class PortfolioItem extends React.Component {
 
   componentDidMount() {
     document.body.classList.add("u-Animate","u-DarkMode");
-    }
+  }
 
   componentWillUnmount() {
     document.body.classList.remove("u-Animate","u-DarkMode");
