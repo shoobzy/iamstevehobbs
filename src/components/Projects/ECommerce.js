@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
 import Lander from "../../images/projects/ecommerce/ecommerce-concept.webp";
 import LanderFull from "../../images/projects/ecommerce/ecommerce-concept-full.png";
 

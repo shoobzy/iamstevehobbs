@@ -1,13 +1,16 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
+import Diner from "../../images/projects/diner/diner.webp";
+import DinerWrap from "../../images/projects/diner/diner-full.jpg";
 
 const DinerProject = () => {
   return (
     <PortfolioItem
-      title="Title"
+      title="Diner"
       category="Digital, Print"
-
-      overview=""
+      image_primary={Diner}
+      overview="Large scale, vinyl wrap - designed to mask out glass partition."
+      modal={DinerWrap}
     />
   )
 }

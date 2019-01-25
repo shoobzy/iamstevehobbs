@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
 import BethanyPoster from "../../images/projects/bethany/bethany-poster.webp"
 import BethanyPosterFull from "../../images/projects/bethany/bethany-poster-full.png"
 

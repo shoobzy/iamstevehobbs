@@ -1,11 +1,11 @@
-import React, { lazy, Suspense } from "react";
-import ScrollToTopOnMount from "../ScrollToTopOnMount";
+import React from "react";
+import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import {
   Preloader,
   Placeholder
 } from "react-preloading-screen";
-import Loader from "../Loader";
-import Modal from "../Modal/Modal";
+import Loader from "./Loader";
+import Modal from "./Modal/Modal";
 
 class PortfolioItem extends React.Component {
   constructor(props) {
@@ -73,10 +73,14 @@ class PortfolioItem extends React.Component {
             />
           </div>
           <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
-            <h5>Overview</h5>
-            <p className="c-Title--Delta c-Project--Overview">
-              {overview}
-            </p>
+            {overview && (
+              <div>
+                <h5>Overview</h5>
+                <p className="c-Title--Delta c-Project--Overview">
+                  {overview}
+                </p>
+              </div>
+            )}
             {ext_url && (
               <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
             )}

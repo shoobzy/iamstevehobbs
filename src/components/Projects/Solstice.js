@@ -1,13 +1,14 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
+import Solstice from "../../images/projects/solstice/solstice.jpg";
+import SolsticeFull from "../../images/projects/solstice/solstice-full.jpg";
 
 const SolsticeProject = () => {
   return (
     <PortfolioItem
-      title="Title"
       category="Photography"
-
-      overview=""
+      image_primary={Solstice}
+      modal={SolsticeFull}
     />
   )
 }

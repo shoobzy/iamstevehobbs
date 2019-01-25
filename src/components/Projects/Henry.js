@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
 import HenryPoster from "../../images/projects/henry/henry-poster.webp"
 import HenryPosterFull from "../../images/projects/henry/henry-poster-full.png"
 

@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
 import StwSplash from "../../images/projects/stw/stw-splash.webp";
 
 const StwProject = () => {

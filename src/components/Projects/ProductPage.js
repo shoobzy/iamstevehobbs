@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
 import DeailPage from "../../images/projects/product-detail/product-detail.webp";
 import DeailPageFull from "../../images/projects/product-detail/product-detail-full.png";
 

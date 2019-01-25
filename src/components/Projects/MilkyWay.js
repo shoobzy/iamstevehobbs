@@ -1,13 +1,14 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
+import MilkyWay from "../../images/projects/milkyway/milkyway.jpg";
+import milkywayFull from "../../images/projects/milkyway/milkyway-full.jpg";
 
 const MilkyWayProject = () => {
   return (
     <PortfolioItem
-      title="Title"
       category="Photography"
-
-      overview=""
+      image_primary={MilkyWay}
+      modal={milkywayFull}
     />
   )
 }

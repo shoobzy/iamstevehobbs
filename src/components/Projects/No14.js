@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
 import HotTub from "../../images/projects/no-14/no-14.webp";
 
 const No14Project = () => {

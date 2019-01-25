@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
 import Exterior from "../../images/projects/la-bergerie/exterior-large.webp";
 import Cards from "../../images/projects/la-bergerie/business-cards.webp";
 

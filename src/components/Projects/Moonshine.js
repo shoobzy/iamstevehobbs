@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../Portfolio/ProjectTpl";
+import PortfolioItem from "../ProjectTpl";
 import Moonshine from "../../images/projects/moonshine/moonshine.webp";
 import MoonshineFull from "../../images/projects/moonshine/moonshine-full.png";
 
