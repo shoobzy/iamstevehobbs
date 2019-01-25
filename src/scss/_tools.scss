@@ -194,11 +194,9 @@
 }
 
 .spin {
-    @include cubic-transition;
+    transition: all .5s cubic-bezier(1, 0.02, 0, 1.49);
     animation-name: spin;
-    animation-duration: .5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-duration: 1.5s;
 }
 
 // Some helpers
