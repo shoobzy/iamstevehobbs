@@ -1,8 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import ScrollToTopOnMount from "../ScrollToTopOnMount";
+import {
+  Preloader,
+  Placeholder
+} from "react-preloading-screen";
 import Loader from "../Loader";
-// import Modal from "../Modal/Modal";
-const Modal = (lazy(() => (import("../Modal/Modal"))))
+import Modal from "../Modal/Modal";
 
 class PortfolioItem extends React.Component {
   constructor(props) {
@@ -52,32 +55,35 @@ class PortfolioItem extends React.Component {
     } = this.props
 
     return (
-      <div className="c-Page fadeInUp c-Project">
-        <ScrollToTopOnMount />
-        <div className="c-Project--Header">
-          <div className="c-Intro o-Grid">
-            <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
-              {title}
-            </h1>
-            <p className="c-Project--Category o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
-              {category}
-            </p>
+      <Preloader>
+        <Placeholder>
+          <Loader/>
+        </Placeholder>
+        <div className="c-Page fadeInUp c-Project">
+          <ScrollToTopOnMount />
+          <div className="c-Project--Header">
+            <div className="c-Intro o-Grid">
+              <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+                {title}
+              </h1>
+              <p className="c-Project--Category o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+                {category}
+              </p>
+            </div>
+            <img
+              className="c-Project--ItemImg h-ResponsiveImg"
+              src={image_primary}
+            />
           </div>
-          <img
-            className="c-Project--ItemImg h-ResponsiveImg"
-            src={image_primary}
-          />
-        </div>
-        <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
-          <h5>Overview</h5>
-          <p className="c-Title--Delta c-Project--Overview">
-            {overview}
-          </p>
-          {ext_url && (
-            <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
-          )}
-          {modal && (
-            <Suspense maxDuration={300} fallback={<Loader/>}>
+          <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
+            <h5>Overview</h5>
+            <p className="c-Title--Delta c-Project--Overview">
+              {overview}
+            </p>
+            {ext_url && (
+              <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
+            )}
+            {modal && (
               <div>
                 <Modal
                   show={this.state.showModal}
@@ -90,16 +96,16 @@ class PortfolioItem extends React.Component {
                 </Modal>
                 <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
               </div>
-            </Suspense>
+            )}
+          </div>
+          {image_secondary && (
+            <img
+              className="c-Project--ItemImg h-ResponsiveImg"
+              src={image_secondary}
+            />
           )}
         </div>
-        {image_secondary && (
-          <img
-            className="c-Project--ItemImg h-ResponsiveImg"
-            src={image_secondary}
-          />
-        )}
-      </div>
+      </Preloader>
     )
   }
 }
