@@ -49,6 +49,13 @@ const project_routes = [
   { id: 11, path: "/milkyway", component: MilkyWayProject }
 ];
 
+const NoMatch = () => (
+  <div>
+    <h2>Page not found</h2>
+    <p>Return to <a href="/">homepage</a></p>
+  </div>
+)
+
 function App() {
   return (
     <Preloader>
@@ -67,7 +74,7 @@ function App() {
                   {project_routes.map(i => (
                     <Route key={i.id} path={i.path} component={i.component} />
                   ))}
-                  <Route render={() => <div>Not Found</div>} />
+                  <Route component={NoMatch} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
