@@ -10,7 +10,7 @@ import ProductPage from "../images/portfolio/product-detail-concept.webp";
 import Bethany from "../images/portfolio/bethany.webp";
 import SeeTheWorld from "../images/portfolio/seetheworld.webp";
 import Henry from "../images/portfolio/henry.webp";
-import ChaletRentals from "../images/portfolio/chalet-apartment-rentals.webp";
+import No14 from "../images/portfolio/no-14.webp";
 import Moonshine from "../images/portfolio/moonshine.webp";
 import Diner from "../images/portfolio/open-24-hours.webp";
 import Solstice from "../images/portfolio/solstice.webp";
@@ -26,7 +26,7 @@ class Portfolio extends React.Component {
       { id: 4, path: "/bethany", img_url: Bethany, title: "Bethany", category: "Print" },
       { id: 5, path: "/seetheworld", img_url: SeeTheWorld, title: "SeeTheWorld", category: "Web" },
       { id: 6, path: "/henry", img_url: Henry, title: "Henry", category: "Print" },
-      { id: 7, path: "/chalet-rentals", img_url: ChaletRentals, title: "Chalet Rentals", category: "Web" },
+      { id: 7, path: "/chalet-rentals", img_url: No14, title: "No.14 Verbier", category: "Web" },
       { id: 8, path: "/moonshine", img_url: Moonshine, title: "Moonshine", category: "Digital" },
       { id: 9, path: "/diner", img_url: Diner, title: "Diner wrap", category: "Print" },
       { id: 10, path: "/solstice", img_url: Solstice, title: "Solstice", category: "Photography" },

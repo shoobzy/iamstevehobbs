@@ -56,9 +56,6 @@ class PortfolioItem extends React.Component {
 
     return (
       <Preloader>
-        <Placeholder>
-          <Loader/>
-        </Placeholder>
         <div className="c-Page fadeInUp c-Project">
           <ScrollToTopOnMount />
           <div className="c-Project--Header">
@@ -105,6 +102,9 @@ class PortfolioItem extends React.Component {
             />
           )}
         </div>
+        <Placeholder>
+          <Loader/>
+        </Placeholder>
       </Preloader>
     )
   }

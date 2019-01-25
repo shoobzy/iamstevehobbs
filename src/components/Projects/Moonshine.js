@@ -1,13 +1,16 @@
 import React from "react";
 import PortfolioItem from "../Portfolio/ProjectTpl";
+import Moonshine from "../../images/projects/moonshine/moonshine.webp";
+import MoonshineFull from "../../images/projects/moonshine/moonshine-full.png";
 
 const MoonshineProject = () => {
   return (
     <PortfolioItem
-      title="Title"
+      title="Moonshine"
       category="Digital, Print"
-
-      overview="A2 sized poster, printed on ... (copy content from existing page)."
+      image_primary={Moonshine}
+      overview="Inspired by the 1930's art style of Max Fleischer, this 'battle flag' was designed for a boat representing the name 'Moonshine'."
+      modal={MoonshineFull}
     />
   )
 }
