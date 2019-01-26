@@ -4,6 +4,7 @@ import {
   Preloader,
   Placeholder
 } from "react-preloading-screen";
+import Img from "react-webp-image";
 import Loader from "./Loader";
 import Modal from "./Modal/Modal";
 
@@ -47,7 +48,8 @@ class PortfolioItem extends React.Component {
     const {
       title,
       category,
-      image_primary,
+      image_webp,
+      image_non_webp,
       overview,
       image_secondary,
       ext_url,
@@ -67,10 +69,19 @@ class PortfolioItem extends React.Component {
                 {category}
               </p>
             </div>
-            <img
-              className="c-Project--ItemImg h-ResponsiveImg"
-              src={image_primary}
-            />
+            {image_webp && image_non_webp && (
+              <Img
+                className="c-Project--ItemImg h-ResponsiveImg"
+                webp={image_webp}
+                src={image_non_webp}
+              />
+            )}
+            {!image_webp && image_non_webp && (
+              <img
+                className="c-Project--ItemImg h-ResponsiveImg"
+                src={image_non_webp}
+              />
+            )}
           </div>
           <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
             {overview && (

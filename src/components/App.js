@@ -42,7 +42,7 @@ const project_routes = [
   { id: 4, path: "/bethany", component: BethanyProject },
   { id: 5, path: "/seetheworld", component: StwProject },
   { id: 6, path: "/henry", component: HenryProject },
-  { id: 7, path: "/chalet-rentals", component: No14Project },
+  { id: 7, path: "/no-14", component: No14Project },
   { id: 8, path: "/moonshine", component: MoonshineProject },
   { id: 9, path: "/diner", component: DinerProject },
   { id: 10, path: "/solstice", component: SolsticeProject },

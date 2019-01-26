@@ -7,7 +7,7 @@ const SolsticeProject = () => {
   return (
     <PortfolioItem
       category="Photography"
-      image_primary={Solstice}
+      image_non_webp={Solstice}
       modal={SolsticeFull}
     />
   )
