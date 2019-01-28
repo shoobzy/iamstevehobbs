@@ -11,6 +11,7 @@ import {
   Preloader,
   Placeholder
 } from "react-preloading-screen";
+import asyncComponent from "./AsyncComponent";
 
 import "../style.css";
 
@@ -21,7 +22,10 @@ import Home from "./Home";
 
 // Figure this out
 // Create a core routing file?
-import LaBergerieProject from "./Projects/LaBergerie";
+const LaBergerieProject = asyncComponent(() =>
+  import("./Projects/LaBergerie").then(module => module.default)
+)
+
 import ThreeStreamsProject from "./Projects/ThreeStreams";
 import ECommerceProject from "./Projects/ECommerce";
 import DetailPageProject from "./Projects/ProductPage";
