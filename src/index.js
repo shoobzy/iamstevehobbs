@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import App from "./components/App";
 
-// // Check that service workers are registered
+// Check that service workers are registered
 // if ('serviceWorker' in navigator) {
 //   try {
 //       navigator.serviceWorker.register('../serviceWorker.js');

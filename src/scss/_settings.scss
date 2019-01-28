@@ -12,6 +12,7 @@ $ink-lighter: #4e525d;
 // @import "../node_modules/modularscale-sass/stylesheets/modularscale";
 @font-face {
     font-family: "futura_ltcondextraboldobl";
+    font-display: auto;
     src: url("./webfonts/futuralt-condextraboldobl-webfont.woff2") format("woff2"),
         url("./webfonts/futuralt-condextraboldobl-webfont.woff") format("woff"),
         url("./webfonts/futuralt-condextraboldobl-webfont.svg#futura_ltcondextraboldobl") format("svg");
@@ -21,6 +22,7 @@ $ink-lighter: #4e525d;
 
 @font-face {
     font-family: "futura_ltbold";
+    font-display: auto;
     src: url("./webfonts/futuralt-bold-webfont.woff2") format("woff2"),
         url("./webfonts/futuralt-bold-webfont.woff") format("woff"),
         url("./webfonts/futuralt-bold-webfont.svg#futura_ltbold") format("svg");
@@ -30,6 +32,7 @@ $ink-lighter: #4e525d;
 
 @font-face {
     font-family: "futura_ltbook";
+    font-display: auto;
     src: url("./webfonts/futuralt-book-webfont.woff2") format("woff2"),
         url("./webfonts/futuralt-book-webfont.woff") format("woff"),
         url("./webfonts/futuralt-book-webfont.svg#futura_ltbook") format("svg");
