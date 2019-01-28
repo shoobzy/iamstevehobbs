@@ -5,7 +5,6 @@ import {
   Route,
 } from "react-router-dom";
 import App from "./components/App";
-import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -13,4 +12,3 @@ ReactDOM.render(
     </BrowserRouter>,
     document.getElementById("root")
 );
-serviceWorker.register();
