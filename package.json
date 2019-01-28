@@ -20,19 +20,6 @@
     "parcel",
     "react"
   ],
-  "precachingSW": {
-    "bypass": false,
-    "allowed": [
-      "js",
-      "css",
-      "map",
-      "html"
-    ],
-    "additional": [],
-    "offlineUrl": "/offline.html",
-    "fileName": "sw.js",
-    "outDir": "./"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -59,7 +46,6 @@
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.11.0",
-    "parcel-plugin-precaching-sw": "0.0.3",
     "shx": "^0.3.2",
     "stylelint": "^9.9.0",
     "stylelint-config-recommended-scss": "^3.2.0",
