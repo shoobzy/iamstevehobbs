@@ -7,14 +7,12 @@ import {
 import App from "./components/App";
 
 // Check that service workers are registered
-// if ('serviceWorker' in navigator) {
-//   try {
-//       navigator.serviceWorker.register('../serviceWorker.js');
-//       console.log('Service Worker Registered');
-//   } catch (error) {
-//       console.log('Service Worker Register Failed');
-//   }
-// }
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+      navigator.serviceWorker.register('../dist/__/sw.js');
+  });
+}
 
 ReactDOM.render(
     <BrowserRouter>
