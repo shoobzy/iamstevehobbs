@@ -7,8 +7,8 @@ import {
 import App from "./components/App";
 
 ReactDOM.render(
-    <BrowserRouter>
-      <Route path="/" component={App} />
-    </BrowserRouter>,
-    document.getElementById("root")
+  <BrowserRouter>
+    <Route path="/" component={App} />
+  </BrowserRouter>,
+  document.getElementById("root")
 );
