@@ -31,7 +31,6 @@
     "react-preloading-screen": "^1.0.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-service-worker": "^0.1.1",
     "react-transition-group": "^2.5.2",
     "react-webp-image": "^1.0.4",
     "scss": "^0.2.4",
