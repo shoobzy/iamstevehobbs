@@ -31,6 +31,7 @@
     "react-preloading-screen": "^1.0.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-service-worker": "^0.1.1",
     "react-transition-group": "^2.5.2",
     "react-webp-image": "^1.0.4",
     "scss": "^0.2.4",
@@ -46,28 +47,11 @@
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.11.0",
-    "parcel-plugin-precaching-sw": "0.0.3",
     "shx": "^0.3.2",
     "stylelint": "^9.9.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-order": "^1.0.0",
     "stylelint-scss": "^3.5.0"
-  },
-  "precachingSW": {
-    "bypass": false,
-    "allowed": [
-      "js",
-      "css",
-      "map",
-      "html",
-      "png",
-      "webp",
-      "webmanifest"
-    ],
-    "additional": [],
-    "offlineUrl": "/offline.html",
-    "fileName": "sw.js",
-    "outDir": "./"
   },
   "husky": {
     "hooks": {
