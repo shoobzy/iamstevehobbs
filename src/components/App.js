@@ -70,7 +70,7 @@ function App() {
             <TransitionGroup>
               <CSSTransition
                 key={location.pathname}
-                timeout={500}
+                timeout={900}
                 classNames="fadeInUp"
               >
                 <Switch location={location}>

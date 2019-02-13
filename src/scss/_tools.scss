@@ -159,7 +159,7 @@
 }
 
 @mixin cubic-transition {
-    transition: all .5s cubic-bezier(.4, 0, .2, 1);
+    transition: all .9s cubic-bezier(.4, 0, .2, 1);
 }
 
 // CSS transition group
@@ -167,13 +167,7 @@
 .fadeInUp-appear,
 .fadeInUp-enter {
     animation-name: fadeInUp;
-    animation-duration: .5s;
-}
-
-.fadeInUpDelay {
-    animation-name: fadeInUp;
-    animation-direction: .7s;
-    animation-delay: 3s;
+    animation-duration: .9s;
 }
 
 .fadeInUp-appear-active,

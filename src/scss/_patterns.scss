@@ -24,9 +24,10 @@
             @include cubic-transition;
             position: absolute;
             width: 0;
-            height: 2px;
+            height: 3px;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             background: $ink;
             backface-visibility: hidden;
             content: "";
@@ -40,7 +41,7 @@
 
         &.active::after,
         &:hover::after {
-            width: 100%;
+            width: 80%;
         }
     }
 }

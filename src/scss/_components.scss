@@ -39,6 +39,7 @@
     z-index: 1;
 }
 
+// Review the transition
 .c-Portfolio--Background {
     position: absolute;
     content: "";
@@ -50,7 +51,7 @@
     overflow: hidden;
     transform: scaleY(0);
     transform-origin: center bottom;
-    transition: opacity 0s, transform .3s cubic-bezier(.4,0,.2,1);
+    transition: opacity 0s, transform .45s cubic-bezier(.4,0,.2,1);
 }
 
 //@todo Create default animation class and state

@@ -1,4 +1,4 @@
-const created = 'Wed Feb 13 2019 19:36:38 GMT+0000 (Greenwich Mean Time)';
+const created = 'Wed Feb 13 2019 20:47:16 GMT+0000 (Greenwich Mean Time)';
 const caches = ['/assets/index.html','/assets/src.e31bb0bc.js','/assets/src.e31bb0bc.map','/assets/src.e31bb0bc.css','/assets/LaBergerie.cec98d3c.js','/assets/LaBergerie.cec98d3c.map','/offline.html'];
 const cacheName = 'iamstevehobbs-5611e1b7';
 const offlineUrl = '/offline.html';
