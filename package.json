@@ -4,9 +4,9 @@
   "description": "Portfolio of Steve Hobbs",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html",
+    "start": "parcel src/index.html --https",
     "prebuild": "shx rm -rf dist/*",
-    "build": "parcel build src/index.html --https",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
@@ -58,15 +58,14 @@
     "allowed": [
       "js",
       "css",
-      "map"
+      "map",
+      "jpeg",
+      "html"
     ],
     "additional": [],
-    "offlineUrl": "/",
+    "offlineUrl": "/offline.html",
     "fileName": "sw.js",
-    "outDir": "./",
-    "index.html": {
-      "bypass": true
-    }
+    "outDir": "./"
   },
   "husky": {
     "hooks": {
