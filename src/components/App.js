@@ -25,18 +25,39 @@ import Home from "./Home";
 const LaBergerieProject = asyncComponent(() =>
   import("./Projects/LaBergerie").then(module => module.default)
 )
-
-import ThreeStreamsProject from "./Projects/ThreeStreams";
-import ECommerceProject from "./Projects/ECommerce";
-import DetailPageProject from "./Projects/ProductPage";
-import BethanyProject from "./Projects/Bethany";
-import StwProject from "./Projects/Stw";
-import HenryProject from "./Projects/Henry";
-import No14Project from "./Projects/No14";
-import MoonshineProject from "./Projects/Moonshine";
-import DinerProject from "./Projects/Diner";
-import SolsticeProject from "./Projects/Solstice";
-import MilkyWayProject from "./Projects/MilkyWay";
+const ThreeStreamsProject = asyncComponent(() =>
+  import("./Projects/ThreeStreams").then(module => module.default)
+)
+const ECommerceProject = asyncComponent(() =>
+  import("./Projects/ECommerce").then(module => module.default)
+)
+const DetailPageProject = asyncComponent(() =>
+  import("./Projects/ProductPage").then(module => module.default)
+)
+const BethanyProject = asyncComponent(() =>
+  import("./Projects/Bethany").then(module => module.default)
+)
+const StwProject = asyncComponent(() =>
+  import("./Projects/Stw").then(module => module.default)
+)
+const HenryProject = asyncComponent(() =>
+  import("./Projects/Henry").then(module => module.default)
+)
+const No14Project = asyncComponent(() =>
+  import("./Projects/No14").then(module => module.default)
+)
+const MoonshineProject = asyncComponent(() =>
+  import("./Projects/Moonshine").then(module => module.default)
+)
+const DinerProject = asyncComponent(() =>
+  import("./Projects/Diner").then(module => module.default)
+)
+const SolsticeProject = asyncComponent(() =>
+  import("./Projects/Solstice").then(module => module.default)
+)
+const MilkyWayProject = asyncComponent(() =>
+  import("./Projects/MilkyWay").then(module => module.default)
+)
 
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
