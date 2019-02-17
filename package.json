@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "prebuild": "shx rm -rf dist/*",
-    "build": "parcel build src/index.html --public-url ./",
+    "build": "parcel build src/index.html --public-url dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
