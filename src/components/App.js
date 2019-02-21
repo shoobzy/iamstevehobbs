@@ -97,7 +97,11 @@ function App() {
                 <Switch location={location}>
                   <Route exact={true} path="/" component={Home} />
                   {project_routes.map(i => (
-                    <Route key={i.id} path={i.path} component={i.component} />
+                    <Route
+                      key={i.id}
+                      path={i.path}
+                      component={i.component}
+                    />
                   ))}
                   <Route component={NoMatch} />
                 </Switch>
