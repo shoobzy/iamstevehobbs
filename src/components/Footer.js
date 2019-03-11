@@ -18,8 +18,7 @@ class Footer extends React.Component {
   }
 
   render() {
-    const iconStyle = {color: "#61dafb",};
-
+    const iconStyle = {color: "#61dafb"};
     const iconClass = this.state.isHovered ? "spin" : "";
 
     return (
