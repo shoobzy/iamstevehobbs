@@ -3,22 +3,21 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import {
-  CSSTransition,
-  TransitionGroup
-} from "react-transition-group";
+import posed, {
+  PoseGroup
+} from "react-pose";
 import {
   Preloader,
   Placeholder
 } from "react-preloading-screen";
-import asyncComponent from "./AsyncComponent";
-
-import "../style.css";
 
 import Loader from "./Loader";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
+import asyncComponent from "./AsyncComponent";
+
+import "../style.css";
 
 // Figure this out
 // Create a core routing file?
@@ -74,12 +73,17 @@ const project_routes = [
   { id: 11, path: "/milkyway", component: MilkyWayProject }
 ];
 
-const NoMatch = () => (
+const NotFound = () => (
   <div>
     <h2>Page not found</h2>
     <p>Return to <a href="/">homepage</a></p>
   </div>
 )
+
+const RouteContainer = posed.div({
+  enter: { opacity: 1, delay: 900, beforeChildren: true },
+  exit: { opacity: 0 }
+});
 
 function App() {
   return (
@@ -88,14 +92,10 @@ function App() {
         <Header />
         <div className="o-Container">
           <Route render={({location}) => (
-            <TransitionGroup>
-              <CSSTransition
-                key={location.pathname}
-                timeout={900}
-                classNames="fadeInUp"
-              >
+            <PoseGroup>
+              <RouteContainer key={location.pathname}>
                 <Switch location={location}>
-                  <Route exact={true} path="/" component={Home} />
+                  <Route exact path="/" component={Home} key="home" />
                   {project_routes.map(i => (
                     <Route
                       key={i.id}
@@ -103,10 +103,10 @@ function App() {
                       component={i.component}
                     />
                   ))}
-                  <Route component={NoMatch} />
+                  <Route component={NotFound} key="error" />
                 </Switch>
-              </CSSTransition>
-            </TransitionGroup>
+              </RouteContainer>
+            </PoseGroup>
           )} />
         </div>
         <Footer />
