@@ -81,7 +81,7 @@ const NotFound = () => (
 )
 
 const RouteContainer = posed.div({
-  enter: { opacity: 1, delay: 900, beforeChildren: true },
+  enter: { opacity: 1, delay: 300, beforeChildren: true },
   exit: { opacity: 0 }
 });
 

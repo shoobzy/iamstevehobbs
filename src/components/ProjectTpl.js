@@ -58,14 +58,14 @@ class PortfolioItem extends React.Component {
 
     return (
       <Preloader>
-        <div className="c-Page fadeInUp c-Project">
+        <div className="c-Page c-Project">
           <ScrollToTopOnMount />
           <div className="c-Project--Header">
             <div className="c-Intro o-Grid">
-              <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+              <h1 className="c-Project--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter">
                 {title}
               </h1>
-              <p className="c-Project--Category o-Grid--Item 1/2-TabletPortraitUp-WithGutter fadeInUp">
+              <p className="c-Project--Category o-Grid--Item 1/2-TabletPortraitUp-WithGutter">
                 {category}
               </p>
             </div>
