@@ -1,12 +1,12 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
+import ProjectItem from "../ProjectTpl";
 import Lander from "../../images/projects/ecommerce/ecommerce-concept.webp";
 import LanderFallback from "../../images/projects/ecommerce/ecommerce-concept.jpg";
 import LanderFull from "../../images/projects/ecommerce/ecommerce-concept-full.png";
 
 const ECommerceProject = () => {
   return (
-    <PortfolioItem
+    <ProjectItem
       title="ECommerce Lander Concept"
       category="Web, Digital"
       image_webp={Lander}

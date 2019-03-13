@@ -1,4 +1,5 @@
 import React from "react";
+import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import {
   Preloader,
@@ -8,7 +9,7 @@ import Img from "react-webp-image";
 import Loader from "./Loader";
 import Modal from "./Modal/Modal";
 
-class PortfolioItem extends React.Component {
+class ProjectItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -125,4 +126,4 @@ class PortfolioItem extends React.Component {
   }
 }
 
-export default PortfolioItem;
+export default ProjectItem;

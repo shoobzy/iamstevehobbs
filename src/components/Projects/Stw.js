@@ -1,10 +1,10 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
+import ProjectItem from "../ProjectTpl";
 import StwSplash from "../../images/projects/stw/stw-splash.jpg";
 
 const StwProject = () => {
   return (
-    <PortfolioItem
+    <ProjectItem
       title="SeeTheWorld"
       category="Web"
       image_non_webp={StwSplash}

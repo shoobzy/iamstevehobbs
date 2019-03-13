@@ -1,8 +1,6 @@
 import React from "react";
 import posed from "react-pose";
-import {
-  Link,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Img from "react-webp-image";
 
 // Review these imports
@@ -33,9 +31,14 @@ import SolsticeFallback from "../images/portfolio/solstice.jpg";
 import MilkywayFallback from "../images/portfolio/milkyway.jpg";
 
 const Portfolio = posed.div({
+  enter: { staggerChildren: 60, delay: 300 },
+  exit: { staggerChildren: 10, staggerDirection: -1 }
+});
+
+const PortfolioItem = posed.div({
   enter: { y: 0, opacity: 1 },
   exit: { y: 50, opacity: 0 }
-});
+})
 
 const projects = [
   { id: 0, path: "/la-bergerie", img_url: LaBergerie, img_url_fallback: LaBergerieFallback, title: "La Bergerie", category: "Web" },
@@ -53,29 +56,27 @@ const projects = [
 ];
 
 export default () => (
-  <Portfolio>
-    <div className="o-Grid c-Portfolio">
-      {projects.map(i => (
-        <div
-          key={i.id}
-          className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
-        >
-          <Link to={i.path}>
-            <Img
-              className="c-Portfolio--ItemImg h-ResponsiveImg"
-              webp={i.img_url}
-              src={i.img_url_fallback}
-            />
-              <div className="c-Portfolio--Content">
-                <div className="c-Portfolio--Text">
-                  <h5 className="c-Portfolio--Title">{i.title}</h5>
-                  <p className="c-Portfolio--Category">{i.category}</p>
-                </div>
+  <Portfolio className="o-Grid c-Portfolio">
+    {projects.map(i => (
+      <PortfolioItem
+        key={i.id}
+        className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
+      >
+        <Link to={i.path}>
+          <Img
+            className="c-Portfolio--ItemImg h-ResponsiveImg"
+            webp={i.img_url}
+            src={i.img_url_fallback}
+          />
+            <div className="c-Portfolio--Content">
+              <div className="c-Portfolio--Text">
+                <h5 className="c-Portfolio--Title">{i.title}</h5>
+                <p className="c-Portfolio--Category">{i.category}</p>
               </div>
-              <div className="c-Portfolio--Background"></div>
-          </Link>
-        </div>
-      ))}
-    </div>
+            </div>
+            <div className="c-Portfolio--Background"></div>
+        </Link>
+      </PortfolioItem>
+    ))}
   </Portfolio>
 );

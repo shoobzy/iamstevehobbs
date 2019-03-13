@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import Intro from "./Intro";
 import Portfolio from "./Portfolio";
 
-class Home extends React.Component {
-  componentDidMount() {
+const HomeContainer = posed.div({
+  enter: { staggerChildren: 60, delay: 300 },
+  exit: { staggerChildren: 10, staggerDirection: -1 }
+});
+
+function Home () {
+  useEffect(() => {
     document.body.classList.remove("u-DarkMode");
 
     // Turn this into a little function
@@ -12,17 +18,15 @@ class Home extends React.Component {
     textElems.forEach(function(textElem) {
       textElem.classList.remove("u-Foreground");
     });
-  }
+  });
 
-  render() {
-    return (
-      <div className="c-Page">
-        <ScrollToTopOnMount />
-        <Intro />
-        <Portfolio />
-      </div>
-    )
-  }
+  return (
+    <HomeContainer className="c-Page">
+      <ScrollToTopOnMount />
+      <Intro />
+      <Portfolio />
+    </HomeContainer>
+  );
 }
 
 export default Home;

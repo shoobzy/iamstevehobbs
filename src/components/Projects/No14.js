@@ -1,10 +1,10 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
+import ProjectItem from "../ProjectTpl";
 import HotTub from "../../images/projects/no-14/no-14.jpg";
 
 const No14Project = () => {
   return (
-    <PortfolioItem
+    <ProjectItem
       title="No.14 Verbier"
       category="Web"
       image_non_webp={HotTub}

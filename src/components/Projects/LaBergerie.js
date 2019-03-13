@@ -1,12 +1,12 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
+import ProjectItem from "../ProjectTpl";
 import Exterior from "../../images/projects/la-bergerie/exterior.webp";
 import ExteriorFallback from "../../images/projects/la-bergerie/exterior.jpg";
 import Cards from "../../images/projects/la-bergerie/business-cards.jpg";
 
 const LaBergerieProject = () => {
   return (
-    <PortfolioItem
+    <ProjectItem
       title="La Bergerie"
       category="Web, Branding"
       image_webp={Exterior}

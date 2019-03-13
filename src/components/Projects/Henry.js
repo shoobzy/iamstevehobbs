@@ -1,12 +1,12 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
+import ProjectItem from "../ProjectTpl";
 import HenryPoster from "../../images/projects/henry/henry-poster.webp"
 import HenryPosterFallback from "../../images/projects/henry/henry-poster.jpg"
 import HenryPosterFull from "../../images/projects/henry/henry-poster-full.png"
 
 const HenryProject = () => {
   return (
-    <PortfolioItem
+    <ProjectItem
       category="Digital, Print"
       image_webp={HenryPoster}
       image_non_webp={HenryPosterFallback}

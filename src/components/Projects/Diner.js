@@ -1,12 +1,12 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
+import ProjectItem from "../ProjectTpl";
 import Diner from "../../images/projects/diner/diner.webp";
 import DinerFallback from "../../images/projects/diner/diner.jpg";
 import DinerWrap from "../../images/projects/diner/diner-full.jpg";
 
 const DinerProject = () => {
   return (
-    <PortfolioItem
+    <ProjectItem
       title="Diner"
       category="Digital, Print"
       image_webp={Diner}
