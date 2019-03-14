@@ -147,14 +147,14 @@
 }
 
 .c-Modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    // display: none;
+    // position: fixed;
+    // z-index: 1;
+    // left: 0;
+    // top: 0;
+    // width: 100%;
+    // height: 100%;
+    // overflow: auto;
     background: rgba($color: $ink, $alpha: .9);
 }
 
@@ -163,8 +163,8 @@
     display: block;
     padding-top: #{$o-gutter * 2.5};
     text-align: center;
-    animation-name: fadeInUp;
-    animation-duration: .5s;
+    // animation-name: fadeInUp;
+    // animation-duration: .5s;
 }
 
 .c-Modal--Close {

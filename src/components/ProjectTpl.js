@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import {
@@ -9,23 +9,15 @@ import Img from "react-webp-image";
 import Loader from "./Loader";
 import Modal from "./Modal/Modal";
 
-class ProjectItem extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showModal: false
-    }
-  }
+const ProjectContainer = posed.div({
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
+})
 
-  toggleModal = () => {
-    this.setState({
-      showModal: !this.state.showModal
-    });
+const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, image_secondary, ext_url }) => {
+  const [modal, setModal] = useState()
 
-    document.body.classList.toggle("u-ModalOpen");
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     document.body.classList.add("u-Animate","u-DarkMode");
 
     // Turn this into a little function
@@ -33,31 +25,20 @@ class ProjectItem extends React.Component {
     textElems.forEach(function(textElem) {
       textElem.classList.add("u-Foreground");
     });
-  }
 
-  componentWillUnmount() {
-    document.body.classList.remove("u-Animate","u-DarkMode");
+    return function cleanup() {
+      document.body.classList.remove("u-Animate","u-DarkMode");
 
-    // Turn this into a little function
-    const textElems = document.querySelectorAll("h1, h2, h3, h4, h5, p, a");
-    textElems.forEach(function(textElem) {
-      textElem.classList.remove("u-Foreground");
-    });
-  }
+      // Turn this into a little function
+      const textElems = document.querySelectorAll("h1, h2, h3, h4, h5, p, a");
+      textElems.forEach(function(textElem) {
+        textElem.classList.remove("u-Foreground");
+      });
+    };
+  });
 
-  render() {
-    const {
-      title,
-      category,
-      image_webp,
-      image_non_webp,
-      overview,
-      image_secondary,
-      ext_url,
-      modal
-    } = this.props
-
-    return (
+  return (
+    <ProjectContainer>
       <Preloader>
         <div className="c-Page c-Project">
           <ScrollToTopOnMount />
@@ -99,15 +80,14 @@ class ProjectItem extends React.Component {
             {modal && (
               <div>
                 <Modal
-                  show={this.state.showModal}
-                  closeCallback={this.toggleModal}
-                  customClass="c-Modal"
+                  open={index === modal}
+                  closeModal={setModal}
                 >
-                  <React.Fragment>
+                  <Fragment key={title}>
                     <img src={modal} className="h-ResponsiveImg" />
-                  </React.Fragment>
+                  </Fragment>
                 </Modal>
-                <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
+                <p><a className="c-Btn" open={index === modal} closeModal={setModal}>View fullsize</a></p>
               </div>
             )}
           </div>
@@ -122,8 +102,8 @@ class ProjectItem extends React.Component {
           <Loader/>
         </Placeholder>
       </Preloader>
-    )
-  }
+    </ProjectContainer>
+  )
 }
 
 export default ProjectItem;

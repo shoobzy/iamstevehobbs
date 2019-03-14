@@ -38,7 +38,7 @@ const Portfolio = posed.div({
 const PortfolioItem = posed.div({
   enter: { y: 0, opacity: 1 },
   exit: { y: 50, opacity: 0 }
-})
+});
 
 const projects = [
   { id: 0, path: "/la-bergerie", img_url: LaBergerie, img_url_fallback: LaBergerieFallback, title: "La Bergerie", category: "Web" },

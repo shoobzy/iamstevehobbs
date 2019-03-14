@@ -9,7 +9,7 @@ const HomeContainer = posed.div({
   exit: { staggerChildren: 10, staggerDirection: -1 }
 });
 
-function Home () {
+function Home() {
   useEffect(() => {
     document.body.classList.remove("u-DarkMode");
 
