@@ -14,8 +14,10 @@ const ProjectContainer = posed.div({
   exit: { y: 50, opacity: 0 }
 })
 
-const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, image_secondary, ext_url }) => {
-  const [modal, setModal] = useState()
+const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, image_secondary, ext_url, modal }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const onButtonClick = () => setIsOpen(true);
+  const onModalClose = () => setIsOpen(false);
 
   useEffect(() => {
     document.body.classList.add("u-Animate","u-DarkMode");
@@ -79,15 +81,19 @@ const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, im
             )}
             {modal && (
               <div>
-                <Modal
-                  open={index === modal}
-                  closeModal={setModal}
-                >
-                  <Fragment key={title}>
+                <p>
+                  <a
+                    className="c-Btn"
+                    onClick={onButtonClick}
+                  >
+                    View fullsize
+                  </a>
+                </p>
+                {isOpen && <Modal onModalClose={onModalClose}>
+                  <Fragment>
                     <img src={modal} className="h-ResponsiveImg" />
                   </Fragment>
-                </Modal>
-                <p><a className="c-Btn" open={index === modal} closeModal={setModal}>View fullsize</a></p>
+                </Modal>}
               </div>
             )}
           </div>

@@ -1,41 +1,68 @@
-import React from "react";
-import posed from "react-pose";
-import styled from "styled-components";
+import React, { useRef, useEffect } from "react";
+import posed, { PoseGroup } from "react-pose";
 
-const ModalContent = posed.div({
-  enter: { y: 0, opacity: 1 },
-  exit: { y: 50, opacity: 0 }
+const ModalContainer = posed.div({
+  enter: {
+    y: 0,
+    opacity: 1,
+    delay: 300,
+    transition: {
+      y: { type: 'spring', stiffness: 1000, damping: 15 },
+      default: { duration: 300 }
+    }
+  },
+  exit: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 150 }
+  }
 });
 
-const Modal = styled.div`
-  display: ${props => (props.open ? `block` : `none`)};
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-`
+const Shade = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+});
 
-export default ({ open, closeModal, children }) => {
-  <Modal
-    className="c-Modal"
-    open={open}
-    onClick={closeModal}
-  >
-    <ModalContent
-      className="c-Modal--Content o-Container"
-      onClick={event => event.stopPropagation()}
-    >
-      {children}
-      <button
-        title="Close"
-        className="c-Btn c-Modal--Close"
-        onClick={closeModal}
-      >
-        &times;
-      </button>
-    </ModalContent>
-  </Modal>
+function useClickOutside(ref, onModalClose) {
+  function handleStatusChange(event) {
+    if (!ref.current.contains(event.target)) {
+      onModalClose();
+    }
+  }
+
+  document.addEventListener("click", handleStatusChange)
+
+  return function cleanup() {
+    document.removeEventListener("click", handleStatusChange)
+  };
 }
+
+function Modal({ isOpen, onModalClose, children }) {
+  const modalRef = useRef(null);
+
+  useEffect(() =>
+    useClickOutside(modalRef, onModalClose)
+  );
+
+  return (
+    <PoseGroup>
+      <Shade
+        key="shade"
+        className="shade"
+      />
+      <ModalContainer
+        key="modal"
+        className="c-Modal"
+      >
+        <div
+          className="c-Modal--Content o-Container"
+          ref={modalRef}
+        >
+          {children}
+        </div>
+      </ModalContainer>
+    </PoseGroup>
+  );
+}
+
+export default Modal;
