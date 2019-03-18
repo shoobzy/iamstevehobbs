@@ -32,7 +32,7 @@ import MilkywayFallback from "../images/portfolio/milkyway.jpg";
 
 const Portfolio = posed.div({
   enter: { staggerChildren: 60, delay: 300 },
-  exit: { staggerChildren: 10, staggerDirection: -1 }
+  exit: { staggerChildren: 20, staggerDirection: -1 }
 });
 
 const PortfolioItem = posed.div({

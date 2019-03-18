@@ -10,7 +10,7 @@ import Loader from "./Loader";
 import Modal from "./Modal/Modal";
 
 const ProjectContainer = posed.div({
-  enter: { y: 0, opacity: 1 },
+  enter: { y: 0, opacity: 1, delay: 150 },
   exit: { y: 50, opacity: 0 }
 })
 

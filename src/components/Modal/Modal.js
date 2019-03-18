@@ -37,7 +37,7 @@ function useClickOutside(ref, onModalClose) {
   };
 }
 
-function Modal({ isOpen, onModalClose, children }) {
+function Modal({ onModalClose, children }) {
   const modalRef = useRef(null);
 
   useEffect(() =>
@@ -53,11 +53,9 @@ function Modal({ isOpen, onModalClose, children }) {
       <ModalContainer
         key="modal"
         className="c-Modal"
+        ref={modalRef}
       >
-        <div
-          className="c-Modal--Content o-Container"
-          ref={modalRef}
-        >
+        <div className="c-Modal--Content o-Container">
           {children}
         </div>
       </ModalContainer>
