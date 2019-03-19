@@ -4,7 +4,7 @@ import posed from "react-pose";
 const ReactIcon = posed.i({
   hoverable: true,
   init: {
-    rotate: "359deg",
+    rotate: "180deg",
   },
   hover: {
     rotate: "360deg",
@@ -17,8 +17,6 @@ const ReactIcon = posed.i({
 });
 
 function Footer() {
-  const [isHovered, setIsHovered] = useState(false);
-  const hover = () => setIsHovered(true);
   const iconStyle = {color: "#61dafb"};
 
   return (
