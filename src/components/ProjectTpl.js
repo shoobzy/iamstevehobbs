@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import {
@@ -12,7 +12,7 @@ import Modal from "./Modal/Modal";
 const ProjectContainer = posed.div({
   enter: { y: 0, opacity: 1, delay: 150 },
   exit: { y: 50, opacity: 0 }
-})
+});
 
 const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, image_secondary, ext_url, modal }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, im
   const onModalClose = () => setIsOpen(false);
 
   useEffect(() => {
-    document.body.classList.add("u-Animate","u-DarkMode");
+    document.body.classList.add("u-Animate", "u-DarkMode");
 
     // Turn this into a little function
     const textElems = document.querySelectorAll("h1, h2, h3, h4, h5, p, a");
@@ -69,18 +69,18 @@ const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, im
           </div>
           <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
             {overview && (
-              <div>
+              <React.Fragment>
                 <h5>Overview</h5>
                 <p className="c-Title--Delta c-Project--Overview">
                   {overview}
                 </p>
-              </div>
+              </React.Fragment>
             )}
             {ext_url && (
               <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
             )}
             {modal && (
-              <div>
+              <React.Fragment>
                 <p>
                   <a
                     className="c-Btn"
@@ -90,11 +90,9 @@ const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, im
                   </a>
                 </p>
                 {isOpen && <Modal onModalClose={onModalClose}>
-                  <Fragment>
-                    <img src={modal} className="h-ResponsiveImg" />
-                  </Fragment>
+                  <img src={modal} className="h-ResponsiveImg" />
                 </Modal>}
-              </div>
+              </React.Fragment>
             )}
           </div>
           {image_secondary && (

@@ -74,10 +74,10 @@ const project_routes = [
 ];
 
 const NotFound = () => (
-  <div>
+  <React.Fragment>
     <h2>Page not found</h2>
     <p>Return to <a href="/">homepage</a></p>
-  </div>
+  </React.Fragment>
 )
 
 const RouteContainer = posed.div({
