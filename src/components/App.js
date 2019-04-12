@@ -90,25 +90,23 @@ function App() {
     <Preloader>
       <div className="o-Page">
         <Header />
-        <div className="o-Container">
-          <Route render={({location}) => (
-            <PoseGroup>
-              <RouteContainer key={location.pathname}>
-                <Switch location={location}>
-                  <Route exact path="/" component={Home} key="home" />
-                  {project_routes.map(i => (
-                    <Route
-                      key={i.id}
-                      path={i.path}
-                      component={i.component}
-                    />
-                  ))}
-                  <Route component={NotFound} key="error" />
-                </Switch>
-              </RouteContainer>
-            </PoseGroup>
-          )} />
-        </div>
+        <Route render={({location}) => (
+          <PoseGroup>
+            <RouteContainer key={location.pathname}>
+              <Switch location={location}>
+                <Route exact path="/" component={Home} key="home" />
+                {project_routes.map(i => (
+                  <Route
+                    key={i.id}
+                    path={i.path}
+                    component={i.component}
+                  />
+                ))}
+                <Route component={NotFound} key="error" />
+              </Switch>
+            </RouteContainer>
+          </PoseGroup>
+        )} />
         <Footer />
       </div>
       <Placeholder>

@@ -31,7 +31,7 @@ import SolsticeFallback from "../images/portfolio/solstice.jpg";
 import MilkywayFallback from "../images/portfolio/milkyway.jpg";
 
 const Portfolio = posed.div({
-  enter: { staggerChildren: 60, delay: 300 },
+  enter: { staggerChildren: 60, delay: 150 },
   exit: { staggerChildren: 20, staggerDirection: -1 }
 });
 
@@ -56,27 +56,29 @@ const projects = [
 ];
 
 export default () => (
-  <Portfolio className="o-Grid c-Portfolio">
-    {projects.map(i => (
-      <PortfolioItem
-        key={i.id}
-        className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
-      >
-        <Link to={i.path}>
-          <Img
-            className="c-Portfolio--ItemImg h-ResponsiveImg"
-            webp={i.img_url}
-            src={i.img_url_fallback}
-          />
-            <div className="c-Portfolio--Content">
-              <div className="c-Portfolio--Text">
-                <h5 className="c-Portfolio--Title">{i.title}</h5>
-                <p className="c-Portfolio--Category">{i.category}</p>
+  <div className="o-Container">
+    <Portfolio className="o-Grid c-Portfolio">
+      {projects.map(i => (
+        <PortfolioItem
+          key={i.id}
+          className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
+        >
+          <Link to={i.path}>
+            <Img
+              className="c-Portfolio--ItemImg h-ResponsiveImg"
+              webp={i.img_url}
+              src={i.img_url_fallback}
+            />
+              <div className="c-Portfolio--Content">
+                <div className="c-Portfolio--Text">
+                  <h5 className="c-Portfolio--Title">{i.title}</h5>
+                  <p className="c-Portfolio--Category">{i.category}</p>
+                </div>
               </div>
-            </div>
-            <div className="c-Portfolio--Background"></div>
-        </Link>
-      </PortfolioItem>
-    ))}
-  </Portfolio>
+              <div className="c-Portfolio--Background"></div>
+          </Link>
+        </PortfolioItem>
+      ))}
+    </Portfolio>
+  </div>
 );

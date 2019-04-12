@@ -6,15 +6,15 @@ $o-gutter: 28px;
 .o-Container {
     max-width: $o-container;
     margin: 0 auto;
-    padding: $o-gutter * 2.25 $o-gutter * 2;
+    padding: $o-gutter * 2.25 $o-gutter * 2 0;
 
     @include for-desktop-down {
         max-width: calc(#{$o-container} - #{$o-gutter * 4});
-        padding: #{$o-gutter * 2} #{$o-gutter * 3};
+        padding: #{$o-gutter * 2} #{$o-gutter * 3} 0;
     }
 
     @include for-tablet-landscape-down {
-        padding: #{$o-gutter * 2} #{$o-gutter * 1.25};
+        padding: #{$o-gutter * 2} #{$o-gutter * 1.25} 0;
     }
 }
 
