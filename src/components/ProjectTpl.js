@@ -1,16 +1,13 @@
 import React from "react";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
-import {
-  Preloader,
-  Placeholder
-} from "react-preloading-screen";
-import Img from "react-webp-image";
 import Loader from "./Loader";
-import Modal from "./Modal/Modal";
+import Img from "react-webp-image";
+
+const Modal = React.lazy(() => import("./Modal/Modal"));
 
 const ProjectContainer = posed.div({
-  enter: { y: 0, opacity: 1, delay: 150 },
+  enter: { y: 0, opacity: 1, delay: 300 },
   exit: {y: 75, opacity: 0 }
 });
 
@@ -63,8 +60,11 @@ class PortfolioItem extends React.Component {
     } = this.props
 
     return (
-      <ProjectContainer>
-        <Preloader>
+      <React.Suspense fallback={<Loader/>}>
+        <ProjectContainer
+          initialPose="exit"
+          pose="enter"
+        >
           <div className="c-Page fadeInUp c-Project">
             <ScrollToTopOnMount />
             <div className="c-Project--Header">
@@ -132,11 +132,8 @@ class PortfolioItem extends React.Component {
               </div>
             )}
           </div>
-          <Placeholder>
-            <Loader/>
-          </Placeholder>
-        </Preloader>
-      </ProjectContainer>
+        </ProjectContainer>
+      </React.Suspense>
     )
   }
 }

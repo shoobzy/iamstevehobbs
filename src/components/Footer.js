@@ -1,20 +1,4 @@
 import React from "react";
-// import posed from "react-pose";
-
-// const ReactIcon = posed.i({
-//   hoverable: true,
-//   init: {
-//     rotate: "180deg",
-//   },
-//   hover: {
-//     rotate: "360deg",
-//   },
-//   transition: {
-//     type: "spring",
-//     stiffness: 800,
-//     duration: 30000
-//   }
-// });
 
 function Footer() {
   const iconStyle = {color: "#61dafb"};
