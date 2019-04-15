@@ -11,7 +11,7 @@ import Modal from "./Modal/Modal";
 
 const ProjectContainer = posed.div({
   enter: { y: 0, opacity: 1, delay: 150 },
-  exit: { y: 50, opacity: 0 }
+  exit: {y: 75, opacity: 0 }
 });
 
 class PortfolioItem extends React.Component {
@@ -78,7 +78,7 @@ class PortfolioItem extends React.Component {
                   </p>
                 </div>
               </div>
-              <div class="c-Project--ItemImg">
+              <div className="c-Project--ItemImg">
                 {image_webp && image_non_webp && (
                   <Img
                     className="h-ResponsiveImg"
@@ -124,7 +124,7 @@ class PortfolioItem extends React.Component {
               </div>
             </div>
             {image_secondary && (
-              <div class="c-Project--ItemImg">
+              <div className="c-Project--ItemImg">
                 <img
                   className="h-ResponsiveImg"
                   src={image_secondary}

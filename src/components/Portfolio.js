@@ -37,7 +37,7 @@ const Portfolio = posed.div({
 
 const PortfolioItem = posed.div({
   enter: { y: 0, opacity: 1 },
-  exit: { y: 50, opacity: 0 }
+  exit: {y: 75, opacity: 0 }
 });
 
 const projects = [

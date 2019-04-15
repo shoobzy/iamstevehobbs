@@ -92,7 +92,11 @@ function App() {
         <Header />
         <Route render={({location}) => (
           <PoseGroup>
-            <RouteContainer key={location.pathname}>
+            <RouteContainer
+              key={location.pathname}
+              initialPose="enter"
+              pose="exit"
+            >
               <Switch location={location}>
                 <Route exact path="/" component={Home} key="home" />
                 {project_routes.map(i => (
