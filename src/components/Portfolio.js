@@ -41,18 +41,18 @@ const PortfolioItem = posed.div({
 });
 
 const projects = [
-  { id: 0, path: "/la-bergerie", img_url: LaBergerie, img_url_fallback: LaBergerieFallback, title: "La Bergerie", category: "Web" },
-  { id: 1, path: "/three-streams", img_url: ThreeStreams, img_url_fallback: ThreeStreamsFallback, title: "Three Streams", category: "Digital"},
-  { id: 2, path: "/e-commerce-concept", img_url: ECommerce, img_url_fallback: ECommerceFallback, title: "Ecommerce concept", category: "Digital" },
-  { id: 3, path: "/product-detail-concept", img_url: ProductPage, img_url_fallback: ProductPageFallback, title: "Product page concept", category: "Digital" },
-  { id: 4, path: "/bethany", img_url: Bethany, img_url_fallback: BethanyFallback, title: "Bethany", category: "Print" },
-  { id: 5, path: "/seetheworld", img_url: SeeTheWorld, img_url_fallback: SeeTheWorldFallback, title: "SeeTheWorld", category: "Web" },
-  { id: 6, path: "/henry", img_url: Henry, img_url_fallback: HenryFallback, title: "Henry", category: "Print" },
-  { id: 7, path: "/no-14", img_url: No14, img_url_fallback: No14Fallback, title: "No.14 Verbier", category: "Web" },
-  { id: 8, path: "/moonshine", img_url: Moonshine, img_url_fallback: MoonshineFallback, title: "Moonshine", category: "Digital" },
-  { id: 9, path: "/diner", img_url: Diner, img_url_fallback: DinerFallback, title: "Diner wrap", category: "Print" },
-  { id: 10, path: "/solstice", img_url: Solstice, img_url_fallback: SolsticeFallback, title: "Solstice", category: "Photography" },
-  { id: 11, path: "/milkyway", img_url: Milkyway, img_url_fallback: MilkywayFallback, title: "Milkyway", category: "Photography" }
+  { id: 0, path: "/la-bergerie", img_url: LaBergerie, img_url_fallback: LaBergerieFallback, img_alt: "La Bergerie web project", title: "La Bergerie", category: "Web" },
+  { id: 1, path: "/three-streams", img_url: ThreeStreams, img_url_fallback: ThreeStreamsFallback, img_alt: "Three Streams logo design concept", title: "Three Streams", category: "Digital"},
+  { id: 2, path: "/e-commerce-concept", img_url: ECommerce, img_url_fallback: ECommerceFallback, img_alt: "eCommerce landing page design concept", title: "Ecommerce concept", category: "Digital" },
+  { id: 3, path: "/product-detail-concept", img_url: ProductPage, img_url_fallback: ProductPageFallback, img_alt: "Product detail page design concept", title: "Product page concept", category: "Digital" },
+  { id: 4, path: "/bethany", img_url: Bethany, img_url_fallback: BethanyFallback, img_alt: "A2 Printed poster", title: "Bethany", category: "Print" },
+  { id: 5, path: "/seetheworld", img_url: SeeTheWorld, img_url_fallback: SeeTheWorldFallback, img_alt: "SeeTheWorld - web project", title: "SeeTheWorld", category: "Web" },
+  { id: 6, path: "/henry", img_url: Henry, img_url_fallback: HenryFallback, img_alt: "A2 Printed poster", title: "Henry", category: "Print" },
+  { id: 7, path: "/no-14", img_url: No14, img_url_fallback: No14Fallback, img_alt: "No.14 - web project", title: "No.14 Verbier", category: "Web" },
+  { id: 8, path: "/moonshine", img_url: Moonshine, img_url_fallback: MoonshineFallback, img_alt: "Illustration for large format print", title: "Moonshine", category: "Digital" },
+  { id: 9, path: "/diner", img_url: Diner, img_url_fallback: DinerFallback, img_alt: "Vinyl wrap designs", title: "Diner wrap", category: "Print" },
+  { id: 10, path: "/solstice", img_url: Solstice, img_url_fallback: SolsticeFallback, img_alt: "Summer solstice - Photography", title: "Solstice", category: "Photography" },
+  { id: 11, path: "/milkyway", img_url: Milkyway, img_url_fallback: MilkywayFallback, img_alt: "Milkyway - Photography", title: "Milkyway", category: "Photography" }
 ];
 
 export default () => (
@@ -68,6 +68,7 @@ export default () => (
               className="c-Portfolio--ItemImg h-ResponsiveImg"
               webp={i.img_url}
               src={i.img_url_fallback}
+              alt={i.img_alt}
             />
               <div className="c-Portfolio--Content">
                 <div className="c-Portfolio--Text">
