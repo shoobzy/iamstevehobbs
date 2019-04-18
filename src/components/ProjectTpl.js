@@ -105,7 +105,7 @@ class PortfolioItem extends React.Component {
                   </React.Fragment>
                 )}
                 {ext_url && (
-                  <p><a className="c-Btn" href={ext_url} target="_blank">Visit</a></p>
+                  <p><a className="c-Btn" href={ext_url} target="_blank" rel="noreferrer">Visit</a></p>
                 )}
                 {modal && (
                   <React.Fragment>
