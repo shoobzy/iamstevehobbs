@@ -1,0 +1,13 @@
+[[headers]]
+for = "/"
+[headers.values]
+Link = [
+"</src.*.css> rel=preload as=stylesheet",
+"</src.*.js> rel=preload as=script",
+"</*.webp> rel=preload as=image",
+"</*.jpg> rel=preload as=image",
+"</*.png> rel=preload as=image"
+]
+[[headers]]
+for = "/*"
+[headers.values]
