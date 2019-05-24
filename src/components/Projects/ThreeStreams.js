@@ -1,11 +1,12 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import Logo from "../../images/projects/three-streams/logo-main.webp";
 import LogoFallback from "../../images/projects/three-streams/logo-main.png";
 
-const ThreeStreamsProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function ThreeStreamsProject() {
   return (
-    <ProjectItem
+    <PortfolioItem
       title="Three Streams"
       category="Branding"
       image_webp={Logo}

@@ -77,23 +77,21 @@ class PortfolioItem extends React.Component {
                 </p>
               </div>
             </div>
-            <React.Suspense fallback={<Loader/>}>
-              <div className="c-Project--ItemImg">
-                {image_webp && image_non_webp && (
-                  <Img
-                    className="h-ResponsiveImg"
-                    webp={image_webp}
-                    src={image_non_webp}
-                  />
-                )}
-                {!image_webp && image_non_webp && (
-                  <img
-                    className="h-ResponsiveImg"
-                    src={image_non_webp}
-                  />
-                )}
-              </div>
-            </React.Suspense>
+            <div className="c-Project--ItemImg">
+              {image_webp && image_non_webp && (
+                <Img
+                  className="h-ResponsiveImg"
+                  webp={image_webp}
+                  src={image_non_webp}
+                />
+              )}
+              {!image_webp && image_non_webp && (
+                <img
+                  className="h-ResponsiveImg"
+                  src={image_non_webp}
+                />
+              )}
+            </div>
           </div>
           <div className="o-Container">
             <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">

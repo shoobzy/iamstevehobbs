@@ -1,10 +1,11 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import StwSplash from "../../images/projects/stw/stw-splash.jpg";
 
-const StwProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function StwProject() {
   return (
-    <ProjectItem
+    <PortfolioItem
       title="SeeTheWorld"
       category="Web"
       image_non_webp={StwSplash}

@@ -1,12 +1,13 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import Lander from "../../images/projects/ecommerce/ecommerce-concept.webp";
 import LanderFallback from "../../images/projects/ecommerce/ecommerce-concept.jpg";
 import LanderFull from "../../images/projects/ecommerce/ecommerce-concept-full.png";
 
-const ECommerceProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function ECommerceProject() {
   return (
-    <ProjectItem
+    <PortfolioItem
       title="ECommerce Lander Concept"
       category="Web, Digital"
       image_webp={Lander}

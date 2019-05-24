@@ -1,12 +1,13 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import BethanyPoster from "../../images/projects/bethany/bethany-poster.webp"
 import BethanyPosterFallback from "../../images/projects/bethany/bethany-poster.jpg"
 import BethanyPosterFull from "../../images/projects/bethany/bethany-poster-full.png"
 
-const BethanyProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function BethanyProject() {
   return (
-    <ProjectItem
+    <PortfolioItem
       category="Digital, Print"
       image_webp={BethanyPoster}
       image_non_webp={BethanyPosterFallback}

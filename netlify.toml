@@ -11,3 +11,7 @@ Link = [
 [[headers]]
 for = "/*"
 [headers.values]
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

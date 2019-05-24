@@ -1,11 +1,12 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import DeailPage from "../../images/projects/product-detail/product-detail.jpg";
 import DeailPageFull from "../../images/projects/product-detail/product-detail-full.png";
 
-const DetailPageProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function DetailPageProject() {
   return (
-    <ProjectItem
+    <PortfolioItem
       title="Product Page Concept"
       category="Web, Digital"
       image_non_webp={DeailPage}
