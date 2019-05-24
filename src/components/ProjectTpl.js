@@ -10,7 +10,7 @@ import Loader from "./Loader";
 import Modal from "./Modal/Modal";
 
 const ProjectContainer = posed.div({
-  enter: { y: 0, opacity: 1, delay: 150 },
+  enter: { y: 0, opacity: 1, delay: 300 },
   exit: { y: 50, opacity: 0 }
 });
 
@@ -89,9 +89,11 @@ const ProjectItem = ({ title, category, image_webp, image_non_webp, overview, im
                     View fullsize
                   </a>
                 </p>
-                {isOpen && <Modal onModalClose={onModalClose}>
-                  <img src={modal} className="h-ResponsiveImg" />
-                </Modal>}
+                {isOpen && (
+                  <Modal onModalClose={onModalClose}>
+                    <img src={modal} className="h-ResponsiveImg" />
+                  </Modal>
+                )}
               </React.Fragment>
             )}
           </div>
