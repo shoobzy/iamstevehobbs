@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
-import Intro from "./Intro";
 import Portfolio from "./Portfolio";
 
 const HomeContainer = posed.div({
-  enter: { staggerChildren: 60, delay: 300 },
-  exit: { staggerChildren: 10, staggerDirection: -1 }
+  enter: { y: 0, opacity: 1, delay: 150 },
+  exit: {y: 75, opacity: 0 }
 });
 
-function Home() {
-  useEffect(() => {
+class Home extends React.Component {
+  componentDidMount() {
     document.body.classList.remove("u-DarkMode");
 
     // Turn this into a little function
@@ -18,15 +17,31 @@ function Home() {
     textElems.forEach(function(textElem) {
       textElem.classList.remove("u-Foreground");
     });
-  });
+  }
 
-  return (
-    <HomeContainer className="c-Page">
-      <ScrollToTopOnMount />
-      <Intro />
-      <Portfolio />
-    </HomeContainer>
-  );
+  render() {
+    return (
+      <HomeContainer
+        className="c-Page"
+        initialPose="exit"
+        pose="enter"
+      >
+        <ScrollToTopOnMount />
+        <div className="o-Container">
+          <div className="c-Intro o-Grid">
+            <h1 className="c-Intro--Title o-Grid--Item 1/2-TabletPortraitUp-WithGutter">
+              Digital<br></br>
+              Designer<br></br>
+              Front-End<br></br>
+              Developer
+            </h1>
+            <p className="c-Title--Delta o-Grid--Item 1/2-TabletPortraitUp-WithGutter">With more than 8 years’ industry experience at combining web development and design.</p>
+          </div>
+        </div>
+        <Portfolio />
+      </HomeContainer>
+    )
+  }
 }
 
 export default Home;

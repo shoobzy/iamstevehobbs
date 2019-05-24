@@ -6,57 +6,29 @@ import {
 import posed, {
   PoseGroup
 } from "react-pose";
-import {
-  Preloader,
-  Placeholder
-} from "react-preloading-screen";
 
 import Loader from "./Loader";
 import Header from "./Header";
 import Footer from "./Footer";
-import Home from "./Home";
-import asyncComponent from "./AsyncComponent";
+
+const Home = React.lazy(() => import("./Home"));
 
 import "../style.css";
 
 // Figure this out
 // Create a core routing file?
-const LaBergerieProject = asyncComponent(() =>
-  import("./Projects/LaBergerie").then(module => module.default)
-)
-const ThreeStreamsProject = asyncComponent(() =>
-  import("./Projects/ThreeStreams").then(module => module.default)
-)
-const ECommerceProject = asyncComponent(() =>
-  import("./Projects/ECommerce").then(module => module.default)
-)
-const DetailPageProject = asyncComponent(() =>
-  import("./Projects/ProductPage").then(module => module.default)
-)
-const BethanyProject = asyncComponent(() =>
-  import("./Projects/Bethany").then(module => module.default)
-)
-const StwProject = asyncComponent(() =>
-  import("./Projects/Stw").then(module => module.default)
-)
-const HenryProject = asyncComponent(() =>
-  import("./Projects/Henry").then(module => module.default)
-)
-const No14Project = asyncComponent(() =>
-  import("./Projects/No14").then(module => module.default)
-)
-const MoonshineProject = asyncComponent(() =>
-  import("./Projects/Moonshine").then(module => module.default)
-)
-const DinerProject = asyncComponent(() =>
-  import("./Projects/Diner").then(module => module.default)
-)
-const SolsticeProject = asyncComponent(() =>
-  import("./Projects/Solstice").then(module => module.default)
-)
-const MilkyWayProject = asyncComponent(() =>
-  import("./Projects/MilkyWay").then(module => module.default)
-)
+const LaBergerieProject = React.lazy(() => import("./Projects/LaBergerie"));
+const ThreeStreamsProject = React.lazy(() => import("./Projects/ThreeStreams"));
+const ECommerceProject = React.lazy(() => import("./Projects/ECommerce"));
+const DetailPageProject = React.lazy(() => import("./Projects/ProductPage"));
+const BethanyProject = React.lazy(() => import("./Projects/Bethany"));
+const StwProject = React.lazy(() => import("./Projects/Stw"));
+const HenryProject = React.lazy(() => import("./Projects/Henry"));
+const No14Project = React.lazy(() => import("./Projects/No14"));
+const MoonshineProject = React.lazy(() => import("./Projects/Moonshine"));
+const DinerProject = React.lazy(() => import("./Projects/Diner"));
+const SolsticeProject = React.lazy(() => import("./Projects/Solstice"));
+const MilkyWayProject = React.lazy(() => import("./Projects/MilkyWay"));
 
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
@@ -87,34 +59,33 @@ const RouteContainer = posed.div({
 
 function App() {
   return (
-    <Preloader>
+    <React.Suspense fallback={<Loader/>}>
       <div className="o-Page">
         <Header />
-        <div className="o-Container">
-          <Route render={({location}) => (
-            <PoseGroup>
-              <RouteContainer key={location.pathname}>
-                <Switch location={location}>
-                  <Route exact path="/" component={Home} key="home" />
-                  {project_routes.map(i => (
-                    <Route
-                      key={i.id}
-                      path={i.path}
-                      component={i.component}
-                    />
-                  ))}
-                  <Route component={NotFound} key="error" />
-                </Switch>
-              </RouteContainer>
-            </PoseGroup>
-          )} />
-        </div>
+        <Route render={({location}) => (
+          <PoseGroup>
+            <RouteContainer
+              key={location.pathname}
+              initialPose="enter"
+              pose="exit"
+            >
+              <Switch location={location}>
+                <Route exact path="/" component={Home} key="home" />
+                {project_routes.map(i => (
+                  <Route
+                    key={i.id}
+                    path={i.path}
+                    component={i.component}
+                  />
+                ))}
+                <Route component={NotFound} key="error" />
+              </Switch>
+            </RouteContainer>
+          </PoseGroup>
+        )} />
         <Footer />
       </div>
-      <Placeholder>
-        <Loader/>
-      </Placeholder>
-    </Preloader>
+    </React.Suspense>
   );
 }
 
