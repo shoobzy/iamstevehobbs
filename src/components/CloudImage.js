@@ -13,6 +13,8 @@ function Image(props) {
         src={props.src}
         alt={props.alt}
         ratio={1.5}
+        operation="width"
+        size={props.size}
         className={props.class}
       />
     </CloudimageProvider>
