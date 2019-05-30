@@ -10,8 +10,7 @@ function LaBergerieProject() {
     <PortfolioItem
       title="La Bergerie"
       category="Web, Branding"
-      image_webp={Exterior}
-      image_non_webp={ExteriorFallback}
+      image_primary={Exterior}
       overview="La Bergerie is widely regarded as one of the finest privately-owned villas in Europe, available to rent for an unforgettable luxury holiday."
       ext_url="http://www.bergerieterreblanche.com/"
       image_secondary={Cards}

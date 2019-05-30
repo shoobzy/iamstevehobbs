@@ -8,7 +8,7 @@ function SolsticeProject() {
   return (
     <PortfolioItem
       category="Photography"
-      image_non_webp={Solstice}
+      image_primary={Solstice}
       modal={SolsticeFull}
     />
   )

@@ -1,8 +1,7 @@
 import React from "react";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
-import Loader from "./Loader";
-import Img from "react-webp-image";
+import Image from "./CloudImage";
 
 const Modal = React.lazy(() => import("./Modal/Modal"));
 
@@ -51,8 +50,7 @@ class PortfolioItem extends React.Component {
     const {
       title,
       category,
-      image_webp,
-      image_non_webp,
+      image_primary,
       overview,
       image_secondary,
       ext_url,
@@ -78,19 +76,10 @@ class PortfolioItem extends React.Component {
               </div>
             </div>
             <div className="c-Project--ItemImg">
-              {image_webp && image_non_webp && (
-                <Img
-                  className="h-ResponsiveImg"
-                  webp={image_webp}
-                  src={image_non_webp}
-                />
-              )}
-              {!image_webp && image_non_webp && (
-                <img
-                  className="h-ResponsiveImg"
-                  src={image_non_webp}
-                />
-              )}
+              <Image
+                src={image_primary}
+                className="h-ResponsiveImg"
+              />
             </div>
           </div>
           <div className="o-Container">
@@ -114,7 +103,10 @@ class PortfolioItem extends React.Component {
                     customClass="c-Modal"
                   >
                     <React.Fragment>
-                      <img src={modal} className="h-ResponsiveImg" />
+                      <Image
+                        src={modal}
+                        className="h-ResponsiveImg"
+                      />
                     </React.Fragment>
                   </Modal>
                   <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
@@ -124,9 +116,9 @@ class PortfolioItem extends React.Component {
           </div>
           {image_secondary && (
             <div className="c-Project--ItemImg">
-              <img
-                className="h-ResponsiveImg"
+              <Image
                 src={image_secondary}
+                className="h-ResponsiveImg"
               />
             </div>
           )}

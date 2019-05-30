@@ -9,7 +9,7 @@ function DetailPageProject() {
     <PortfolioItem
       title="Product Page Concept"
       category="Web, Digital"
-      image_non_webp={DeailPage}
+      image_primary={DeailPage}
       overview="Product detail view concept. Designed in Sketch."
       modal={DeailPageFull}
     />

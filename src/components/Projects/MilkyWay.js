@@ -8,7 +8,7 @@ function MilkyWayProject() {
   return (
     <PortfolioItem
       category="Photography"
-      image_non_webp={MilkyWay}
+      image_primary={MilkyWay}
       modal={MilkyWayFull}
     />
   )

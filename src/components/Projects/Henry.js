@@ -9,8 +9,7 @@ function HenryProject() {
   return (
     <PortfolioItem
       category="Digital, Print"
-      image_webp={HenryPoster}
-      image_non_webp={HenryPosterFallback}
+      image_primary={HenryPoster}
       overview="A2 print on Giclée Hahnemühle Pearl 285gsm. Designed in Adobe Illustrator"
       modal={HenryPosterFull}
     />

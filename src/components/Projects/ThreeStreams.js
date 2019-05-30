@@ -9,8 +9,7 @@ function ThreeStreamsProject() {
     <PortfolioItem
       title="Three Streams"
       category="Branding"
-      image_webp={Logo}
-      image_non_webp={LogoFallback}
+      image_primary={Logo}
       overview="Logo concept for Three Streams - a neuropsychology, psychotherapy, and spiritual practice."
     />
   )

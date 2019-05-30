@@ -10,8 +10,7 @@ function DinerProject() {
     <PortfolioItem
       title="Diner"
       category="Digital, Print"
-      image_webp={Diner}
-      image_non_webp={DinerFallback}
+      image_primary={Diner}
       overview="Large scale, vinyl wrap - designed to mask out glass partition."
       modal={DinerWrap}
     />

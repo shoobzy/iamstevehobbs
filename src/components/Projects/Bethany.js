@@ -9,8 +9,7 @@ function BethanyProject() {
   return (
     <PortfolioItem
       category="Digital, Print"
-      image_webp={BethanyPoster}
-      image_non_webp={BethanyPosterFallback}
+      image_primary={BethanyPoster}
       overview="A2 print on Giclée Hahnemühle Pearl 285gsm. Designed in Adobe Illustrator"
       modal={BethanyPosterFull}
     />

@@ -10,8 +10,7 @@ function ECommerceProject() {
     <PortfolioItem
       title="ECommerce Lander Concept"
       category="Web, Digital"
-      image_webp={Lander}
-      image_non_webp={LanderFallback}
+      image_primary={Lander}
       overview="Web landing page concept for an ECommerce company. Designed in Sketch."
       modal={LanderFull}
     />
