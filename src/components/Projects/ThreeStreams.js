@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/projects/three-streams/logo-main.jpg";
+import Logo from "../../images/projects/three-streams/logo-main.png";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
 
