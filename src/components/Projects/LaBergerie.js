@@ -1,6 +1,5 @@
 import React from "react";
-import Exterior from "../../images/projects/la-bergerie/exterior.webp";
-import ExteriorFallback from "../../images/projects/la-bergerie/exterior.jpg";
+import Exterior from "../../images/projects/la-bergerie/exterior.jpg";
 import Cards from "../../images/projects/la-bergerie/business-cards.jpg";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));

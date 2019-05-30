@@ -1,6 +1,5 @@
 import React from "react";
-import Lander from "../../images/projects/ecommerce/ecommerce-concept.webp";
-import LanderFallback from "../../images/projects/ecommerce/ecommerce-concept.jpg";
+import Lander from "../../images/projects/ecommerce/ecommerce-concept.jpg";
 import LanderFull from "../../images/projects/ecommerce/ecommerce-concept-full.png";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));

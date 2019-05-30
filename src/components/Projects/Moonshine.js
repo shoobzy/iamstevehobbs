@@ -1,6 +1,5 @@
 import React from "react";
-import Moonshine from "../../images/projects/moonshine/moonshine.webp";
-import MoonshineFallback from "../../images/projects/moonshine/moonshine.jpg";
+import Moonshine from "../../images/projects/moonshine/moonshine.jpg";
 import MoonshineFull from "../../images/projects/moonshine/moonshine-full.png";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));

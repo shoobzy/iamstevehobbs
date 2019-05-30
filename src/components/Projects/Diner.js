@@ -1,6 +1,5 @@
 import React from "react";
-import Diner from "../../images/projects/diner/diner.webp";
-import DinerFallback from "../../images/projects/diner/diner.jpg";
+import Diner from "../../images/projects/diner/diner.jpg";
 import DinerWrap from "../../images/projects/diner/diner-full.jpg";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));

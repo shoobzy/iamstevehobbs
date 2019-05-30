@@ -1,6 +1,5 @@
 import React from "react";
-import BethanyPoster from "../../images/projects/bethany/bethany-poster.webp"
-import BethanyPosterFallback from "../../images/projects/bethany/bethany-poster.jpg"
+import BethanyPoster from "../../images/projects/bethany/bethany-poster.jpg"
 import BethanyPosterFull from "../../images/projects/bethany/bethany-poster-full.png"
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
