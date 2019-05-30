@@ -50,7 +50,10 @@ export default () => (
           key={i.id}
           className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
         >
-          <Link to={i.path}>
+          <Link
+            to={i.path}
+            aria-label={"View project - " + i.img_alt}
+          >
             <Image
               src={i.img_url}
               alt={i.img_alt}
