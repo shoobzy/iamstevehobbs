@@ -1,12 +1,13 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import Moonshine from "../../images/projects/moonshine/moonshine.webp";
 import MoonshineFallback from "../../images/projects/moonshine/moonshine.jpg";
 import MoonshineFull from "../../images/projects/moonshine/moonshine-full.png";
 
-const MoonshineProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function MoonshineProject() {
   return (
-    <ProjectItem
+    <PortfolioItem
       title="Moonshine"
       category="Digital, Print"
       image_webp={Moonshine}

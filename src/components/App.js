@@ -10,6 +10,7 @@ import posed, {
 import Loader from "./Loader";
 import Header from "./Header";
 import Footer from "./Footer";
+
 const Home = React.lazy(() => import("./Home"));
 
 import "../style.css";
@@ -45,10 +46,10 @@ const project_routes = [
 ];
 
 const NotFound = () => (
-  <React.Fragment>
+  <div className="o-Container">
     <h2>Page not found</h2>
     <p>Return to <a href="/">homepage</a></p>
-  </React.Fragment>
+  </div>
 )
 
 const RouteContainer = posed.div({

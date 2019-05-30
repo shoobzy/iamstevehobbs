@@ -1,10 +1,11 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import HotTub from "../../images/projects/no-14/no-14.jpg";
 
-const No14Project = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function No14Project() {
   return (
-    <ProjectItem
+    <PortfolioItem
       title="No.14 Verbier"
       category="Web"
       image_non_webp={HotTub}

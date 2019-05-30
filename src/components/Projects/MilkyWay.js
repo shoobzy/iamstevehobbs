@@ -1,11 +1,12 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import MilkyWay from "../../images/projects/milkyway/milkyway.jpg";
 import MilkyWayFull from "../../images/projects/milkyway/milkyway-full.jpg";
 
-const MilkyWayProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function MilkyWayProject() {
   return (
-    <ProjectItem
+    <PortfolioItem
       category="Photography"
       image_non_webp={MilkyWay}
       modal={MilkyWayFull}

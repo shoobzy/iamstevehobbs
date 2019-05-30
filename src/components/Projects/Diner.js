@@ -1,12 +1,13 @@
 import React from "react";
-import ProjectItem from "../ProjectTpl";
 import Diner from "../../images/projects/diner/diner.webp";
 import DinerFallback from "../../images/projects/diner/diner.jpg";
 import DinerWrap from "../../images/projects/diner/diner-full.jpg";
 
-const DinerProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function DinerProject() {
   return (
-    <ProjectItem
+    <PortfolioItem
       title="Diner"
       category="Digital, Print"
       image_webp={Diner}

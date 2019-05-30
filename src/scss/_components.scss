@@ -105,6 +105,14 @@
     max-width: $o-container;
     margin: $o-gutter * 2.25 auto 0;
     padding: 0;
+
+    @include for-desktop-down {
+        max-width: calc(#{$o-container} - #{$o-gutter * 4});
+    }
+
+    @include for-tablet-landscape-up {
+        padding: 0 #{$o-gutter * 3};
+    }
 }
 
 .c-Project--Copy {
