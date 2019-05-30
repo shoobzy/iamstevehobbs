@@ -13,6 +13,7 @@ function DinerProject() {
       image_primary={Diner}
       overview="Large scale, vinyl wrap - designed to mask out glass partition."
       modal={DinerWrap}
+      modal_image_size="1098x732"
     />
   )
 }
