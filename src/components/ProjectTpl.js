@@ -79,7 +79,7 @@ class PortfolioItem extends React.Component {
             <div className="c-Project--ItemImg">
               <Image
                 src={image_primary}
-                size="1098x618"
+                alt={title}
                 className="h-ResponsiveImg"
               />
             </div>
