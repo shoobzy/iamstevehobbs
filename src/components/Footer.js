@@ -10,6 +10,8 @@ function Footer() {
           href="https://reactjs.org/"
           target="_blank"
           style={iconStyle}
+          rel="noreferrer"
+          aria-label="React - A JavaScript library for building user interfaces"
         >
           <i className="fab fa-react"></i>
         </a>
