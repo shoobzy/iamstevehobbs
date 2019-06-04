@@ -1,14 +1,15 @@
 import React from "react";
 import Img, { CloudimageProvider } from "react-cloudimage-responsive";
 
-const cloudimageConfig = {
+const cloudimageModalConfig = {
     token: "akksjsapen",
-    baseUrl: "https://pose-integration.iamstevehobbs.com/"
+    baseUrl: "https://pose-integration.iamstevehobbs.com/",
+    lazyLoading: false
 };
 
-function Image(props) {
+function ModalImage(props) {
   return (
-    <CloudimageProvider config={cloudimageConfig}>
+    <CloudimageProvider config={cloudimageModalConfig}>
       <Img
         src={props.src}
         alt={props.alt}
@@ -22,4 +23,4 @@ function Image(props) {
   );
 };
 
-export default Image;
+export default ModalImage;

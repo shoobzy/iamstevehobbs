@@ -2,6 +2,7 @@ import React from "react";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import Image from "./CloudImage";
+import ModalImage from "./CloudModalImage";
 
 const Modal = React.lazy(() => import("./Modal/Modal"));
 
@@ -104,7 +105,7 @@ class PortfolioItem extends React.Component {
                     customClass="c-Modal"
                   >
                     <React.Fragment>
-                      <Image
+                      <ModalImage
                         src={modal}
                         className="h-ResponsiveImg"
                       />
