@@ -12,7 +12,6 @@ function MoonshineProject() {
       image_primary={Moonshine}
       overview="Inspired by the 1930's art style of Max Fleischer, this 'battle flag' was designed for a boat representing the name 'Moonshine'."
       modal={MoonshineFull}
-      modal_image_size="1098x812"
     />
   )
 }

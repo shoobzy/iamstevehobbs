@@ -12,7 +12,6 @@ function ECommerceProject() {
       image_primary={Lander}
       overview="Web landing page concept for an ECommerce company. Designed in Sketch."
       modal={LanderFull}
-      modal_image_size="1440x4137"
     />
   )
 }
