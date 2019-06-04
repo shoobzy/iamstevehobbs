@@ -6,7 +6,7 @@
         position: relative;
         margin-left: $o-gutter * 1.5;
         padding-bottom: 13px;
-        font-size: $base-font-size;
+        font-size: $base-font-size * .875;
         font-family: $futura-bold;
         font-display: auto;
         line-height: $base-line-height;
@@ -15,7 +15,6 @@
 
         @include for-phone-only {
             margin-left: $base-font-size;
-            font-size: $base-font-size * .875;
         }
 
         &:first-child {
@@ -51,12 +50,4 @@
 .p-Nav--Inner {
     padding-top: $o-gutter * 1.5;
     padding-bottom: $o-gutter * 1.5;
-}
-
-.p-Nav--Item {
-    @include for-phone-only {
-        width: 100%;
-        padding-bottom: $base-font-size;
-        text-align: center;
-    }
 }
