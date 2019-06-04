@@ -12,8 +12,7 @@ function Image(props) {
       <Img
         src={props.src}
         alt={props.alt}
-        ratio={1.5}
-        operation="width"
+        operation="cdn"
         size={props.size}
         className={props.class}
       />
