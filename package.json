@@ -33,7 +33,6 @@
     "react-pose": "^4.0.8",
     "react-router": "^4.4.0",
     "react-router-dom": "^5.0.0",
-    "react-webp-image": "^1.0.4",
     "scss": "^0.2.4"
   },
   "devDependencies": {
