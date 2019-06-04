@@ -16,6 +16,7 @@ function Image(props) {
         operation="cdn"
         size={props.size}
         className={props.class}
+        f="webp"
       />
     </CloudimageProvider>
   );
