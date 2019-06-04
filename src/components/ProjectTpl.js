@@ -37,7 +37,7 @@ class PortfolioItem extends React.Component {
   }
 
   componentWillUnmount() {
-    document.body.classList.remove("u-Animate","u-DarkMode");
+    document.body.classList.remove("u-Animate","u-DarkMode","u-ModalOpen");
 
     // Turn this into a little function
     const textElems = document.querySelectorAll("h1, h2, h3, h4, h5, p, a");
