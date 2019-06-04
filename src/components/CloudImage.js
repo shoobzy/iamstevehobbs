@@ -3,7 +3,7 @@ import Img, { CloudimageProvider } from "react-cloudimage-responsive";
 
 const cloudimageConfig = {
     token: "akksjsapen",
-    baseUrl: "",
+    baseUrl: "https://pose-integration.iamstevehobbs.com/",
     lazyLoading: false
 };
 
