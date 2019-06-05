@@ -179,7 +179,8 @@
 .c-Modal--Content {
     position: relative;
     display: block;
-    padding-top: #{$o-gutter * 2.5};
+    padding-top: $o-gutter * 2.5;
+    padding-bottom: $o-gutter * 2.25;
     text-align: center;
     animation-name: fadeInUp;
     animation-duration: .5s;

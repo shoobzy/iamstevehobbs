@@ -55,7 +55,8 @@ class PortfolioItem extends React.Component {
       overview,
       image_secondary,
       ext_url,
-      modal
+      modal,
+      modal_image_size
     } = this.props
 
     return (
@@ -107,6 +108,7 @@ class PortfolioItem extends React.Component {
                     <React.Fragment>
                       <ModalImage
                         src={modal}
+                        size={modal_image_size}
                         className="h-ResponsiveImg"
                       />
                     </React.Fragment>

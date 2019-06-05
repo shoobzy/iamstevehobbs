@@ -11,6 +11,7 @@ function HenryProject() {
       image_primary={HenryPoster}
       overview="A2 print on Giclée Hahnemühle Pearl 285gsm. Designed in Adobe Illustrator"
       modal={HenryPosterFull}
+      modal_image_size="1098x1553"
     />
   )
 }
