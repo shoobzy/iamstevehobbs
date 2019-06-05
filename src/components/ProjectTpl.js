@@ -81,6 +81,7 @@ class PortfolioItem extends React.Component {
               <Image
                 src={image_primary}
                 alt={title}
+                size="1098x618"
                 className="h-ResponsiveImg"
               />
             </div>
