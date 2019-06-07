@@ -12,11 +12,7 @@ function Image(props) {
       <Img
         src={props.src}
         alt={props.alt}
-        operation="cdn"
-        size={props.size}
-        className={props.class}
-        filter="webp"
-        ratio={1.5}
+        ratio={props.ratio}
       />
     </CloudimageProvider>
   );

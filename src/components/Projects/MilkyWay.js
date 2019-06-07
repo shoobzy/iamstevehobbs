@@ -10,7 +10,7 @@ function MilkyWayProject() {
       category="Photography"
       image_primary={MilkyWay}
       modal={MilkyWayFull}
-      modal_image_size="1098x784"
+      modal_image_ratio="1.400510204081633"
     />
   )
 }

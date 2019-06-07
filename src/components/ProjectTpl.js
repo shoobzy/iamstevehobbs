@@ -56,7 +56,7 @@ class PortfolioItem extends React.Component {
       image_secondary,
       ext_url,
       modal,
-      modal_image_size
+      modal_image_ratio
     } = this.props
 
     return (
@@ -81,8 +81,7 @@ class PortfolioItem extends React.Component {
               <Image
                 src={image_primary}
                 alt={title}
-                size="1098x618"
-                className="h-ResponsiveImg"
+                ratio="1.776699029126214"
               />
             </div>
           </div>
@@ -109,8 +108,8 @@ class PortfolioItem extends React.Component {
                     <React.Fragment>
                       <ModalImage
                         src={modal}
-                        size={modal_image_size}
-                        className="h-ResponsiveImg"
+                        alt={title}
+                        ratio={modal_image_ratio}
                       />
                     </React.Fragment>
                   </Modal>
@@ -123,8 +122,8 @@ class PortfolioItem extends React.Component {
             <div className="c-Project--ItemImg">
               <Image
                 src={image_secondary}
-                size="1098x618"
-                className="h-ResponsiveImg"
+                alt={title}
+                ratio={1.777777777777778}
               />
             </div>
           )}

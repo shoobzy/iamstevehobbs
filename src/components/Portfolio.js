@@ -57,7 +57,7 @@ export default () => (
             <Image
               src={i.img_url}
               alt={i.img_alt}
-              size="366x366"
+              ratio="1.0"
               className="c-Portfolio--ItemImg h-ResponsiveImg"
             />
             <div className="c-Portfolio--Content">

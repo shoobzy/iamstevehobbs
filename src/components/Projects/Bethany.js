@@ -11,7 +11,7 @@ function BethanyProject() {
       image_primary={BethanyPoster}
       overview="A2 print on Giclée Hahnemühle Pearl 285gsm. Designed in Adobe Illustrator"
       modal={BethanyPosterFull}
-      modal_image_size="1098x1533"
+      modal_image_ratio="0.716242661448141"
     />
   )
 }

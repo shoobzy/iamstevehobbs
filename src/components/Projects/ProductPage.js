@@ -12,7 +12,7 @@ function DetailPageProject() {
       image_primary={DeailPage}
       overview="Product detail view concept. Designed in Sketch."
       modal={DeailPageFull}
-      modal_image_size="1098x1570"
+      modal_image_ratio="0.699363057324841"
     />
   )
 }
