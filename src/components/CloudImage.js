@@ -13,7 +13,7 @@ function Image(props) {
         src={props.src}
         alt={props.alt}
         ratio={props.ratio}
-        qn={80}
+        q="80"
       />
     </CloudimageProvider>
   );

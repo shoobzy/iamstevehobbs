@@ -14,6 +14,7 @@ function ModalImage(props) {
         src={props.src}
         alt={props.alt}
         ratio={props.ratio}
+        q="80"
       />
     </CloudimageProvider>
   );
