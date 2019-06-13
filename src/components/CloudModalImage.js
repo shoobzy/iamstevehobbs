@@ -4,6 +4,7 @@ import Img, { CloudimageProvider } from "react-cloudimage-responsive";
 const cloudimageModalConfig = {
     token: "akksjsapen",
     baseUrl: "https://pose-integration.iamstevehobbs.com/",
+    filters: "foil1",
     lazyLoading: false
 };
 
