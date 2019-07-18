@@ -6,6 +6,10 @@ import {
 import posed, {
   PoseGroup
 } from "react-pose";
+import ReactGA from "react-ga";
+
+ReactGA.initialize('UA-37329355-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 import Loader from "./Loader";
 import Header from "./Header";
