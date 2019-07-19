@@ -12,3 +12,7 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
+
+// this way Parcel won't check "service-worker.js"
+const sW = "../dist/service-worker.js";
+navigator.serviceWorker.register(sW)
