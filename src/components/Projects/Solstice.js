@@ -1,14 +1,16 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
 import Solstice from "../../images/projects/solstice/solstice.jpg";
 import SolsticeFull from "../../images/projects/solstice/solstice-full.jpg";
 
-const SolsticeProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function SolsticeProject() {
   return (
     <PortfolioItem
       category="Photography"
-      image_non_webp={Solstice}
+      image_primary={Solstice}
       modal={SolsticeFull}
+      modal_image_ratio="1.5"
     />
   )
 }

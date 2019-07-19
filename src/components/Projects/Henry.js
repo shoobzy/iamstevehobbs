@@ -1,17 +1,17 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
-import HenryPoster from "../../images/projects/henry/henry-poster.webp"
-import HenryPosterFallback from "../../images/projects/henry/henry-poster.jpg"
+import HenryPoster from "../../images/projects/henry/henry-poster.jpg"
 import HenryPosterFull from "../../images/projects/henry/henry-poster-full.png"
 
-const HenryProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function HenryProject() {
   return (
     <PortfolioItem
       category="Digital, Print"
-      image_webp={HenryPoster}
-      image_non_webp={HenryPosterFallback}
+      image_primary={HenryPoster}
       overview="A2 print on Giclée Hahnemühle Pearl 285gsm. Designed in Adobe Illustrator"
       modal={HenryPosterFull}
+      modal_image_ratio="0.707018673535093"
     />
   )
 }

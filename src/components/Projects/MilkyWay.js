@@ -1,14 +1,16 @@
 import React from "react";
-import PortfolioItem from "../ProjectTpl";
 import MilkyWay from "../../images/projects/milkyway/milkyway.jpg";
 import MilkyWayFull from "../../images/projects/milkyway/milkyway-full.jpg";
 
-const MilkyWayProject = () => {
+const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
+
+function MilkyWayProject() {
   return (
     <PortfolioItem
       category="Photography"
-      image_non_webp={MilkyWay}
+      image_primary={MilkyWay}
       modal={MilkyWayFull}
+      modal_image_ratio="1.400510204081633"
     />
   )
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// Convert this to a functional component with Hooks
 const Modal = ({ children, customClass, show, closeCallback }) => (
   <div className={`${customClass}`} style={{ display: show ? "block" : "none"}}>
     <div className="c-Modal--Content o-Container">
