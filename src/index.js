@@ -12,21 +12,3 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
-
-// this way Parcel won't check "service-worker.js"
-const sW = "../dist/service-worker.js";
-
-window.addEventListener('load', () => {
-  if ('serviceWorker' in navigator) {
-    // register service worker
-    navigator.serviceWorker.register(sW).then(
-      () => {
-        console.log('SW registration succesful 😍');
-      },
-      err => {
-        console.error('SW registration failed 😠', err)
-      });
-    } else {
-      // Not supported 😥
-    }
-  });
