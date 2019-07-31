@@ -9,9 +9,9 @@ $ink: #303245;
 $ink-lighter: #4e525d;
 
 $base-line-height: 1.75rem;
-$futura-lt-condextraboldobl: "Futura LT CondExtraBoldObl", sans-serif;
-$futura-lt-bold: "Futura LT Bold", sans-serif;
-$futura-lt-book: "Futura LT Book", sans-serif;
+$futura-lt-condextraboldobl: "Futura LT CondExtraBoldObl";
+$futura-lt-bold: "Futura LT Bold";
+$futura-lt-book: "Futura LT Book";
 
 $base-font-size: 1rem;
 $ratio: 1.33; // Desktop
@@ -39,24 +39,24 @@ $h1: $h2 * $ratio;
 // Typography
 @font-face {
     font-family: $futura-lt-condextraboldobl;
-    src: local($futura-lt-condextraboldobl), local("FuturaLT-CondExtraBoldObl"), url("./webfonts/FuturaLT-CondExtraBoldObl.woff") format("woff");
-    font-display: swap;
     font-weight: normal;
     font-style: normal;
+    src: local($futura-lt-condextraboldobl), local("FuturaLT-CondExtraBoldObl"), url("./webfonts/FuturaLT-CondExtraBoldObl.woff") format("woff");
+    font-display: block;
 }
 
 @font-face {
     font-family: $futura-lt-bold;
-    src: local($futura-lt-bold), local("FuturaLT-Bold"), url("./webfonts/FuturaLT-Bold.woff") format("woff");
-    font-display: swap;
     font-weight: normal;
     font-style: normal;
+    src: local($futura-lt-bold), local("FuturaLT-Bold"), url("./webfonts/FuturaLT-Bold.woff") format("woff");
+    font-display: block;
 }
 
 @font-face {
     font-family: $futura-lt-book;
-    src: local($futura-lt-book), local("FuturaLT-Book"), url("./webfonts/FuturaLT-Book.woff") format("woff");
-    font-display: swap;
     font-weight: normal;
     font-style: normal;
+    src: local($futura-lt-book), local("FuturaLT-Book"), url("./webfonts/FuturaLT-Book.woff") format("woff");
+    font-display: block;
 }

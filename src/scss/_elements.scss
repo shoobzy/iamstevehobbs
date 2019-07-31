@@ -9,6 +9,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -19,6 +20,7 @@ h5,
 p,
 a,
 li {
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 0;
     margin-bottom: $base-line-height;
     color: $ink;
@@ -50,7 +52,6 @@ li {
     font-size: $base-font-size; /* IE fallback */
     font-size: var(--font-size);
     font-family: $futura-lt-book;
-    font-display: auto;
     color: $ink-lighter;
     line-height: $base-line-height;
 }
