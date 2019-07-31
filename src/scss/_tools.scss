@@ -67,7 +67,7 @@
     @include header-setup(
         $h1,
         var(--h1),
-        $futura-condextraboldobl,
+        $futura-lt-condextraboldobl,
         $base-line-height * 2.5,
         uppercase
     );
@@ -82,7 +82,7 @@
     @include header-setup(
         $h2,
         var(--h2),
-        $futura-condextraboldobl,
+        $futura-lt-condextraboldobl,
         $base-line-height * 1.25,
         uppercase
     );
@@ -96,7 +96,7 @@
     @include header-setup(
         $h3,
         var(--h3),
-        $futura-condextraboldobl,
+        $futura-lt-condextraboldobl,
         $base-line-height * 1.5,
         uppercase
     );
@@ -110,7 +110,7 @@
     @include header-setup(
         $h4,
         var(--h4),
-        $futura-book,
+        $futura-lt-book,
         $base-line-height * 1.5,
     );
 
@@ -124,7 +124,7 @@
     @include header-setup(
         $h5,
         var(--h5),
-        $futura-bold,
+        $futura-lt-bold,
         $base-line-height,
         uppercase,
         $base-font-size * .1875
