@@ -17,8 +17,6 @@ import Footer from "./Footer";
 
 const Home = React.lazy(() => import("./Home"));
 
-import "../style.css";
-
 // Figure this out
 // Create a core routing file?
 const LaBergerieProject = React.lazy(() => import("./Projects/LaBergerie"));
