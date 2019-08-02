@@ -1,16 +1,26 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { hydrate, render } from "react-dom";
 import {
   BrowserRouter,
   Route,
 } from "react-router-dom";
+import "./style.scss";
 import App from "./components/App";
 
-import "./style.scss";
+const rootElem = document.getElementById("root");
 
-ReactDOM.render(
+if (rootElem.hasChildNodes()) {
+  hydrate(
   <BrowserRouter>
     <Route path="/" component={App} />
   </BrowserRouter>,
-  document.getElementById("root")
-);
+  rootElem
+  );
+} else {
+  render(
+    <BrowserRouter>
+      <Route path="/" component={App} />
+    </BrowserRouter>,
+  rootElem
+  );
+}
