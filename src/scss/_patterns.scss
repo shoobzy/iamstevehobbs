@@ -12,10 +12,6 @@
         letter-spacing: $base-font-size * .1875;
         text-transform: uppercase;
 
-        @include for-phone-only {
-            margin-left: $base-font-size;
-        }
-
         &:first-child {
             margin-left: 0;
         }
@@ -49,4 +45,11 @@
 .p-Nav--Inner {
     padding-top: $o-gutter * 1.5;
     padding-bottom: $o-gutter * 1.5;
+}
+
+.p-Nav--Item {
+    @include for-phone-only {
+        width: 100%;
+        margin-bottom: $o-gutter / 2;
+    }
 }
