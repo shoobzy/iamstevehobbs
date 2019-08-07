@@ -6,6 +6,7 @@ import {
 import posed, {
   PoseGroup
 } from "react-pose";
+import MetaTags from "react-meta-tags";
 import ReactGA from "react-ga";
 
 ReactGA.initialize('UA-37329355-1');
@@ -49,6 +50,10 @@ const project_routes = [
 
 const NotFound = () => (
   <div className="o-Container">
+    <MetaTags>
+      <title>Oops. 404 Page not found</title>
+      <meta name="prerender-status-code" content="404" />
+    </MetaTags>
     <h2>Page not found</h2>
     <p>Return to <a href="/">homepage</a></p>
   </div>

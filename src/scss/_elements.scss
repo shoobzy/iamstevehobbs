@@ -70,11 +70,3 @@ ul {
         margin-bottom: $base-line-height / 2;
     }
 }
-
-// @todo Remove this / re-apply the small ratio
-// See https://gitlab.com/shoobzy/iamstevehobbs/commit/635c561380516833c6baa8c268c17543191e6edc#5140f1fbd1f37aad72a7aafef8cef5288d63b062_57_55
-// @include for-tablet-landscape-down {
-//     :root {
-//         --ratio: var(--ratio-sm);
-//     }
-// }
