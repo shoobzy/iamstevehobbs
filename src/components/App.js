@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  Route,
-  Switch
-} from "react-router-dom";
-import posed, {
-  PoseGroup
-} from "react-pose";
+import { Route, Switch } from "react-router-dom";
+import posed, { PoseGroup } from "react-pose";
 import ReactGA from "react-ga";
 
 ReactGA.initialize('UA-37329355-1');
