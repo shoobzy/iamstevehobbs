@@ -28,7 +28,7 @@
     "dotenv": "^8.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-cloudimage-responsive": "^3.0.7",
+    "react-cloudimage-responsive": "^3.0.8",
     "react-dom": "^16.12.0",
     "react-ga": "^2.7.0",
     "react-pose": "^4.0.10",
