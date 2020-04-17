@@ -6,6 +6,10 @@
 .p-Nav--Inner {
     position: relative;
     padding: $o-gutter * 1.5;
+
+    @include for-tablet-landscape-down {
+        padding: #{$o-gutter * 1.5} #{$o-gutter * 1.25} #{$o-gutter / 2};
+    }
 }
 
 .p-Nav--Logo {
@@ -17,6 +21,10 @@
 
     @at-root .u-DarkMode & {
         background: url("./images/sh-monogram--white.svg") 0 0 no-repeat;
+    }
+
+    @include for-phone-only {
+        background-size: 80%;
     }
 }
 
@@ -36,8 +44,8 @@
         text-transform: uppercase;
 
         @include for-phone-only {
-            margin-left: $o-gutter;
-            font-size: $base-font-size * .75;
+            margin-left: $o-gutter * .75;
+            font-size: $base-font-size * .6875;
         }
 
         &:first-child {
