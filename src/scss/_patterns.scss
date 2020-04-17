@@ -1,6 +1,29 @@
 .p-Nav {
     padding: 0;
     font-size: 0;
+}
+
+.p-Nav--Inner {
+    position: relative;
+    padding: $o-gutter * 1.5;
+}
+
+.p-Nav--Logo {
+    position: absolute;
+    top: 42px;
+    background: url("./images/sh-monogram--dark.svg") 0 0 no-repeat;
+    width: 68px;
+    height: 49px;
+
+    @at-root .u-DarkMode & {
+        background: url("./images/sh-monogram--white.svg") 0 0 no-repeat;
+    }
+}
+
+.p-Nav--Item {
+    @include for-phone-only {
+        margin-bottom: $o-gutter / 2;
+    }
 
     a {
         position: relative;
@@ -11,6 +34,11 @@
         line-height: $base-line-height;
         letter-spacing: $base-font-size * .1875;
         text-transform: uppercase;
+
+        @include for-phone-only {
+            margin-left: $o-gutter;
+            font-size: $base-font-size * .75;
+        }
 
         &:first-child {
             margin-left: 0;
@@ -39,17 +67,5 @@
         &:hover::after {
             width: 80%;
         }
-    }
-}
-
-.p-Nav--Inner {
-    padding-top: $o-gutter * 1.5;
-    padding-bottom: $o-gutter * 1.5;
-}
-
-.p-Nav--Item {
-    @include for-phone-only {
-        width: 100%;
-        margin-bottom: $o-gutter / 2;
     }
 }
