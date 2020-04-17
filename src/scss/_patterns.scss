@@ -15,12 +15,14 @@
 .p-Nav--Logo {
     position: absolute;
     top: 42px;
-    background: url("./images/sh-monogram--dark.svg") 0 0 no-repeat;
+    background-image: url("./images/sh-monogram--dark.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
     width: 68px;
     height: 49px;
 
     @at-root .u-DarkMode & {
-        background: url("./images/sh-monogram--white.svg") 0 0 no-repeat;
+        background-image: url("./images/sh-monogram--white.svg");
     }
 
     @include for-phone-only {
