@@ -14,8 +14,8 @@ import Henry from "../images/portfolio/henry.jpg";
 import No14 from "../images/portfolio/no-14.jpg";
 import Moonshine from "../images/portfolio/moonshine.jpg";
 import Diner from "../images/portfolio/open-24-hours.jpg";
-import Solstice from "../images/portfolio/solstice.jpg";
 import Milkyway from "../images/portfolio/milkyway.jpg";
+import Zuno from "../images/portfolio/zuno.jpg";
 
 const Portfolio = posed.div({
   enter: { staggerChildren: 60, delay: 150 },
@@ -24,7 +24,7 @@ const Portfolio = posed.div({
 
 const PortfolioItem = posed.div({
   enter: { y: 0, opacity: 1 },
-  exit: {y: 75, opacity: 0 }
+  exit: { y: 75, opacity: 0 }
 });
 
 const projects = [
@@ -38,8 +38,8 @@ const projects = [
   { id: 7, path: "/no-14", img_url: No14, img_alt: "No.14 - web project", title: "No.14 Verbier", category: "Web" },
   { id: 8, path: "/moonshine", img_url: Moonshine, img_alt: "Illustration for large format print", title: "Moonshine", category: "Digital" },
   { id: 9, path: "/diner", img_url: Diner, img_alt: "Vinyl wrap designs", title: "Diner wrap", category: "Print" },
-  { id: 10, path: "/solstice", img_url: Solstice, img_alt: "Summer solstice - Photography", title: "Solstice", category: "Photography" },
-  { id: 11, path: "/milkyway", img_url: Milkyway, img_alt: "Milkyway - Photography", title: "Milkyway", category: "Photography" }
+  { id: 10, path: "/milkyway", img_url: Milkyway, img_alt: "Milkyway - Photography", title: "Milkyway", category: "Photography" },
+  { id: 11, path: "/zuno", img_url: Zuno, img_alt: "ZUNO Fruit Teas", title: "ZUNO", category: "Branding" }
 ];
 
 export default () => (

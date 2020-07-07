@@ -1,21 +1,25 @@
 import React from "react";
 import Img, { CloudimageProvider } from "react-cloudimage-responsive";
+import ErrorBoundary from "./ErrorBoundary";
 
 const cloudimageConfig = {
-    token: "akksjsapen",
-    baseUrl: "https://www.iamstevehobbs.com/",
-    filters: "foil1"
+  token: (process.env.CLOUDIMAGETOKEN),
+  baseUrl: "http://localhost:1234/",
+  doNotReplaceURL: true,
+  filters: "foil1"
 };
 
 function Image(props) {
   return (
-    <CloudimageProvider config={cloudimageConfig}>
-      <Img
-        src={props.src}
-        alt={props.alt}
-        ratio={props.ratio}
-      />
-    </CloudimageProvider>
+    <ErrorBoundary>
+      <CloudimageProvider config={cloudimageConfig}>
+        <Img
+          src={props.src}
+          alt={props.alt}
+          ratio={props.ratio}
+        />
+      </CloudimageProvider>
+    </ErrorBoundary>
   );
 };
 
