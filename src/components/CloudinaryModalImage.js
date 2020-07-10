@@ -4,7 +4,7 @@ import Img from "react-cloudinary-lazy-image"
 function ModalImage(props) {
   return (
     <Img
-      cloudName={process.env.CLOUDNAME}
+      cloudName="iamstevehobbs-com"
       imageName={props.src}
       alt={props.alt}
       fluid={{
