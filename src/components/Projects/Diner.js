@@ -1,6 +1,4 @@
 import React from "react";
-import Diner from "../../images/projects/diner/diner.jpg";
-import DinerWrap from "../../images/projects/diner/diner-full.jpg";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
 
@@ -9,10 +7,10 @@ function DinerProject() {
     <PortfolioItem
       title="Diner"
       category="Digital, Print"
-      image_primary={Diner}
+      image_primary="/diner/diner-webp"
       overview="Large scale, vinyl wrap - designed to mask out glass partition."
-      modal={DinerWrap}
-      modal_image_ratio="1.5"
+      modal="/diner/diner-full"
+      modal_height={732}
     />
   )
 }

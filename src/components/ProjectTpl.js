@@ -1,8 +1,9 @@
 import React from "react";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
-import Image from "./CloudImage";
-import ModalImage from "./CloudModalImage";
+import CloudinaryImage from "./CloudinaryImage";
+import ModalImage from "./CloudinaryModalImage";
+import ColourPalette from "./ColourPalette";
 
 const Modal = React.lazy(() => import("./Modal/Modal"));
 
@@ -56,16 +57,22 @@ class PortfolioItem extends React.Component {
       image_secondary,
       ext_url,
       modal,
-      modal_image_ratio
+      modal_height,
+      colour_palette
     } = this.props
 
+    // @todo Apply this at project level
+    let swatches = [
+      { id: 0, swatchName: "Pantone-276C", pantone: "PANTONE 276 C", rgb: "34 28 53", hex: "221C35", cmyk: "94 93 0 79" },
+      { id: 1, swatchName: "Pantone-7404C", pantone: "PANTONE 7404 C", rgb: "244 218 64", hex: "F4DA40", cmyk: "1 3 80 0" },
+      { id: 2, swatchName: "Pantone-Rubine_Red_C", pantone: "PANTONE Rubine Red C", rgb: "206 0 88", hex: "CE0058", cmyk: "0 100 24 4" }
+    ];
+
     return (
-      <ProjectContainer
-        initialPose="exit"
-        pose="enter"
-      >
+      <ProjectContainer>
         <div className="c-Page fadeInUp c-Project">
           <ScrollToTopOnMount />
+
           <div className="c-Project--Header">
             <div className="o-Container">
               <div className="c-Intro o-Grid">
@@ -78,13 +85,15 @@ class PortfolioItem extends React.Component {
               </div>
             </div>
             <div className="c-Project--ItemImg">
-              <Image
-                src={image_primary}
+              <CloudinaryImage
+                src={"Projects/" + image_primary}
                 alt={title}
-                ratio="1.776699029126214"
+                maxWidth={1098}
+                height={618}
               />
             </div>
           </div>
+
           <div className="o-Container">
             <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
               {overview && (
@@ -107,9 +116,9 @@ class PortfolioItem extends React.Component {
                   >
                     <React.Fragment>
                       <ModalImage
-                        src={modal}
+                        src={"Projects/" + modal}
                         alt={title}
-                        ratio={modal_image_ratio}
+                        height={modal_height}
                       />
                     </React.Fragment>
                   </Modal>
@@ -118,14 +127,35 @@ class PortfolioItem extends React.Component {
               )}
             </div>
           </div>
+
           {image_secondary && (
             <div className="c-Project--ItemImg">
-              <Image
-                src={image_secondary}
+              <CloudinaryImage
+                src={"Projects/" + image_secondary}
                 alt={title}
-                ratio={1.777777777777778}
+                maxWidth={1098}
+                height={618}
               />
             </div>
+          )}
+
+          {colour_palette && (
+            swatches = (
+              <div className="o-Container">
+                <div className="o-Grid c-Project--Copy 2/3-TabletPortraitUp">
+                  {swatches.map(i => (
+                    <ColourPalette
+                      key={i.id}
+                      swatchName={i.swatchName}
+                      pantone={i.pantone}
+                      hex={i.hex}
+                      rgb={i.rgb}
+                      cmyk={i.cmyk}
+                    />
+                  ))}
+                </div>
+              </div>
+            )
           )}
         </div>
       </ProjectContainer>

@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../../images/projects/three-streams/logo-main.png";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
 
@@ -8,7 +7,7 @@ function ThreeStreamsProject() {
     <PortfolioItem
       title="Three Streams"
       category="Branding"
-      image_primary={Logo}
+      image_primary="three-streams/logo-main"
       overview="Logo concept for Three Streams - a neuropsychology, psychotherapy, and spiritual practice."
     />
   )

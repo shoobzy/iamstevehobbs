@@ -128,6 +128,33 @@
     margin: 0 0 $o-gutter * 2;
 }
 
+.c-Project--Palette {
+    width: 210px;
+    margin: 0 auto #{$o-gutter};
+    padding: 0 #{$o-gutter / 2};
+    box-sizing: border-box;
+}
+
+.c-Project--Palette-Swatch {
+    width: $o-gutter * 2.25;
+    height: $o-gutter * 2.25;
+    border: 2px solid $white;
+    border-radius: 100%;
+    margin: 0 auto $o-gutter;
+
+    &.Pantone-276C {
+        background-color: #221C35;
+    }
+
+    &.Pantone-7404C {
+        background-color: #F4DA40;
+    }
+
+    &.Pantone-Rubine_Red_C {
+        background-color: #CE0058;
+    }
+}
+
 .c-Title--Charlie {
     @include header-charlie;
 }

@@ -1,6 +1,4 @@
 import React from "react";
-import Lander from "../../images/projects/ecommerce/ecommerce-concept.jpg";
-import LanderFull from "../../images/projects/ecommerce/ecommerce-concept-full.png";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
 
@@ -9,10 +7,10 @@ function ECommerceProject() {
     <PortfolioItem
       title="ECommerce Lander Concept"
       category="Web, Digital"
-      image_primary={Lander}
+      image_primary="/ecommerce/ecommerce-concept-webp"
       overview="Web landing page concept for an ECommerce company. Designed in Sketch."
-      modal={LanderFull}
-      modal_image_ratio="0.348019017432647"
+      modal="/ecommerce/ecommerce-concept-full"
+      modal_height={3155}
     />
   )
 }

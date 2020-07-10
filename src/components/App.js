@@ -24,8 +24,8 @@ const HenryProject = React.lazy(() => import("./Projects/Henry"));
 const No14Project = React.lazy(() => import("./Projects/No14"));
 const MoonshineProject = React.lazy(() => import("./Projects/Moonshine"));
 const DinerProject = React.lazy(() => import("./Projects/Diner"));
-const SolsticeProject = React.lazy(() => import("./Projects/Solstice"));
 const MilkyWayProject = React.lazy(() => import("./Projects/MilkyWay"));
+const ZunoProject = React.lazy(() => import("./Projects/Zuno"));
 
 const project_routes = [
   { id: 0, path: "/la-bergerie", component: LaBergerieProject },
@@ -33,13 +33,13 @@ const project_routes = [
   { id: 2, path: "/e-commerce-concept", component: ECommerceProject },
   { id: 3, path: "/product-detail-concept", component: DetailPageProject },
   { id: 4, path: "/bethany", component: BethanyProject },
-  { id: 5, path: "/seetheworld", component: StwProject },
+  { id: 5, path: "/zuno", component: ZunoProject },
   { id: 6, path: "/henry", component: HenryProject },
   { id: 7, path: "/no-14", component: No14Project },
   { id: 8, path: "/moonshine", component: MoonshineProject },
   { id: 9, path: "/diner", component: DinerProject },
-  { id: 10, path: "/solstice", component: SolsticeProject },
-  { id: 11, path: "/milkyway", component: MilkyWayProject }
+  { id: 10, path: "/milkyway", component: MilkyWayProject },
+  { id: 11, path: "/seetheworld", component: StwProject }
 ];
 
 const NotFound = () => (

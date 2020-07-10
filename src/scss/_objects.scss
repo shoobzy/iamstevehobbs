@@ -25,6 +25,14 @@ $o-gutter: 28px;
     justify-content: space-between;
     margin: 0;
     padding: 0;
+
+    &.flex-normal {
+        align-items: normal;
+    }
+
+    &.column {
+        flex-direction: column;
+    }
 }
 
 .o-Grid--Item {

@@ -10,7 +10,6 @@ function SolsticeProject() {
       category="Photography"
       image_primary={Solstice}
       modal={SolsticeFull}
-      modal_image_ratio="1.5"
     />
   )
 }

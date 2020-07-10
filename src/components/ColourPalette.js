@@ -4,14 +4,12 @@ function ColourPalette(props) {
   return (
     <div className="c-Project--Palette">
         <div className={"c-Project--Palette-Swatch " + props.swatchName}></div>
-        <div className="c-Project--Palette-Values">
-          <h5>{props.pantone}</h5>
-          <p>
-            <span>RGB:<span>{props.rgb}</span></span>
-            <span>HEX:<span>{props.hex}</span></span>
-            <span>CMYK:<span>{props.cmyk}</span></span>
-          </p>
-        </div>
+        <p className="c-Project--Palette-Values o-Grid flex-normal column">
+          <strong className="u-TextCenter">{props.pantone}</strong><br></br>
+          <span className="o-Grid row">RGB:<span>{props.rgb}</span></span>
+          <span className="o-Grid row">HEX:<span>{props.hex}</span></span>
+          <span className="o-Grid row">CMYK:<span>{props.cmyk}</span></span>
+        </p>
     </div>
   );
 };

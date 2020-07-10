@@ -1,6 +1,4 @@
 import React from "react";
-import Logo from "../../images/projects/zuno/zuno-logo.jpg";
-import Mockups from "../../images/projects/zuno/mockups.jpg";
 
 const PortfolioItem = React.lazy(() => import("../ProjectTpl"));
 
@@ -12,9 +10,9 @@ class ZunoProject extends React.Component {
       <PortfolioItem
         title="Zuno Fruit teas"
         category="Branding"
-        image_primary={Logo}
+        image_primary="zuno/zuno-logo"
         overview="ZUNO Fruit Teas packaging design and branding."
-        image_secondary={Mockups}
+        image_secondary="zuno/mockups"
         colour_palette={swatches}
       />
     )
