@@ -155,6 +155,10 @@
     }
 }
 
+.c-Project--Palette-Values {
+    color: $white;
+}
+
 .c-Title--Charlie {
     @include header-charlie;
 }

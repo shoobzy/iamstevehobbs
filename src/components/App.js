@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import posed, { PoseGroup } from "react-pose";
 import ReactGA from "react-ga";
@@ -11,6 +11,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const Home = React.lazy(() => import("./Home"));
+const NotFound = React.lazy(() => import("./NotFound"));
 
 // Figure this out
 // Create a core routing file?
@@ -42,13 +43,6 @@ const project_routes = [
   { id: 11, path: "/seetheworld", component: StwProject }
 ];
 
-const NotFound = () => (
-  <div className="o-Container">
-    <h2>Page not found</h2>
-    <p>Return to <a href="/">homepage</a></p>
-  </div>
-)
-
 const RouteContainer = posed.div({
   enter: { opacity: 1, delay: 300, beforeChildren: true },
   exit: { opacity: 0 }
@@ -56,7 +50,7 @@ const RouteContainer = posed.div({
 
 function App() {
   return (
-    <React.Suspense fallback={<Loader/>}>
+    <Suspense fallback={<Loader/>}>
       <div className="o-Page">
         <Header />
         <Route render={({location}) => (
@@ -66,23 +60,25 @@ function App() {
               initialPose="enter"
               pose="exit"
             >
-              <Switch location={location}>
-                <Route exact path="/" component={Home} key="home" />
-                {project_routes.map(i => (
-                  <Route
-                    key={i.id}
-                    path={i.path}
-                    component={i.component}
-                  />
-                ))}
-                <Route component={NotFound} key="error" />
-              </Switch>
+              <Suspense fallback={<Loader/>}>
+                <Switch location={location}>
+                  <Route exact path="/" component={Home} key="home" />
+                  {project_routes.map(i => (
+                    <Route
+                      key={i.id}
+                      path={i.path}
+                      component={i.component}
+                    />
+                  ))}
+                  <Route component={NotFound} key="error" />
+                </Switch>
+              </Suspense>
             </RouteContainer>
           </PoseGroup>
         )} />
         <Footer />
       </div>
-    </React.Suspense>
+    </Suspense>
   );
 }
 

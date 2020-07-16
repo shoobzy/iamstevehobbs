@@ -1,11 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
+import Loader from "./Loader";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import CloudinaryImage from "./CloudinaryImage";
 import ModalImage from "./CloudinaryModalImage";
-import ColourPalette from "./ColourPalette";
 
 const Modal = React.lazy(() => import("./Modal/Modal"));
+const ColourPalette = React.lazy(() => import("./ColourPalette"));
 
 const ProjectContainer = posed.div({
   enter: { y: 0, opacity: 1, delay: 300 },
@@ -108,22 +109,24 @@ class PortfolioItem extends React.Component {
                 <p><a className="c-Btn" href={ext_url} target="_blank" rel="noreferrer">Visit</a></p>
               )}
               {modal && (
-                <React.Fragment>
-                  <Modal
-                    show={this.state.showModal}
-                    closeCallback={this.toggleModal}
-                    customClass="c-Modal"
-                  >
-                    <React.Fragment>
-                      <ModalImage
-                        src={"Projects/" + modal}
-                        alt={title}
-                        height={modal_height}
-                      />
-                    </React.Fragment>
-                  </Modal>
-                  <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
-                </React.Fragment>
+                <Suspense fallback={<Loader/>}>
+                  <React.Fragment>
+                    <Modal
+                      show={this.state.showModal}
+                      closeCallback={this.toggleModal}
+                      customClass="c-Modal"
+                    >
+                      <React.Fragment>
+                        <ModalImage
+                          src={"Projects/" + modal}
+                          alt={title}
+                          height={modal_height}
+                        />
+                      </React.Fragment>
+                    </Modal>
+                    <p><a className="c-Btn" onClick={this.toggleModal}>View fullsize</a></p>
+                  </React.Fragment>
+                </Suspense>
               )}
             </div>
           </div>
