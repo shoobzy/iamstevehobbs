@@ -43,8 +43,8 @@ export default () => (
             <CloudinaryImage
               src={"Portfolio/" + i.img_url}
               alt={i.img_alt}
-              maxWidth={530}
-              height={530}
+              maxWidth={366}
+              height={366}
             />
             <div className="c-Portfolio--Content">
               <div className="c-Portfolio--Text">
