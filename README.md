@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b30a6e65-9705-42bc-bb0f-cd13cf808355/deploy-status)](https://app.netlify.com/sites/sleepy-perlman-874aa7/deploys)
