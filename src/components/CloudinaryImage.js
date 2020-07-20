@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 
 const Img = React.lazy(() => import("react-cloudinary-lazy-image"));
 
