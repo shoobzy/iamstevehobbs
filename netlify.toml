@@ -15,6 +15,3 @@ for = "/*"
 from = "/*"
 to = "/index.html"
 status = 200
-
-[[plugins]]
-  package = "netlify-plugin-inline-critical-css"
