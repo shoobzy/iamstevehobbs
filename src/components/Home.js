@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import posed from "react-pose";
 import ScrollToTopOnMount from "./ScrollToTopOnMount";
-import Portfolio from "./Portfolio";
+import Loader from "./Loader";
+
+const Portfolio = React.lazy(() => import("./Portfolio"));
 
 const HomeContainer = posed.div({
   enter: { y: 0, opacity: 1, delay: 150 },
@@ -38,7 +40,9 @@ class Home extends React.Component {
             <p className="c-Title--Delta o-Grid--Item 1/2-TabletPortraitUp-WithGutter">With more than 8 years’ industry experience at combining web development and design.</p>
           </div>
         </div>
-        <Portfolio />
+        <Suspense fallback={<Loader/>}>
+          <Portfolio />
+        </Suspense>
       </HomeContainer>
     )
   }

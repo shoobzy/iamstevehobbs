@@ -43,47 +43,43 @@ const RouteContainer = posed.div({
   exit: { opacity: 0 }
 });
 
-function App() {
-  return (
-    <Suspense fallback={<Loader/>}>
-      <div className="o-Page">
-        <Header />
-        <Route render={({location}) => (
-          <PoseGroup>
-            <RouteContainer
-              key={location.pathname}
-              initialPose="enter"
-              pose="exit"
-            >
-              <Suspense fallback={<Loader/>}>
-                <Switch location={location}>
+export default () => (
+  <Suspense fallback={<Loader/>}>
+    <div className="o-Page">
+      <Header />
+      <Route render={({location}) => (
+        <PoseGroup>
+          <RouteContainer
+            key={location.pathname}
+            initialPose="enter"
+            pose="exit"
+          >
+            <Suspense fallback={<Loader/>}>
+              <Switch location={location}>
+                <Route
+                  exact path="/"
+                  component={Home}
+                  key="home"
+                />
+                {project_routes.map(i => (
                   <Route
-                    exact path="/"
-                    component={Home}
-                    key="home"
+                    key={i.id}
+                    path={i.path}
+                    component={i.component}
                   />
-                  {project_routes.map(i => (
-                    <Route
-                      key={i.id}
-                      path={i.path}
-                      component={i.component}
-                    />
-                  ))}
-                  <Route
-                    component={NotFound}
-                    key="error"
-                  />
-                </Switch>
-              </Suspense>
-            </RouteContainer>
-          </PoseGroup>
-        )} />
-        <div className="o-Footer o-Container">
-          <p>Steve Hobbs &copy; {(new Date().getFullYear())}</p>
-        </div>
+                ))}
+                <Route
+                  component={NotFound}
+                  key="error"
+                />
+              </Switch>
+            </Suspense>
+          </RouteContainer>
+        </PoseGroup>
+      )} />
+      <div className="o-Footer o-Container">
+        <p>Steve Hobbs &copy; {(new Date().getFullYear())}</p>
       </div>
-    </Suspense>
-  );
-}
-
-export default App;
+    </div>
+  </Suspense>
+);
