@@ -4,7 +4,6 @@ import posed, { PoseGroup } from "react-pose";
 
 import Loader from "./Loader";
 import Header from "./Header";
-import Footer from "./Footer";
 
 const Home = React.lazy(() => import("./Home"));
 const NotFound = React.lazy(() => import("./NotFound"));
@@ -58,7 +57,11 @@ function App() {
             >
               <Suspense fallback={<Loader/>}>
                 <Switch location={location}>
-                  <Route exact path="/" component={Home} key="home" />
+                  <Route
+                    exact path="/"
+                    component={Home}
+                    key="home"
+                  />
                   {project_routes.map(i => (
                     <Route
                       key={i.id}
@@ -66,13 +69,18 @@ function App() {
                       component={i.component}
                     />
                   ))}
-                  <Route component={NotFound} key="error" />
+                  <Route
+                    component={NotFound}
+                    key="error"
+                  />
                 </Switch>
               </Suspense>
             </RouteContainer>
           </PoseGroup>
         )} />
-        <Footer />
+        <div className="o-Footer o-Container">
+          <p>Steve Hobbs &copy; {(new Date().getFullYear())}</p>
+        </div>
       </div>
     </Suspense>
   );
