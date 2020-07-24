@@ -7,7 +7,6 @@ export default ({src, width, height, alt}) => (
     responsive
     width="auto"
     height={height}
-    crop="scale"
     responsiveUseBreakpoints="true"
     cloudName="iamstevehobbs-com"
     publicId={src}
