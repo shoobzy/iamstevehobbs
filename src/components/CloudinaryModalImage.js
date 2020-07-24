@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import {Image, Placeholder, Transformation} from "cloudinary-react";
+import { Image, Placeholder, Transformation } from "cloudinary-react";
 import Loader from "./Loader";
 
 export default ({src, alt, height}) => (
