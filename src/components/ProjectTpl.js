@@ -1,12 +1,12 @@
 import React, { Suspense } from "react";
 import Loader from "./Loader";
 import posed from "react-pose";
-import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import CloudinaryImage from "./CloudinaryImage";
 import ModalImage from "./CloudinaryModalImage";
 
 const Modal = React.lazy(() => import("./Modal/Modal"));
 const ColourPalette = React.lazy(() => import("./ColourPalette"));
+const ScrollToTopOnMount = React.lazy (() => import("./ScrollToTopOnMount"));
 
 const ProjectContainer = posed.div({
   enter: { y: 0, opacity: 1, delay: 300 },

@@ -3,8 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import posed, { PoseGroup } from "react-pose";
 
 import Loader from "./Loader";
-import Header from "./Header";
 
+const Header = React.lazy(() => import("./Header"));
 const Home = React.lazy(() => import("./Home"));
 const NotFound = React.lazy(() => import("./NotFound"));
 

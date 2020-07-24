@@ -1,7 +1,8 @@
 import React from "react";
 import posed from "react-pose";
-import ScrollToTopOnMount from "./ScrollToTopOnMount";
 import Portfolio from "./Portfolio";
+
+const ScrollToTopOnMount = React.lazy (() => import("./ScrollToTopOnMount"));
 
 const HomeContainer = posed.div({
   enter: { y: 0, opacity: 1, delay: 150 },
