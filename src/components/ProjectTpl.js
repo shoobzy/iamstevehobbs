@@ -62,14 +62,11 @@ class PortfolioItem extends React.Component {
       colour_palette
     } = this.props
 
-    if (colour_palette) {
-      // @todo Apply this at project level
-      swatches = [
-        { id: 0, swatchName: "Pantone-276C", pantone: "PANTONE 276 C", rgb: "34 28 53", hex: "221C35", cmyk: "94 93 0 79" },
-        { id: 1, swatchName: "Pantone-7404C", pantone: "PANTONE 7404 C", rgb: "244 218 64", hex: "F4DA40", cmyk: "1 3 80 0" },
-        { id: 2, swatchName: "Pantone-Rubine_Red_C", pantone: "PANTONE Rubine Red C", rgb: "206 0 88", hex: "CE0058", cmyk: "0 100 24 4" }
-      ];
-    }
+    let swatches = [
+      { id: 0, swatchName: "Pantone-276C", pantone: "PANTONE 276 C", rgb: "34 28 53", hex: "221C35", cmyk: "94 93 0 79" },
+      { id: 1, swatchName: "Pantone-7404C", pantone: "PANTONE 7404 C", rgb: "244 218 64", hex: "F4DA40", cmyk: "1 3 80 0" },
+      { id: 2, swatchName: "Pantone-Rubine_Red_C", pantone: "PANTONE Rubine Red C", rgb: "206 0 88", hex: "CE0058", cmyk: "0 100 24 4" }
+    ];
 
     return (
       <ProjectContainer>
