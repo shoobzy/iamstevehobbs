@@ -5,8 +5,6 @@ import Loader from "./components/Loader";
 
 const App = React.lazy(() => import("./components/App"));
 
-import "./style.scss";
-
 ReactDOM.render(
   <BrowserRouter>
     <Suspense fallback={<Loader/>}>
@@ -19,6 +17,7 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+import "./style.scss";
 import ReactGA from "react-ga";
 
 ReactGA.initialize('UA-37329355-1');
