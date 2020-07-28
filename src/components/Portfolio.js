@@ -4,13 +4,8 @@ import { Link } from "react-router-dom";
 import CloudinaryImage from "./CloudinaryImage";
 
 const Portfolio = posed.div({
-  enter: { staggerChildren: 60, delay: 150 },
-  exit: { staggerChildren: 20, staggerDirection: -1 }
-});
-
-const PortfolioItem = posed.div({
-  enter: { y: 0, opacity: 1 },
-  exit: { y: 75, opacity: 0 }
+  enter: { y: 0, opacity: 1, staggerChildren: 60, delay: 150 },
+  exit: { y: 75, opacity: 0, staggerChildren: 20, staggerDirection: -1 }
 });
 
 const projects = [
@@ -32,7 +27,7 @@ export default () => (
   <div className="o-Container">
     <Portfolio className="o-Grid c-Portfolio">
       {projects.map(i => (
-        <PortfolioItem
+        <div
           key={i.id}
           className="c-Portfolio--Item o-Grid--Item 1/2-TabletPortraitUp 1/3-TabletLandscapeUp"
         >
@@ -43,8 +38,6 @@ export default () => (
             <CloudinaryImage
               src={"Portfolio/" + i.img_url}
               alt={i.img_alt}
-              width={366}
-              height={366}
             />
             <div className="c-Portfolio--Content">
               <div className="c-Portfolio--Text">
@@ -54,7 +47,7 @@ export default () => (
             </div>
             <div className="c-Portfolio--Background"></div>
           </Link>
-        </PortfolioItem>
+        </div>
       ))}
     </Portfolio>
   </div>

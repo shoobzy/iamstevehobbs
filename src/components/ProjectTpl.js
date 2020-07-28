@@ -88,8 +88,6 @@ class PortfolioItem extends React.Component {
               <CloudinaryImage
                 src={"Projects/" + image_primary}
                 alt={title}
-                width={1098}
-                height={618}
               />
             </div>
           </div>
@@ -135,8 +133,6 @@ class PortfolioItem extends React.Component {
               <CloudinaryImage
                 src={"Projects/" + image_secondary}
                 alt={title}
-                width={1098}
-                height={618}
               />
             </div>
           )}

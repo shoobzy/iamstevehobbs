@@ -1,23 +1,22 @@
 import React from "react";
-import {Image, Placeholder, Transformation} from "cloudinary-react";
+import { Image, Placeholder } from "cloudinary-react";
 
-export default ({src, width, height, alt}) => (
-  <Image
-    dpr="auto"
-    responsive
-    width="auto"
-    height={height}
-    responsiveUseBreakpoints="true"
-    cloudName="iamstevehobbs-com"
-    publicId={src}
-    alt={alt}
-    loading="lazy"
-    className="c-Portfolio--ItemImg h-ResponsiveImg"
-    style={{width: width}}>
-    <Placeholder type="blur" />
-    <Transformation
-      quality="auto"
-      fetchFormat="auto"
-    />
-  </Image>
+export default ({src, alt}) => (
+  <div>
+    <Image
+      style={{
+        maxWidth: "100%",
+        maxHeight: "100%"
+      }}
+      cloudName="iamstevehobbs-com"
+      publicId={src}
+      loading="lazy"
+      crop="scale"
+      width="auto"
+      responsive
+      alt={alt}
+    >
+      <Placeholder />
+    </Image>
+  </div>
 );
