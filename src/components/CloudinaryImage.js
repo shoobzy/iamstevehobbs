@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Placeholder } from "cloudinary-react";
+import { Image, Placeholder, Transformation } from "cloudinary-react";
 
 export default ({src, alt}) => (
   <div>
@@ -17,6 +17,7 @@ export default ({src, alt}) => (
       alt={alt}
     >
       <Placeholder />
+      <Transformation fetchFormat="auto" />
     </Image>
   </div>
 );
