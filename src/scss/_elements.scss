@@ -1,17 +1,5 @@
 // Elements (namespace: e-) are the HTML native elements which we would not style based on the class names. For example,
 // we should provide default styles to <a> element rather than .link class.
-html {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.75;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 h1,
 h2,
 h3,
