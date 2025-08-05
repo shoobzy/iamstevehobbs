@@ -52,11 +52,6 @@
         "stylelint-order": "^6.0.3",
         "stylelint-scss": "^6.5.0"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
     "workbox": {
         "importScripts": "./worker.js",
         "globDirectory": "./dist",
