@@ -52,6 +52,10 @@
         "stylelint-order": "^6.0.3",
         "stylelint-scss": "^6.5.0"
     },
+    "overrides": {
+        "glob": "^9.3.0",
+        "rimraf": "^4.0.0"
+    },
     "workbox": {
         "importScripts": "./worker.js",
         "globDirectory": "./dist",
