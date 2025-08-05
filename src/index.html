@@ -1,50 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="Portfolio of Steve Hobbs">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="description" content="Portfolio of Steve Hobbs" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
         <title>Steve Hobbs | Digital Designer, Front-End Developer</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png?v=gAeNyB64Am">
-        <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png?v=gAeNyB64Am">
-        <link rel="mask-icon" href="../safari-pinned-tab.svg?v=gAeNyB64Am" color="#0066cc">
-        <link rel="shortcut icon" href="../favicon.ico?v=gAeNyB64Am">
-        <meta name="apple-mobile-web-app-title" content="iamstevehobbs.com">
-        <meta name="application-name" content="iamstevehobbs.com">
-        <meta name="msapplication-TileColor" content="#0066cc">
-        <meta name="theme-color" content="#ffffff">
-        <link rel="manifest" href="./manifest.webmanifest">
-        <style>
-            html {
-                font-size: 16px;
-                font-size: 1rem;
-                line-height: 1.75;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" media="print" onload="this.media='all'">
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="../apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="../favicon-32x32.png?v=gAeNyB64Am"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="../favicon-16x16.png?v=gAeNyB64Am"
+        />
+        <link
+            rel="mask-icon"
+            href="../safari-pinned-tab.svg?v=gAeNyB64Am"
+            color="#0066cc"
+        />
+        <link rel="shortcut icon" href="../favicon.ico?v=gAeNyB64Am" />
+        <meta name="apple-mobile-web-app-title" content="iamstevehobbs.com" />
+        <meta name="application-name" content="iamstevehobbs.com" />
+        <meta name="msapplication-TileColor" content="#0066cc" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="manifest" href="./manifest.webmanifest" />
     </head>
     <body>
         <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+            <p class="browserupgrade">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="https://browsehappy.com/">upgrade your browser</a> to
+                improve your experience and security.
+            </p>
         <![endif]-->
-        <noscript>This website requires JavaScript. Please enable it or upgrade your browser.</noscript>
+        <noscript
+            >This website requires JavaScript. Please enable it or upgrade your
+            browser.</noscript
+        >
         <div id="root"></div>
-        <script src="./index.js"></script>
-        <script>
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", () => {
-                    navigator.serviceWorker.register("/service-worker.js");
-                });
-            }
-        </script>
+        <script type="module" src="./index.js"></script>
+        <script type="module" src="./register-sw.js"></script>
     </body>
 </html>

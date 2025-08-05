@@ -1,0 +1,138 @@
+@use "../settings" as settings;
+
+@mixin for-phone-only {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 601px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-down {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: 901px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-down {
+    @media (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1281px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin header-setup(
+    $font-size,
+    $font-size-var,
+    $font-family,
+    $line-height,
+    $text-transform: null,
+    $letter-spacing: null
+) {
+    font-size: $font-size;
+    font-size: $font-size-var;
+    font-family: $font-family;
+    line-height: $line-height;
+    text-transform: $text-transform;
+    letter-spacing: $letter-spacing;
+    @content;
+}
+
+@mixin header-alpha {
+    @include header-setup(
+        settings.$h1,
+        var(--h1),
+        settings.$futura-lt-condextraboldobl,
+        settings.$base-line-height * 2.5,
+        uppercase
+    );
+
+    @include for-tablet-landscape-down {
+        font-size: settings.$h2;
+        line-height: settings.$base-line-height * 2;
+    }
+}
+
+@mixin header-bravo {
+    @include header-setup(
+        settings.$h2,
+        var(--h2),
+        settings.$futura-lt-condextraboldobl,
+        settings.$base-line-height * 1.25,
+        uppercase
+    );
+
+    @include for-tablet-landscape-down {
+        font-size: settings.$h3;
+    }
+}
+
+@mixin header-charlie {
+    @include header-setup(
+        settings.$h3,
+        var(--h3),
+        settings.$futura-lt-condextraboldobl,
+        settings.$base-line-height * 1.5,
+        uppercase
+    );
+
+    @include for-tablet-landscape-down {
+        font-size: settings.$h4;
+    }
+}
+
+@mixin header-delta {
+    @include header-setup(
+        settings.$h4,
+        var(--h4),
+        settings.$futura-lt-book,
+        settings.$base-line-height * 1.5
+    );
+
+    @include for-tablet-landscape-down {
+        font-size: settings.$h5;
+        line-height: settings.$base-line-height;
+    }
+}
+
+@mixin header-echo {
+    @include header-setup(
+        settings.$h5,
+        var(--h5),
+        settings.$futura-lt-bold,
+        settings.$base-line-height,
+        uppercase,
+        settings.$base-font-size * 0.1875
+    );
+
+    // Figure out why the h5 disappears without this breakpoint
+    @include for-tablet-landscape-down {
+        font-size: settings.$h5;
+        line-height: settings.$base-line-height;
+    }
+}
+
+@mixin cubic-transition {
+    transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}

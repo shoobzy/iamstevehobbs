@@ -1,20 +1,20 @@
+@use "settings" as settings;
+@use "tools" as tools;
+
 // Objects (namespace: o-) are used for design patterns, such as layouts, where items are being arranged rather than
 // decorated.
-$o-container: 1098px;
-$o-gutter: 28px;
-
 .o-Container {
-    max-width: $o-container;
+    max-width: settings.$o-container;
     margin: 0 auto;
-    padding: $o-gutter * 2.25 $o-gutter * 2 0;
+    padding: settings.$o-gutter * 2.25 settings.$o-gutter * 2 0;
 
-    @include for-desktop-down {
-        max-width: calc(#{$o-container} - #{$o-gutter * 4});
-        padding: #{$o-gutter * 2} #{$o-gutter * 3} 0;
+    @include tools.for-desktop-down {
+        max-width: calc(#{settings.$o-container} - #{settings.$o-gutter * 4});
+        padding: #{settings.$o-gutter * 2} #{settings.$o-gutter * 3} 0;
     }
 
-    @include for-tablet-landscape-down {
-        padding: #{$o-gutter * 2} #{$o-gutter * 1.25} 0;
+    @include tools.for-tablet-landscape-down {
+        padding: #{settings.$o-gutter * 2} #{settings.$o-gutter * 1.25} 0;
     }
 }
 
@@ -44,25 +44,25 @@ $o-gutter: 28px;
 }
 
 .\31\/2-TabletPortraitUp {
-    @include for-tablet-portrait-up {
+    @include tools.for-tablet-portrait-up {
         width: 50%;
     }
 }
 
 .\31\/2-TabletPortraitUp-WithGutter {
-    @include for-tablet-portrait-up {
-        width: calc(50% - #{$o-gutter});
+    @include tools.for-tablet-portrait-up {
+        width: calc(50% - #{settings.$o-gutter});
     }
 }
 
 .\31\/3-TabletLandscapeUp {
-    @include for-tablet-landscape-up {
+    @include tools.for-tablet-landscape-up {
         width: 33.333%;
     }
 }
 
 .\32\/3-TabletPortraitUp {
-    @include for-tablet-portrait-up {
+    @include tools.for-tablet-portrait-up {
         width: 66.666%;
     }
 }

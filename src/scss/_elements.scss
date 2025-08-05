@@ -1,3 +1,18 @@
+@use "settings" as settings;
+@use "tools" as tools;
+@use "sass:math";
+
+html {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 // Elements (namespace: e-) are the HTML native elements which we would not style based on the class names. For example,
 // we should provide default styles to <a> element rather than .link class.
 h1,
@@ -10,51 +25,51 @@ a,
 li {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 0;
-    margin-bottom: $base-line-height;
-    color: $ink;
+    margin-bottom: settings.$base-line-height;
+    color: settings.$ink;
     -webkit-font-smoothing: antialiased;
 }
 
 h1 {
-    @include header-alpha;
+    @include tools.header-alpha;
 }
 
 h2 {
-    @include header-bravo;
+    @include tools.header-bravo;
 }
 
 h3 {
-    @include header-charlie;
+    @include tools.header-charlie;
 }
 
 h4 {
-    @include header-delta;
+    @include tools.header-delta;
 }
 
 h5 {
-    @include header-echo;
+    @include tools.header-echo;
 }
 
 p,
 li {
-    font-size: $base-font-size; /* IE fallback */
+    font-size: settings.$base-font-size; /* IE fallback */
     font-size: var(--font-size);
-    font-family: $futura-lt-book;
-    color: $ink-lighter;
-    line-height: $base-line-height;
+    font-family: settings.$futura-lt-book;
+    color: settings.$ink-lighter;
+    line-height: settings.$base-line-height;
 }
 
 a {
     text-decoration: none;
-    color: $ink;
+    color: settings.$ink;
 }
 
 ul {
-    margin: 0 0 $base-line-height;
+    margin: 0 0 settings.$base-line-height;
     padding: 0;
     list-style: none;
 
     li {
-        margin-bottom: $base-line-height / 2;
+        margin-bottom: math.div(settings.$base-line-height, 2);
     }
 }

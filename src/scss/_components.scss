@@ -1,3 +1,7 @@
+@use "settings" as settings;
+@use "tools" as tools;
+@use "sass:math";
+
 // A component (namespace: c-) is a small feature that makes up a part of the website. Think buttons, accordions, sliders,
 // modal dialogs, etc. Each component is fully functional by itself and does not rely on any other components. This fact
 // should be considered when you name the component.
@@ -16,7 +20,7 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    padding: $o-gutter;
+    padding: settings.$o-gutter;
     text-align: center;
     top: 0;
     right: 0;
@@ -28,10 +32,10 @@
 .c-Portfolio--Category {
     position: relative;
     display: block;
-    margin-bottom: $base-line-height / 2;
+    margin-bottom: math.div(settings.$base-line-height, 2);
     opacity: 0;
     transform: translateY(125%);
-    transition: transform .5s, opacity .5s;
+    transition: transform 0.5s, opacity 0.5s;
     z-index: 1;
 }
 
@@ -43,11 +47,11 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: $white;
+    background: settings.$white;
     overflow: hidden;
     transform: scaleY(0);
     transform-origin: center bottom;
-    transition: opacity 0s, transform .45s cubic-bezier(.4,0,.2,1);
+    transition: opacity 0s, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 //@todo Create default animation class and state
@@ -72,11 +76,11 @@
         }
 
         .c-Portfolio--Title {
-            transition-delay: .1s;
+            transition-delay: 0.1s;
         }
 
         .c-Portfolio--Category {
-            transition-delay: .3s;
+            transition-delay: 0.3s;
         }
     }
 }
@@ -90,99 +94,99 @@
 }
 
 .c-Project--Category {
-    @include header-delta;
+    @include tools.header-delta;
 
-    @include for-tablet-portrait-up {
+    @include tools.for-tablet-portrait-up {
         text-align: right;
     }
 }
 
 .c-Project--ItemImg {
-    max-width: $o-container;
-    margin: $o-gutter * 2.25 auto 0;
+    max-width: settings.$o-container;
+    margin: settings.$o-gutter * 2.25 auto 0;
     padding: 0;
 
-    @include for-desktop-down {
-        max-width: calc(#{$o-container} - #{$o-gutter * 4});
+    @include tools.for-desktop-down {
+        max-width: calc(#{settings.$o-container} - #{settings.$o-gutter * 4});
     }
 
-    @include for-tablet-landscape-up {
-        padding: 0 #{$o-gutter * 3};
+    @include tools.for-tablet-landscape-up {
+        padding: 0 #{settings.$o-gutter * 3};
     }
 }
 
 .c-Project--Copy {
     margin: 0 auto;
-    padding: $o-gutter * 2 0;
+    padding: settings.$o-gutter * 2 0;
 
-    @include for-tablet-landscape-down {
-        padding: $o-gutter * 1 0;
+    @include tools.for-tablet-landscape-down {
+        padding: settings.$o-gutter * 1 0;
     }
 }
 
 .c-Project--Overview {
-    margin: 0 0 $o-gutter * 2;
+    margin: 0 0 settings.$o-gutter * 2;
 }
 
 .c-Project--Palette {
     width: 210px;
-    margin: 0 auto #{$o-gutter};
-    padding: 0 #{$o-gutter / 2};
+    margin: 0 auto #{settings.$o-gutter};
+    padding: 0 #{settings.$o-gutter * 0.5};
     box-sizing: border-box;
 }
 
 .c-Project--Palette-Swatch {
-    width: $o-gutter * 2.25;
-    height: $o-gutter * 2.25;
-    border: 2px solid $white;
+    width: settings.$o-gutter * 2.25;
+    height: settings.$o-gutter * 2.25;
+    border: 2px solid settings.$white;
     border-radius: 100%;
-    margin: 0 auto $o-gutter;
+    margin: 0 auto settings.$o-gutter;
 
     &.Pantone-276C {
-        background-color: #221C35;
+        background-color: #221c35;
     }
 
     &.Pantone-7404C {
-        background-color: #F4DA40;
+        background-color: #f4da40;
     }
 
     &.Pantone-Rubine_Red_C {
-        background-color: #CE0058;
+        background-color: #ce0058;
     }
 }
 
 .c-Project--Palette-Values {
-    color: $white;
+    color: settings.$white;
 }
 
 .c-Title--Charlie {
-    @include header-charlie;
+    @include tools.header-charlie;
 }
 
 .c-Title--Delta {
-    @include header-delta;
+    @include tools.header-delta;
 }
 
 .c-Btn {
-    @include cubic-transition;
+    @include tools.cubic-transition;
     position: relative;
     display: inline-block;
-    padding: 9px $o-gutter * 1 8px;
-    border: 2px solid $ink-lighter;
-    font-size: $base-font-size; // IE fallback
+    padding: 9px settings.$o-gutter * 1 8px;
+    border: 2px solid settings.$ink-lighter;
+    font-size: settings.$base-font-size; // IE fallback
     font-size: var(--font-size);
-    font-family: $futura-lt-book;
-    color: $white;
+    font-family: settings.$futura-lt-book;
+    color: settings.$white;
     text-align: center;
-    line-height: $base-line-height;
-    border-radius: $o-gutter * 2.5;
+    line-height: settings.$base-line-height;
+    border-radius: settings.$o-gutter * 2.5;
     background: none;
     appearance: none;
     cursor: pointer;
 
     &:hover {
-        border-color: $white;
-        color: $white;
+        border-color: settings.$white;
+        color: settings.$white;
     }
 
     &:focus {
@@ -199,17 +203,17 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background: rgba($color: $ink, $alpha: .9);
+    background: rgba(settings.$color: settings.$ink, settings.$alpha: 0.9);
 }
 
 .c-Modal--Content {
     position: relative;
     display: block;
-    padding-top: $o-gutter * 2.5;
-    padding-bottom: $o-gutter * 2.25;
+    padding-top: settings.$o-gutter * 2.5;
+    padding-bottom: settings.$o-gutter * 2.25;
     text-align: center;
     animation-name: fadeInUp;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
 }
 
 .c-Modal--Close {
@@ -218,7 +222,7 @@
     right: 0;
     background: none;
     border: 0;
-    font-size: $h3;
+    font-size: settings.$h3;
     appearance: none;
 }
 

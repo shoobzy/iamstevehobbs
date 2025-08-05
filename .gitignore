@@ -4,6 +4,7 @@ node_modules
 dist/*
 .env*
 .vscode
+.parcel-cache/
 
 # Local Netlify folder
 .netlify
