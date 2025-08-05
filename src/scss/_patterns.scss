@@ -1,9 +1,13 @@
+@use "settings" as settings;
+@use "tools" as tools;
+
 .p-Nav--Inner {
     position: relative;
-    padding: $o-gutter * 1.5;
+    padding: settings.$o-gutter * 1.5;
 
-    @include for-tablet-landscape-down {
-        padding: #{$o-gutter * 1.5} #{$o-gutter * 1.25} #{$o-gutter / 2};
+    @include tools.for-tablet-landscape-down {
+        padding: #{settings.$o-gutter * 1.5} #{settings.$o-gutter * 1.25} #{settings.$o-gutter *
+            0.5};
     }
 }
 
@@ -20,29 +24,29 @@
         background-image: url("./images/sh-monogram--white.svg");
     }
 
-    @include for-phone-only {
+    @include tools.for-phone-only {
         background-size: 80%;
     }
 }
 
 .p-Nav--Item {
-    @include for-phone-only {
-        margin-bottom: $o-gutter / 2;
+    @include tools.for-phone-only {
+        margin-bottom: settings.$o-gutter * 0.5;
     }
 
     a {
         position: relative;
-        margin-left: $o-gutter * 1.5;
+        margin-left: settings.$o-gutter * 1.5;
         padding-bottom: 13px;
-        font-size: $base-font-size * .875;
-        font-family: $futura-lt-bold;
-        line-height: $base-line-height;
-        letter-spacing: $base-font-size * .1875;
+        font-size: settings.$base-font-size * 0.875;
+        font-family: settings.$futura-lt-bold;
+        line-height: settings.$base-line-height;
+        letter-spacing: settings.$base-font-size * 0.1875;
         text-transform: uppercase;
 
-        @include for-phone-only {
-            margin-left: $o-gutter * .75;
-            font-size: $base-font-size * .6875;
+        @include tools.for-phone-only {
+            margin-left: settings.$o-gutter * 0.75;
+            font-size: settings.$base-font-size * 0.6875;
         }
 
         &:first-child {
@@ -50,21 +54,21 @@
         }
 
         &::after {
-            @include cubic-transition;
+            @include tools.cubic-transition;
             position: absolute;
             width: 0;
             height: 2px;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            background: $ink;
+            background: settings.$ink;
             backface-visibility: hidden;
             content: "";
             pointer-events: none;
 
             // Review this
             @at-root body.u-DarkMode & {
-                background: $white;
+                background: settings.$white;
             }
         }
 

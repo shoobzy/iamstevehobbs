@@ -1,13 +1,15 @@
+@use "settings" as settings;
+
 .u-Animate {
-    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .u-DarkMode {
-    background: $ink;
+    background: settings.$ink;
 }
 
 .u-Foreground {
-    color: $white;
+    color: settings.$white;
 }
 
 .u-TextCenter {
